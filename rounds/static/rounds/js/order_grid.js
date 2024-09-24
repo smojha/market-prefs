@@ -99,6 +99,7 @@ $(window).on('load', function () {
             submitted_odata = o_data;
             ts = Date.now() - load_time;
             submitted_odata.ts = ts
+            console.log("Order submitted:", submitted_odata);
             liveSend({'func': 'submit-order', 'data': submitted_odata});
             reset_grid();
         }
@@ -291,6 +292,37 @@ function draw_grid(dark_left=false, dark_right=false) {
         'box': box
     };
 };
+
+function submitOrderFromConsole(order) {
+    if (!order || !order.type || !order.quantity || !order.price) {
+        console.error("Invalid order. Please provide 'type', 'quantity', and 'price'.");
+        return;
+    }
+
+    // Prepare order data structure similar to grid submission
+    let ts = Date.now() - load_time; // Timestamp to match the grid logic
+    let o_data = {
+        'type': order.type,
+        'quantity': Math.abs(order.quantity),
+        'price': Math.max(order.price, 0),
+        'ts': ts
+    };
+
+    // Check for valid order
+    if (o_data.price <= 0 || o_data.quantity === 0) {
+        console.error("Invalid order data. Price must be greater than 0 and quantity must not be 0.");
+        return;
+    }
+
+    // Send the order
+    liveSend({'func': 'submit-order', 'data': o_data});
+
+    // Optional: Log the submitted order for confirmation
+    console.log("Order submitted:", o_data);
+}
+
+window.submitOrderFromConsole = submitOrderFromConsole;
+
 
 
 

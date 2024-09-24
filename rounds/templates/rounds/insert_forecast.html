@@ -25,3 +25,57 @@
         {{ endfor }}
     </div>
 </div>
+
+<script>
+    function gatherForecastData() {
+        const inputs = [];
+
+        "{{ for d in inputs }}"
+
+        inputs.push({
+            label: "{{ d.label }}",
+            field: "{{ d.f }}",
+            min: "{{ d.lo }}",
+            max: "{{ d.hi }}"
+        });
+        "{{ endfor }}"
+
+        console.log(JSON.stringify(inputs, null, 2));
+    }
+
+
+    // TODO: Tinker with this once selected forecast data is actualy being recorded
+    function setForecastDataFromJSON(jsonData) {
+        jsonData.forEach(data => {
+            const slider = document.getElementById(`${data.field}`);
+            if (slider) {
+                // Set the slider value if it's within range
+                const min = parseInt(slider.min, 10);
+                const max = parseInt(slider.max, 10);
+                slider.value = data.value;
+                if (data.value >= min && data.value <= max) {
+                    console.log("nice1!");
+                    slider.value = data.value;
+                    console.log("nice!");
+                    console.log(`Updated ${data.field}: ${slider.value}`);
+                } else {
+                    console.warn(`Value ${data.value} for ${data.field} is out of range.`);
+                }
+
+                // Optionally update the corresponding display element
+                const targetElement = document.getElementById(data.field);
+                if (targetElement) {
+                    targetElement.innerText = data.value;
+                }
+            } else {
+                console.warn(`Slider element not found for ${data.field}`);
+            }
+        });
+    }
+
+    // Example of calling the function (e.g., on form submission or button click)
+    // For demo, calling it immediately after the page loads
+    document.addEventListener("DOMContentLoaded", function() {
+        gatherForecastData();
+    });
+</script>

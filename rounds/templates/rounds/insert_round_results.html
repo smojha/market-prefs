@@ -1,8 +1,22 @@
-
-{{ for msg in messages }}
-<div class="alert {{ msg.class_attr }}">
-    <div class="message">
-        {{ msg.msg }}
+<div id="messages-container">
+    {{ for msg in messages }}
+    <div class="alert {{ msg.class_attr }}">
+        <div class="message">
+            {{ msg.msg }}
+        </div>
     </div>
+    {{ endfor }}
 </div>
-{{  endfor }}
+
+<script>
+    const messages = [];
+
+    "{{ for msg in messages }}"
+    messages.push({
+        class_attr: "{{ msg.class_attr }}",
+        msg: "{{ msg.msg }}"
+    });
+    "{{ endfor }}"
+
+    console.log(JSON.stringify(messages, null, 2));
+</script>

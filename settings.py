@@ -106,14 +106,14 @@ SESSION_CONFIG_DEFAULTS = dict(
     
     quiz_reward = .25,
     
-    market_time=20,
+    market_time=120,
     fixate_time=2,
-    forecast_time=30,
-    summary_time=10,
+    forecast_time=500,
+    summary_time=100,
     practice_time=15,
     practice_end_time=30,
     final_results_time=75,
-    risk_elic_time=5,
+    risk_elic_time=50,
     show_next=False,
     is_prolific=False,
     is_mturk=False,

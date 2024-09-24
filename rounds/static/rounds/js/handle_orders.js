@@ -15,6 +15,7 @@ function clear_orders_grid(){
 
 
 function add_form_order_to_list(live_data){
+    console.log("Adding order to list", live_data);
     var oid = live_data.order_id;
     submitted_odata.oid = oid;
     ALL_ORDERS.set(""+oid, submitted_odata)

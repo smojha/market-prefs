@@ -99,4 +99,14 @@ window.onload = function() {
             animation: {duration: 0}
         }
     });
+
+    let market_history = {
+        num_periods: num_periods,
+        labels: labels,
+        prices: price_data,
+        volumes: volume_data
+    };
+
+    console.log(JSON.stringify(market_history, null, 2));
+    console.log('Price history loaded');
 }

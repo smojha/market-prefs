@@ -1,71 +1,81 @@
-            <div>
-                <table class="left-tab">
-                    <tr>
-                         <th colspan="2" class="box-header">Personal Stats</th>
-                     </tr>
-                    <tr>
-                        <td><div id="stat_stock_pos"># of Shares</div> </td>
-                        <td class="stat-value">&nbsp;<span class="r_just {{ vos_neg_cls }} {{ attn_cls }}">{{ shares }}</span></td>
-                    </tr>
-                    <tr>
-                        <td><div id="stat_cash_pos">Current Cash</div></td>
-                        <td class="stat-value">&nbsp;<span class="r_just {{ vos_neg_cls }} {{ attn_cls }}">{{ cash }}</span></td>
-                    </tr>
-                    <tr>
-                        <td><div id="stat_stock_value">STOCK Value</div></td>
-                        <td class="stat-value">&nbsp;<span class="r_just {{ vos_neg_cls }} {{ attn_cls }}">{{ stock_val }}</span></td>
-                    </tr>
-                   </tr>
-                    {{ if for_results }}
-                    <tr>
-                        <td><div class="tool-tip">Dividend Earned
-                            <span class="tool-tip-text tt-right">
-                                <p>The amount or dividend payments you earned market period</p>
-                            </span>
-                        </div></td>
-                        <td class="stat-value">&nbsp;<span class="r_just">{{ player.dividend_earned }}</span></td>
-                    </tr>
-                    <tr>
-                        <td><div class="tool-tip">Interest Earned
-                            <span class="tool-tip-text tt-right">
-                                <p>The amount of interest you earned market period</p>
-                            </span>
-                        </div></td>
-                        <td class="stat-value">&nbsp;<span class="r_just">{{ player.interest_earned }}</span></td>
-                    </tr>
-                    {{ else }}
-                    <tr><td colspan="2">&nbsp;</td> </tr>
-                    <tr><td colspan="2">&nbsp;</td> </tr>
-                    {{ endif }}
-                </table>
-            </div>
-            <div class="right-stat-div">
-                 <table>
-                     <tr>
-                         <th colspan="2" class="box-header">Market Stats</th>
-                     </tr>
-                     <tr>
-                         <td><div id="stat_market_price">Market Price</div></td>
-                         <td class="stat-value">&nbsp;<span class="r_just">{{ market_price | cu }}</span></td>
-                    </tr>
-                    {#
-                    <tr>
-                        <td><div id="stat_stock_float">Float</div></td>
-                        <td class="stat-value">&nbsp;<span class="r_just">{{ group.float }} shares</span></td>
-                    </tr>
-                    #}
-                    <tr>
-                        <td><div id="stat_int_rate">Interest Rate</div></td>
-                        <td class="stat-value">&nbsp;<span class="r_just">{{ interest_pct }}</span></td>
-                    </tr>
-                    <tr>
-                        <td><div id="stat_dividends">Dividends</div></td>
-                        <td class="stat-value">&nbsp;<span class="r_just">{{ dividends }}</span></td>
-                    </tr>
-                   <tr>
-                        <td><div id="stat_buy_back">Buy Back</div></td>
-                       <td class="stat-value">&nbsp;<span class="r_just">{{ buy_back }}</span></td>
-                    </tr>
-                </table>
-            </div>
-        </div>
+<div>
+    <table class="left-tab">
+        <tr>
+            <th colspan="2" class="box-header">Personal Stats</th>
+        </tr>
+        <tr>
+            <td><div id="stat_stock_pos"># of Shares</div> </td>
+            <td class="stat-value">&nbsp;<span id="shares" class="r_just">{{ shares }}</span></td>
+        </tr>
+        <tr>
+            <td><div id="stat_cash_pos">Current Cash</div></td>
+            <td class="stat-value">&nbsp;<span id="cash" class="r_just">{{ cash }}</span></td>
+        </tr>
+        <tr>
+            <td><div id="stat_stock_value">STOCK Value</div></td>
+            <td class="stat-value">&nbsp;<span id="stock_val" class="r_just">{{ stock_val }}</span></td>
+        </tr>
+        {{ if for_results }}
+        <tr>
+            <td><div class="tool-tip">Dividend Earned</div></td>
+            <td class="stat-value">&nbsp;<span id="dividend_earned" class="r_just">{{ player.dividend_earned }}</span></td>
+        </tr>
+        <tr>
+            <td><div class="tool-tip">Interest Earned</div></td>
+            <td class="stat-value">&nbsp;<span id="interest_earned" class="r_just">{{ player.interest_earned }}</span></td>
+        </tr>
+        {{ endif }}
+    </table>
+</div>
+
+<div class="right-stat-div">
+    <table>
+        <tr>
+            <th colspan="2" class="box-header">Market Stats</th>
+        </tr>
+        <tr>
+            <td><div id="stat_market_price">Market Price</div></td>
+            <td class="stat-value">&nbsp;<span id="market_price" class="r_just">{{ market_price }}</span></td>
+        </tr>
+        <tr>
+            <td><div id="stat_int_rate">Interest Rate</div></td>
+            <td class="stat-value">&nbsp;<span id="interest_pct" class="r_just">{{ interest_pct }}</span></td>
+        </tr>
+        <tr>
+            <td><div id="stat_dividends">Dividends</div></td>
+            <td class="stat-value">&nbsp;<span id="dividends" class="r_just">{{ dividends }}</span></td>
+        </tr>
+        <tr>
+            <td><div id="stat_buy_back">Buy Back</div></td>
+            <td class="stat-value">&nbsp;<span id="buy_back" class="r_just">{{ buy_back }}</span></td>
+        </tr>
+    </table>
+</div>
+
+<script>
+    // Function to gather data and print as JSON
+    function printJsonData() {
+        // Collect the values from the DOM
+        const data = {
+            personalStats: {
+                shares: document.getElementById('shares').textContent.trim(),
+                cash: document.getElementById('cash').textContent.trim(),
+                stockValue: document.getElementById('stock_val').textContent.trim(),
+                dividendEarned: document.getElementById('dividend_earned')?.textContent.trim() || null,
+                interestEarned: document.getElementById('interest_earned')?.textContent.trim() || null
+            },
+            marketStats: {
+                marketPrice: document.getElementById('market_price').textContent.trim(),
+                interestRate: document.getElementById('interest_pct').textContent.trim(),
+                dividends: document.getElementById('dividends').textContent.trim(),
+                buyBack: document.getElementById('buy_back').textContent.trim()
+            }
+        };
+
+        // Print the JSON string to the console
+        console.log(JSON.stringify(data, null, 2));
+    }
+
+    // Call the function to print the JSON
+    printJsonData();
+</script>

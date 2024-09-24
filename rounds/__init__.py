@@ -569,6 +569,7 @@ def market_page_live_method(player, d, o_cls=Order, show_warnings=True, show_not
 
     if func == 'submit-order':
         data = d['data']
+        print(data)
         error_code, t, p, q = is_order_valid(player, data, orders_by_type)
         ts = data['ts']
 
