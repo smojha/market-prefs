@@ -27,31 +27,31 @@ Please choose your prefered lottery.  {{if is_practice}} (Practice Round) {{endi
     <script>
         $(window).on('load', function() {
             const chartsData = {};
-    
+        
             // Helper function to extract data from a canvas chart
             function extractChartData(canvasId) {
                 const canvas = document.getElementById(canvasId);
                 const chartInstance = Chart.getChart(canvas);
-    
+        
                 if (chartInstance) {
                     // Extract chart data and labels
                     const data = chartInstance.data.datasets[0].data;
                     const labels = chartInstance.data.labels;
-    
+        
                     return {
-                        labels: labels,
-                        data: data
+                        awards: labels,
+                        win_odds: data
                     };
                 } else {
                     console.error(`No chart instance found for canvas ID: ${canvasId}`);
                     return null;
                 }
             }
-    
+        
             // Extract data from both canvases
             const safeChartData = extractChartData('safe_card');
             const riskChartData = extractChartData('risk_card');
-    
+        
             // Build a JSON object to group data from both canvases
             if (safeChartData) {
                 chartsData['safe_card'] = safeChartData;
@@ -59,39 +59,62 @@ Please choose your prefered lottery.  {{if is_practice}} (Practice Round) {{endi
             if (riskChartData) {
                 chartsData['risk_card'] = riskChartData;
             }
+
+            const page_load_time = new Date().toISOString();
     
+            // Define the readPage function as a property of the window object
+            window.readPage = function() {
+                const labeledChartData = {
+                    source: "risk_page",
+                    timestamp: page_load_time,
+                    data: chartsData
+                };
+                return labeledChartData;
+            };
+        
+            // Create JSON object containing the selected chart data and source label
+            const labeledChartData = {
+                source: "risk_page",
+                data: chartsData
+            };
+        
             // Log the final JSON object containing both charts' data
-            console.log(JSON.stringify(chartsData, null, 2));
+            console.log(JSON.stringify(labeledChartData, null, 2));
         });
     </script>
-
-<script>
-    function simulateCanvasClick(canvasId) {
-        const canvas = document.getElementById(canvasId);
-        const chartInstance = Chart.getChart(canvas);
-
-        if (!chartInstance) {
-            console.error(`No chart instance found for canvas ID: ${canvasId}`);
-            return;
+    
+    <script>
+        function simulateCanvasClick(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const chartInstance = Chart.getChart(canvas);
+    
+            if (!chartInstance) {
+                console.error(`No chart instance found for canvas ID: ${canvasId}`);
+                return;
+            }
+    
+            // Get the position of the canvas
+            const rect = canvas.getBoundingClientRect();
+            const x = rect.left + rect.width / 2;
+            const y = rect.top + rect.height / 2;
+    
+            // Create a click event
+            const clickEvent = new MouseEvent('click', {
+                clientX: x,
+                clientY: y,
+                bubbles: true,
+                cancelable: true
+            });
+    
+            // Dispatch the event on the canvas
+            canvas.dispatchEvent(clickEvent);
         }
 
-        // Get the position of the canvas
-        const rect = canvas.getBoundingClientRect();
-        const x = rect.left + rect.width / 2;
-        const y = rect.top + rect.height / 2;
-
-        // Create a click event
-        const clickEvent = new MouseEvent('click', {
-            clientX: x,
-            clientY: y,
-            bubbles: true,
-            cancelable: true
-        });
-
-        // Dispatch the event on the canvas
-        canvas.dispatchEvent(clickEvent);
-    }
-</script>
+        function pickLottery(safe=true) {
+            const canvasId = safe ? 'safe_card' : 'risk_card';
+            simulateCanvasClick(canvasId);
+        }
+    </script>
 
 
 

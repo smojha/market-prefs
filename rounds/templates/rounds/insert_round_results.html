@@ -18,5 +18,17 @@
     });
     "{{ endfor }}"
 
-    console.log(JSON.stringify(messages, null, 2));
+    // Make JSON object containing all messages and source label
+
+    const messagesData = {
+        subsource: "results_messages",
+        messages: messages
+    };
+
+    console.log(JSON.stringify(messagesData, null, 2));
+
+    // Define getResultsMessages() function
+    function getResultsMessages() {
+        return messagesData;
+    }
 </script>

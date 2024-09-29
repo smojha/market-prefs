@@ -54,9 +54,17 @@
 
 <script>
     // Function to gather data and print as JSON
-    function printJsonData() {
+    function getStats() {
         // Collect the values from the DOM
+        // Match this document element with null to determine market state
+        dividend_earned = document.getElementById('dividend_earned') || null;
+        if (dividend_earned) {
+            source = 'stats_dashboard_post_round';
+        } else {
+            source = 'stats_dashboard_pre_round';
+        }
         const data = {
+            subsource: source,
             personalStats: {
                 shares: document.getElementById('shares').textContent.trim(),
                 cash: document.getElementById('cash').textContent.trim(),
@@ -72,10 +80,9 @@
             }
         };
 
-        // Print the JSON string to the console
-        console.log(JSON.stringify(data, null, 2));
+        return data;
     }
 
     // Call the function to print the JSON
-    printJsonData();
+    console.log(JSON.stringify(getStats(), null, 2));
 </script>

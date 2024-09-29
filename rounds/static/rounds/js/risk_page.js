@@ -32,13 +32,6 @@ $(window).on('load', function () {
         $('._otree-content, .otree-title').css('background-color', '#fafaff')
     }
 
-    if (typeof logChartData === 'function') {
-        console.log('logChartData function found');
-        logChartData();
-    } else {
-        console.error('logChartData function not found');
-    }
-
 });
 
 CHARTS = []
@@ -139,26 +132,6 @@ function make_chart(ctx, pct, pay){
     };
 
    return  new Chart(ctx, {type: 'pie', data:data, options:options})
-}
-
-function logChartData() {
-    CHARTS.forEach((chart) => {
-        const data = chart.data.datasets[0].data;
-        const labels = chart.data.labels;
-        const total = data.reduce((sum, value) => sum + value, 0);
-
-        const jsonOutput = labels.map((label, index) => {
-            const value = data[index];
-            const percentage = Math.round((value / total) * 100) + '%';
-            return {
-                label: label,
-                value: value,
-                percentage: percentage
-            };
-        });
-
-        console.log(JSON.stringify(jsonOutput, null, 2));
-    });
 }
 
 

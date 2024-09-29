@@ -121,8 +121,75 @@ $(window).on('load', function () {
         {{ if is_practice }}
         <div class="shares-box boxed_area larger-font">
         <p>The market price in the last practice round was {{ market_price }}.</p>
-        <p>  Concider whether you are willing to buy STOCK at this price concidering the trade-in amount after the last round.</p>
+        <p>  Consider whether you are willing to buy STOCK at this price considering the trade-in amount after the last round.</p>
         </div>
+
+        <script>
+            const practiceResultsData = {
+                source: "practice_results",
+                shares: "{{ player.shares_result }}",
+                stock_val: "{{ buy_back_amt }}",
+                market_price: "{{ market_price }}",
+                thoughts: "The market price in the last practice round was {{market_price}}. Consider whether you are willing to buy STOCK at this price considering the trade-in amount after the last round."
+            }
+            console.log(JSON.stringify(practiceResultsData, null, 2));
+
+            // Define readPage() function
+            function readPage() {
+                const practiceResultsData = {
+                    source: "practice_results",
+                    shares: "{{ player.shares_result }}",
+                    stock_val: "{{ buy_back_amt }}",
+                    market_price: "{{ market_price }}",
+                    thoughts: "The market price in the last practice round was {{market_price}}. Consider whether you are willing to buy STOCK at this price considering the trade-in amount after the last round."
+                }
+                return practiceResultsData;
+            }
+
+            // Simulate a click on the "Next" button to proceed to the experiment
+            function proceedToExperiment() {
+                document.querySelector('.bottom-right button').click();
+            }
+        </script>
+
+        {{ else }}
+        <script>
+            const finalResultsData = {
+                source: "final_results",
+                participant_code: "{{ player.participant.label }}",
+                participation_fee: "{{ session.participation_fee }}",
+                market_bonus: "{{ market_bonus }}",
+                forecast_bonus: "{{ forecast_bonus }}",
+                risk_bonus: "{{ risk_bonus }}",
+                quiz_bonus: "{{ quiz_bonus }}",
+                total_payment: "{{ total_pay }}"
+            }
+            console.log(JSON.stringify(finalResultsData, null, 2));
+
+            // Define readPage() function
+            function readPage() {
+                const finalResultsData = {
+                    source: "final_results",
+                    participant_code: "{{ player.participant.label }}",
+                    participation_fee: "{{ session.participation_fee }}",
+                    market_bonus: "{{ market_bonus }}",
+                    forecast_bonus: "{{ forecast_bonus }}",
+                    risk_bonus: "{{ risk_bonus }}",
+                    quiz_bonus: "{{ quiz_bonus }}",
+                    total_payment: "{{ total_pay }}"
+                }
+                return finalResultsData;
+            }
+
+            // Simulate a click on the "Next" button to proceed to the survey
+            function proceedToSurvey() {
+                document.querySelector('.bottom-right button').click();
+            }
+        </script>
+
+
         {{ endif }}
+
+
 </div>
 {{ endblock }}

@@ -5,7 +5,7 @@
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>-->
 {#<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>#}
 <script src="{{ static 'js/Chart.js' }}"></script>
-<script src="{{ static 'rounds/js/price_history.js' }}"></script>
+<script src="{{ static 'rounds/js/price_history.js' }}" defer></script>
 <script src="{{ static 'rounds/js/move_timer.js' }}"></script>
 <script src="{{ static 'rounds/js/set_tool_tip.js' }}"></script>
 <script src="{{ static 'rounds/js/biotrigger.js' }}"></script>
@@ -62,6 +62,54 @@
             {{ include_sibling 'insert_stats.html' }}
         </div>
 </div>
+
+<script>
+    // Define readPage() function
+    function readPage(){
+        // Determine source type based on functions that are defined/available
+        let has_forecast = typeof gatherForecastData === 'function';
+        let has_round_results = typeof getResultsMessages === 'function';
+        let has_stats = typeof getStats === 'function';
+
+        // Construct reponses based on the source type
+        if (has_forecast){
+            forecase_data = gatherForecastData();
+            market_history_data = fetchMarketHistory();
+            stats_data = getStats();
+            forecast_source_resp = {
+                source: 'forecast_page',
+                forecast_data: forecase_data,
+                market_history_data: market_history_data,
+                stats_data: stats_data
+            }
+            return forecast_source_resp;
+        } else if (!has_forecast && !has_round_results){
+            market_history_data = fetchMarketHistory();
+            stats_data = getStats();
+            market_grid_choice_resp = {
+                source: 'market_choice_page',
+                market_history_data: market_history_data,
+                stats_data: stats_data
+            }
+            return market_grid_choice_resp;
+        } else if (has_round_results){
+            round_results_data = getResultsMessages();
+            market_history_data = fetchMarketHistory();
+            stats_data = getStats();
+            round_results_resp = {
+                source: 'round_results_page',
+                round_results_data: round_results_data,
+                market_history_data: market_history_data,
+                stats_data: stats_data
+            }
+            return round_results_resp;
+        } else {
+            // Something has gone seriously wrong
+            console.error('Failed to identify page type');
+            return null;
+        }
+    }
+</script>
 
 
 

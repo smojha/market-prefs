@@ -28,7 +28,7 @@
                 function submitOrderFromConsole(order) {
                     if (!order || !order.type || !order.quantity || !order.price) {
                         console.error("Invalid order. Please provide 'type', 'quantity', and 'price'.");
-                        return;
+                        return false;
                     }
 
                     // Prepare order data structure similar to grid submission
@@ -43,7 +43,7 @@
                     // Check for valid order
                     if (o_data.price <= 0 || o_data.quantity === 0) {
                         console.error("Invalid order data. Price must be greater than 0 and quantity must not be 0.");
-                        return;
+                        return false;
                     }
 
                     // Send the order
@@ -51,6 +51,8 @@
 
                     // Optional: Log the submitted order for confirmation
                     console.log("Order submitted:", o_data);
+
+                    return true;
                 }
             </script>
         </div>
