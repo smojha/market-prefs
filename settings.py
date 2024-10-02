@@ -106,9 +106,9 @@ SESSION_CONFIG_DEFAULTS = dict(
     
     quiz_reward = .25,
     
-    market_time=20,
+    market_time=12,
     fixate_time=2,
-    forecast_time=30,
+    forecast_time=10,
     summary_time=10,
     practice_time=15,
     practice_end_time=30,
