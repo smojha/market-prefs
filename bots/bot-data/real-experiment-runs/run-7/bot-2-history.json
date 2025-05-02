@@ -1,0 +1,2148 @@
+[
+    {
+        "round_num": 1,
+        "timestamp": "2025-01-10 02:56:28",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 106.6,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.0,
+            "submitted_orders": [],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "Initial strategy: Observe market behavior in the first few practice rounds. Submit moderate price predictions. Aim to understand how the market values the stock relative to its expected dividend and cash interest rate. In later rounds, experiment with buying and selling based on deviations from the expected value.",
+        "insight": "The expected dividend of 0.7 plus the final buyback price of 14 suggests a potential undervaluation if market prices stay consistently below this range.  Need to see how market participants behave.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 2,
+        "timestamp": "2025-01-10 02:59:16",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 115.93,
+            "stock_value": 64.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.33,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 17.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 16.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 1,
+            "round_finished": true
+        },
+        "plan": "Continue to observe market behavior. Test limit orders slightly above and below 14 to gauge market sentiment.  Refine price forecasting based on observed market prices. If the market consistently undervalues the stock (below 14), accumulate more shares. If the market overvalues, consider selling some or all shares.",
+        "insight": "Market opened at 15 in the first practice round. Need more data to understand how participants value the stock. The lack of trades suggests either a consensus around 15 or a lack of willingness to trade at that price.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 3,
+        "timestamp": "2025-01-10 03:02:02",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 35,
+                "field": "f0",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 35,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 50,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 125.73,
+            "stock_value": 64.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.8,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 17.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 16.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 1,
+            "round_finished": true
+        },
+        "plan": "Based on practice rounds, start with limit orders near the observed market price. If the market appears to undervalue the stock (consistently below 14), buy. If the market overvalues (significantly above 14), sell.  Continuously observe market behavior and adjust strategy accordingly.",
+        "insight": "Market prices in practice rounds have been 15 and 16, with low volume.  Participants may be hesitant to trade or there might be a general consensus on the stock's value. Need to observe behavior in the actual experiment to get a clearer picture of market dynamics.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 4,
+        "timestamp": "2025-01-10 03:05:48",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 17
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 18
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 106.6,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.0,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "Initial strategy: test market depth near the price of 14.  If buy orders are filled consistently below 14, increase buying. If sell orders are filled consistently above 14, increase selling.  If neither happens, maintain a balanced approach.  Adjust strategy based on early round observations. Aim to exploit any consistent mispricing relative to the final 14 buyback price.",
+        "insight": "Practice rounds may not be representative of actual trading behavior.  Initial rounds of the experiment will be crucial for understanding market dynamics. Pay close attention to market clearing price and volume.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 5,
+        "timestamp": "2025-01-10 03:08:34",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 17
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 18
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 115.93,
+            "stock_value": 60.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.33,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "Continue testing market depth around the 14 buyback price.  Submit limit orders slightly closer to the previous market price to increase the probability of execution.  If the price moves significantly away from 14, consider more aggressive buying or selling to exploit the potential mispricing.  Begin to consider time decay as the experiment progresses and favor positions closer to buyback price.",
+        "insight": "The initial round of the main experiment mirrors the first practice round, suggesting participants may be approaching the game with similar strategies.  However, the lack of executed trades indicates either tighter spreads or lower trading volume.  Closely observing early round behavior will be key.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 6,
+        "timestamp": "2025-01-10 03:11:25",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 17
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 123.33,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.8,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "Continue to test market depth around the 14-15 price range. Slightly tighten the bid-ask spread on my limit orders to increase the chance of execution.  Consider submitting smaller order sizes to minimize risk.  Begin formulating a long-term strategy that incorporates time decay and the final buyback price.",
+        "insight": "The market price in the main experiment is stable around 15, with low trading volume and a tight bid-ask spread.  Participants seem anchored to the 14 buyback price, preventing significant price fluctuations.  Successfully executing trades requires more aggressive limit order pricing.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 7,
+        "timestamp": "2025-01-10 03:14:12",
+        "forecast": [
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 131.1,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 6.17,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "Refine limit order pricing to be more aggressive, aiming to buy slightly below and sell slightly above the prevailing market price. Continue testing market depth and participant sentiment. Develop a clearer strategy for rounds 20-30 to maximize profit from the final buyback.",
+        "insight": "Market appears stable around 15, but low volume may indicate latent price instability. Participants seem anchored to the 14 buyback, creating a price ceiling.  Aggressively priced limit orders might be necessary to execute trades.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 8,
+        "timestamp": "2025-01-10 03:17:00",
+        "forecast": [
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 141.66,
+            "stock_value": 60.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 6.56,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "Continue probing market depth with limit orders close to the observed market price of 15.  Increase aggressiveness if no fills occur in the next few rounds. Begin to formulate a strategy for maximizing profit during the later rounds (20-30), considering the final buyback price of 14. Explore the possibility of acquiring more shares at lower prices if the market dips, to capitalize on dividends and the final 14 buyback.",
+        "insight": "Market stability around 15 persists. Narrow trading range suggests participants are either content with current prices or hesitant to trade. Aggressive limit order placement will be key to order execution.  Need to develop a clearer strategy for maximizing profit from the buyback in rounds 20-30.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 9,
+        "timestamp": "2025-01-10 03:19:46",
+        "forecast": [
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 152.74,
+            "stock_value": 60.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 7.08,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "The market has stabilized around 15. Explore buying at slightly lower prices (13-14) and selling closer to the current market price (15-16). Begin developing a strategy for rounds 20-30 to account for the 14 buyback.  If the market remains stable, consider holding more cash in later rounds to avoid being stuck with shares bought above 14.",
+        "insight": "Market stability around 15 persists for 5 rounds.  No significant price fluctuations observed. This suggests a possible equilibrium, but could also be a temporary lull.  Participants appear risk-averse, with limited trading volume and narrow bid-ask spreads. Aggressive buy orders at slightly below market price might be necessary for fills. Need to strategize around the 14 buyback price to avoid potential losses in later rounds.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 10,
+        "timestamp": "2025-01-10 03:22:33",
+        "forecast": [
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 3,
+            "current_cash": 179.13,
+            "stock_value": 45.0,
+            "dividend_earned": 3.0,
+            "interest_earned": 8.39,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "Continue to observe market behavior. Narrow the spread between buy and sell orders, aiming for small profits.  If the market remains stable, focus on maximizing cash holdings through interest accumulation while avoiding buying above 14. Start preparing for the 14 buyback around round 20 by gradually decreasing stock holdings.",
+        "insight": "Market stability around 15 confirmed in the main experiment rounds. Narrow bid-ask spreads persist, suggesting risk aversion and potential equilibrium.  My limit orders haven't filled, indicating the need for smaller spreads or more aggressive pricing.  Forecasts need to reflect current market stability.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 11,
+        "timestamp": "2025-01-10 03:25:19",
+        "forecast": [
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 204.64,
+            "stock_value": 30.0,
+            "dividend_earned": 0.8,
+            "interest_earned": 9.71,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "Continue to observe market behavior.  Buy orders slightly below current market price (14), sell orders at or slightly above (15-16).  Prepare for the final buyback by gradually decreasing stock holdings, starting around round 20.  Focus on maximizing cash through interest and well-timed stock trades. Aim to sell all stock by round 28.",
+        "insight": "Market stability around 15 persists. Successful sale at 15 in round 7 suggests potential selling opportunities.  Buy orders need to be more competitive (closer to 15).  Forecasts should reflect current stability but consider the 14 buyback as we approach round 30.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 12,
+        "timestamp": "2025-01-10 03:28:05",
+        "forecast": [
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 231.62,
+            "stock_value": 15.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 10.98,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "Continue to observe market behavior and exploit selling opportunities at or above 15. Aim to reduce stock holdings by around round 20, with the target of holding no stock by round 28.  Avoid buying above 14.  Maximize cash via interest and stock sales.",
+        "insight": "Market shows strong stability at 15. Selling opportunities exist at this price.  The longer-term strategy should shift towards cash accumulation in anticipation of the buyback at 14.  Forecasts should remain conservative, trending towards 14 as we approach round 30.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 13,
+        "timestamp": "2025-01-10 03:30:52",
+        "forecast": [
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 243.6,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 11.58,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 9,
+            "round_finished": true
+        },
+        "plan": "Continue selling remaining stock at 15.  If the price drops below 15, consider holding until the final rounds or selling at a slightly reduced price to avoid holding stocks at the end.  Prioritize cash accumulation.",
+        "insight": "Market surprisingly stable at 15. Successful sales in rounds 7, 8, and 9 confirm selling opportunity at this price.  However, extended stability might indicate a shift in player sentiment, potentially leading to a rapid price adjustment soon.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 14,
+        "timestamp": "2025-01-10 03:33:40",
+        "forecast": [
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 256.18,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 12.18,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "Sell remaining stock, prioritizing 15 but accepting 14. Continue accumulating cash. Forecast prices conservatively, leaning towards 14 as the end of the experiment approaches, as the buyback price anchors the value.",
+        "insight": "Successfully liquidated a significant portion of stock holdings at 15. Price stability followed by a minor dip to 14 suggests cautious market sentiment.  Focus on capital preservation and optimizing cash holdings as the terminal round approaches.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 15,
+        "timestamp": "2025-01-10 03:36:27",
+        "forecast": [
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 269.39,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 12.81,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 9,
+            "round_finished": true
+        },
+        "plan": "Continue accumulating cash, attempt to sell remaining stock at 14 or 15.  Forecast prices conservatively around 14, especially as the final round approaches.",
+        "insight": "Market price stabilization around 15 suggests some resistance to price increases. The dip to 14 reinforces the strength of the buyback price as an anchor.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 16,
+        "timestamp": "2025-01-10 03:39:12",
+        "forecast": [
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 283.86,
+            "stock_value": 14.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 13.47,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "Maintain a cash-heavy position. Monitor the market for any significant deviations from the 14 price point.  If the price falls below 14, consider purchasing stock. Forecast prices conservatively around 14.",
+        "insight": "Market stability around 14 reinforces the significance of the buyback price as a strong support level. Opportunities to sell above 14 should be taken, while buying below 14 could be profitable.  Consistent price action around 14 provides forecasting stability.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 17,
+        "timestamp": "2025-01-10 03:41:57",
+        "forecast": [
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 299.05,
+            "stock_value": 13.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 14.19,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "Continue to prioritize cash accumulation.  If the price remains at 14 or drops lower, consider buying a small number of shares, but avoid large purchases. Adjust sell orders to match or slightly undercut the prevailing market price. As the experiment nears its end,  prioritize cash.",
+        "insight": "The recent drop to 14 suggests a potential shift in market sentiment, possibly due to participants becoming more risk-averse as the experiment progresses.  The consistent earlier price of 15 might have been driven by speculation or overvaluation.  It is important to remain flexible and adapt to changes in market dynamics.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 18,
+        "timestamp": "2025-01-10 03:44:45",
+        "forecast": [
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 40,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 315.0,
+            "stock_value": 13.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 14.95,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "The market price seems to have stabilized around 14-15.  Prioritize accumulating cash, but look for buying opportunities if the price falls to 13 or below. Sell any remaining shares as the experiment approaches round 30.",
+        "insight": "The market seems to be correcting itself towards the fundamental value. The initial higher prices likely reflected early speculation.  Participants are becoming more aware of the final buyback price of 14.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 19,
+        "timestamp": "2025-01-10 03:47:33",
+        "forecast": [
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 40,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 319.1,
+            "stock_value": 26.0,
+            "dividend_earned": 2.0,
+            "interest_earned": 15.1,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 9,
+            "round_finished": true
+        },
+        "plan": "Continue prioritizing accumulating cash. Attempt to sell remaining share at 14 or higher. Submit buy orders around 13 to take advantage of any price drops.  As we approach round 30, be prepared to liquidate any remaining stock holdings to avoid the risk of them being bought back at 14.",
+        "insight": "The market seems to be respecting the fundamental value now, consistently trading close to 14.  Selling pressure appears limited above this price point.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 20,
+        "timestamp": "2025-01-10 03:50:20",
+        "forecast": [
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 40,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 3,
+            "current_cash": 322.61,
+            "stock_value": 39.0,
+            "dividend_earned": 1.2,
+            "interest_earned": 15.31,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "Continue to manage risk by prioritizing cash accumulation. Attempt to sell remaining shares if price reaches 14 or 15.  Submit buy orders around 13 to acquire additional shares if the price drops. Start preparing for a potential end-game strategy in the next few rounds by aiming to maximize cash holdings. ",
+        "insight": "The market has become more stable around 13-15 recently.  It might be a good opportunity to accumulate more cash by selling the remaining shares if the price reaches 15 or even 14. Buy orders at 13 could be a good value play if the price fluctuates downwards.  Time to be vigilant.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 21,
+        "timestamp": "2025-01-10 03:53:09",
+        "forecast": [
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 40,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 3,
+            "current_cash": 339.94,
+            "stock_value": 37.5,
+            "dividend_earned": 1.2,
+            "interest_earned": 16.13,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 12.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "Continue to prioritize cash accumulation and minimize risk.  If the price rises to 14 or 15, attempt to sell remaining shares.  Submit conservative buy orders around 12 or 13 only if there's a clear dip. With only 12 rounds remaining, focus on maximizing cash holdings for the final buyback.",
+        "insight": "Market stability around 13-15 persists. Successfully capitalized on selling opportunities at 15.  Buying at 13 seems viable during price dips, however, with 12 rounds left, focus shifts towards cash maximization and conservative buying.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 22,
+        "timestamp": "2025-01-10 03:55:56",
+        "forecast": [
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 13
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 13
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 40,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 7,
+            "current_cash": 309.34,
+            "stock_value": 84.0,
+            "dividend_earned": 2.8,
+            "interest_earned": 14.6,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 4,
+                    "price": 12.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 14,
+            "round_finished": true
+        },
+        "plan": "Capitalize on the current low market price by aggressively buying at 12 and 13. Maintain a higher sell order at 15 for potential upward swings. If purchases are successful, assess market trends to decide whether to hold or sell closer to the final rounds. With fewer rounds remaining, prioritize increasing share holdings at the lower current price and maximizing returns through dividends and the final buyback. ",
+        "insight": "Market dipped below 14. Aggressive buying at 12-13 presents an opportunity to capitalize on the potential price difference with the final buyback. Holding becomes increasingly favorable as the final rounds approach.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 23,
+        "timestamp": "2025-01-10 03:58:44",
+        "forecast": [
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 13
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 13
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 30,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 40,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 7,
+            "current_cash": 331.81,
+            "stock_value": 84.0,
+            "dividend_earned": 7.0,
+            "interest_earned": 15.47,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 13,
+            "round_finished": true
+        },
+        "plan": "Begin selling shares. Place limit sell orders between 13 and 14 to capitalize on current holdings. Avoid buying as the termination price of 14 approaches.  Prioritize selling to maximize cash holdings by the end of the experiment.",
+        "insight": "Successfully bought at the dip to 12.  Need to ensure I don't get caught holding shares below 14 when the game ends.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 24,
+        "timestamp": "2025-01-10 04:01:25",
+        "forecast": [
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 13
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 13
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 30,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 8,
+            "current_cash": 340.05,
+            "stock_value": 88.0,
+            "dividend_earned": 3.2,
+            "interest_earned": 16.04,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 12.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 11.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 11.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 17,
+            "round_finished": true
+        },
+        "plan": "Continue to reduce stock holdings, focusing on sell orders between 13 and 14.  If prices dip below 13, consider buying a limited number of shares for a quick turnaround.  With only 9 rounds left, prioritize cash holdings.",
+        "insight": "Market appears somewhat stable between 12 and 15 but with final round approaching, minimizing risk by focusing on cash becomes crucial. The drop to 12 presented an opportunity, however, my purchase increased share holdings more than desired.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 25,
+        "timestamp": "2025-01-10 04:04:13",
+        "forecast": [
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 30,
+                "field": "f2",
+                "input_forecast": 12
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 382.55,
+            "stock_value": 66.0,
+            "dividend_earned": 2.4,
+            "interest_earned": 18.1,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 11.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 11.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 11.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 22,
+            "round_finished": true
+        },
+        "plan": "Aggressively sell remaining shares. Prioritize cash holdings. Accept slightly lower prices if necessary to sell before the final round.  Buy orders will depend on large price swings downwards, but focus remains on maximizing cash.",
+        "insight": "Unintentional buy order filled in round 21 at 11.  Market volatility increased. Downward trend observed, which could present opportunities for opportunistic buy orders and quick turnaround sales.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 26,
+        "timestamp": "2025-01-10 04:07:01",
+        "forecast": [
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 30,
+                "field": "f2",
+                "input_forecast": 12
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 3,
+            "current_cash": 437.53,
+            "stock_value": 33.0,
+            "dividend_earned": 1.2,
+            "interest_earned": 20.78,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 11.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 9.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 11.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 11.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 14,
+            "round_finished": true
+        },
+        "plan": "Continue to prioritize cash holdings.  Aggressively sell remaining shares, accepting slightly lower prices to avoid being stuck with them at the end. Consider small, strategic buy orders only if the price falls significantly below 11.  Avoid buying any shares after round 26.",
+        "insight": "Market price continues its downward trend, reaching 11.  It is now more critical to prioritize cash. Selling shares becomes paramount, even at slight losses.  However, large downward price swings could still present opportunities to 'buy low, sell high' if done cautiously and with quick turnaround times.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 27,
+        "timestamp": "2025-01-10 04:09:47",
+        "forecast": [
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 11
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 10
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f2",
+                "input_forecast": 9
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 494.06,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 23.53,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 11.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 11.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 11.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 11,
+            "round_finished": true
+        },
+        "plan": "Focus is now entirely on maximizing cash.  Aggressively sell remaining shares, even at lower prices, to avoid being left with them at the end. Absolutely no buying after round 26.",
+        "insight": "Successfully unloaded most shares as price declined to 11.  Final rounds should focus exclusively on cash accumulation.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 28,
+        "timestamp": "2025-01-10 04:12:37",
+        "forecast": [
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 10
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 9
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f2",
+                "input_forecast": 8
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 518.76,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 24.7,
+            "submitted_orders": [],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 11.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 21,
+            "round_finished": true
+        },
+        "plan": "Continue to hold cash and accrue interest.  Absolutely no stock purchases in the remaining rounds.",
+        "insight": "Successfully sold all shares prior to the final rounds, which was the primary goal.  Focus now solely on maximizing cash returns through interest.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 29,
+        "timestamp": "2025-01-10 04:15:22",
+        "forecast": [
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 10
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 9
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 544.7,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 25.94,
+            "submitted_orders": [],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 10,
+            "round_finished": true
+        },
+        "plan": "Maintain the strategy of holding only cash and accumulating interest.  Avoid any stock purchases in the remaining rounds, irrespective of price fluctuations.",
+        "insight": "The market price has consistently remained below the buyback value of 14, reinforcing the strategy of holding cash and maximizing interest returns.  My order submissions and pricing forecasts will continue to be guided by this approach.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 30,
+        "timestamp": "2025-01-10 04:18:12",
+        "forecast": [
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 13
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 13
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 558.69,
+            "stock_value": 13.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 26.59,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 11.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 10.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 23,
+            "round_finished": true
+        },
+        "plan": "In these final rounds, prioritize buying stock below the buyback price of 14. Submit buy orders between 10 and 13, aiming to capitalize on the guaranteed return at the end of the experiment. Do not sell any stock.",
+        "insight": "As the experiment nears its end, the stock's value becomes less dependent on dividends and more aligned with the buyback price. This presents a reliable opportunity to profit by acquiring stock below 14.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 31,
+        "timestamp": "2025-01-10 04:20:56",
+        "forecast": [
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 13
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 13
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 574.97,
+            "stock_value": 26.0,
+            "dividend_earned": 2.0,
+            "interest_earned": 27.28,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 11.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 12,
+            "round_finished": true
+        },
+        "plan": "Continue prioritizing buying stock below the buyback price of 14. Focus buy orders between 10 and 13.  Do not sell any stock unless the price goes significantly above 14. Time is running out to take advantage of the price differential.",
+        "insight": "In the later rounds, the market behavior reinforces the strategy of buying below 14. The increased trading volume suggests others are also capitalizing on this opportunity.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 32,
+        "timestamp": "2025-01-10 04:23:42",
+        "forecast": [
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 13
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 604.52,
+            "stock_value": 26.0,
+            "dividend_earned": 0.8,
+            "interest_earned": 28.75,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 8,
+            "round_finished": true
+        },
+        "plan": "Final round - maximize cash by selling remaining stock. Buyback price is 14, so prioritize selling at or slightly below this price.",
+        "insight": "Market prices have consistently stayed below the buyback price, making it profitable to accumulate shares and sell them off. ",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 33,
+        "timestamp": "2025-01-10 04:26:32",
+        "forecast": [
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 635.55,
+            "stock_value": 26.0,
+            "dividend_earned": 0.8,
+            "interest_earned": 30.23,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 20,
+            "round_finished": true
+        },
+        "plan": "N/A - Final Round",
+        "insight": "The market trended downwards towards the end of the experiment as participants anticipated the final buyback price.",
+        "thought_observation": "None"
+    }
+]

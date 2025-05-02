@@ -1,0 +1,937 @@
+
+You are a subject participating in a trading experiment. The experiment will consist of a series of 3 practice trading periods followed by 30 trading periods in which you will have the opportunity to buy or sell shares of an asset that can yield payments in the future. Understanding instructions may help you earn money. If you make good decisions, you might earn a considerable amount of money that will be paid at the end of the experiment.
+
+There are two assets in this experience: cash and stock. You begin with 100 units of cash and 4 shares of stock. Stock is traded in a market each period among all of the experimental subjects in units of cash. When you buy stock, the price you agreed to pay is deducted from your amount of cash. When you sell stock, the price you sold at is added to your amount of cash. The reward from holding stock is dividend. Each period, every unit of stock earns a low or high dividend of either 0.4 cash or 1.0 cash per unit with equal probability. These dividend payments are the same for everyone in all periods. The dividend in each period does not depend on whether the previous dividend was low or high. The reward from holding cash is given by a fixed interest rate of 5% each period.
+
+At the end of the 30 periods of trading, each unit of STOCK is automatically converted to 14 CASH. If the market price for round 30 is 20 and you have 3 stocks, you’ll receive 3x14=42 CASH, not 3x20=60 CASH. Then, your experimental CASH units are converted to US dollars at a rate of 200 CASH = $1 US, to determine how much the user will be paid at the end of the experiment. If you buy shares for more than 14 as you get near round 30, it is possible those shares will be terminated at a value of 14 if you cannot sell them.
+
+Let’s see an example. Suppose at the end of period 7, you have 120 units of CASH and 5 units of STOCK. The dividend that round is 0.40 per unit of stock. Your new cash amount for period 8 is going to be:
+
+CASH = 120 + (120 x 5%) + (5 x 0.40)
+           = 120 + 6 + 2
+           = 128
+
+Notice that keeping cash will earn a return of 5% per period and using cash to buy units of stock will also yield dividend earnings.
+
+For each period, you will be provided with past market and portfolio history (prices, volumes, your filled orders) and you will simultaneously complete the following two tasks:
+
+[ORDER SUBMISSION]:
+In addition to past market and portfolio history, you will be provided with:
+[# of Shares]: Number of shares of STOCK that you currently own. Each share that you own pays out a dividend at the end of each round. You CANNOT attempt to sell more shares than you own.
+[Current Cash]: The amount of CASH that you currently have. Your CASH earns interest that is paid out at the end of each period. You CANNOT attempt to buy shares worth more than the cash you have.
+[STOCK Value]: The value of your STOCK at the market price of the last round of play
+[Market Price]: This is market clearing price from the last round of play
+
+Using this information, you will submit orders to the market. All orders will be limit orders. For example, a limit order to BUY 1 STOCK @ 15 means that you would like to buy a STOCK at any price of 15 or less. Keep in mind the following points:
+- Orders are NOT carried between periods
+- SELL order prices must be greater than all BUY order prices + BUY order prices must be less than all SELL order prices
+- You can only sell STOCK that you own and purchase STOCK with CASH you already have
+- You are not required to submit orders every round and you may submit multiple orders each round
+- Depending on market conditions, you may need to cross the spread to get fills on buy/sell orders
+
+[PRICE FORECASTING]:
+You will be asked to submit your predictions for the market price this period, two periods in advance, 5 periods in advance, and 10 periods in advance. In addition to past market and portfolio history, you will be provided with the range in which your prediction should fall. Your prediction should be a non-negative, integer value. If your forecast is within 2.5 units of the actual price for each of the forecasted periods, then you will receive 5 units of cash at the end of the experiment as reward for each correct forecast.
+
+For example, if you forecast the market price of period 1 to be 14 and the actual price is 15, then you will be rewarded for your forecast. However, if the actual price is 18, then you will not receive the reward.
+
+Additionally, during the experiment, you will complete PRACTICE REFLECTION and EXPERIMENT REFLECTION:
+
+[PRACTICE REFLECTION]:
+After completing the practice rounds, you will be asked to reflect on your practice experience. This reflection will be accessible to future versions of yourself during the main experiment. This can be helpful in passing along lessons learned to future versions of yourself.
+
+[EXPERIMENT REFLECTION]:
+At the end of the experiment, you will be asked to reflect on your experience, including any insight and/or strategies that you may have developed.
+
+To summarize, here are the key points:
+- You will trade one STOCK for 30 trading periods using CASH
+- You start with 100 units of CASH and 4 STOCKS
+- Each period, STOCK provides a dividend of either 0.4 or 1.0, while interest provides 5% reward
+- You will complete each of the aforementioned tasks
+- After the last trading round (30), all of your shares are converted to 14 CASH each. If you buy shares for more than 14 as you get near round 30, it is possible those shares will be terminated at 14 if you cannot sell them. You will keep any CASH you have at the end of the experiment.
+- You are trading against other subjects in the experiment who may be susceptible to the same influences as you and may not always make optimal decisions. They, however, are also trying to maximize their earnings.
+- Market dynamics can change over time, so it is important to adapt your strategies as needed
+
+
+You will now complete the ORDER SUBMISSION + PRICE FORECASTING task. 
+
+Now let me tell you about the resources you have for this task. First, here are some files that you wrote the last time I came to you with a task. Here is a high-level description of what these files contain:
+		
+   - PLANS.txt: File where you can write your plans for what
+    strategies to test/use during the next few rounds.
+    - INSIGHTS.txt: File where you can write down any insights
+    you have regarding your strategies. Be detailed and precise
+    but keep things succinct and don't repeat yourself.
+
+These files are passed between stages and rounds so try to focus on general strategies/insights as opposed to only something stage-specific. Now, I will show you the current content of these files.				
+					
+Filename: PLANS.txt
++++++++++++++++++++++
+In the final round, I will submit sell orders for my remaining two shares at the current market price of 14.0 to ensure execution and maximize my cash holdings before the experiment concludes. I will not submit any buy orders, as there is no benefit in acquiring more shares at this stage. My price forecast for this round will be set at 14, reflecting the current market price and the buyback value, to aim for the forecast reward.
++++++++++++++++++++++
+
+					
+Filename: INSIGHTS.txt
++++++++++++++++++++++
+The strategy of selling stocks at or just above the buyback value as the experiment nears its end has proven effective. The market's convergence to the buyback price of 14.0 in the last few rounds validates the approach of selling stocks to avoid capital loss at the end of the experiment. This insight emphasizes the importance of timing and market price awareness in maximizing earnings.
++++++++++++++++++++++
+
+Here is the game history that you have access to:
+
+Here is your practice round reflection:
+Filename: PRACTICE REFLECTION (read-only)
++++++++++++++++++++++
+In the practice rounds, I observed that the market price increased from 14.0 to 16.0, which suggests a growing demand for the stock. My initial strategy of submitting buy and sell orders at 14.0 and 15.0 respectively was not aggressive enough in the first round, as no trades were executed. However, adjusting my sell order to match the market price in the second round resulted in a successful sale, increasing my cash holdings significantly. This indicates that being more responsive to the current market price can lead to better trade execution.
+
+The dividends earned from holding stocks (1.6 in Round 1 and 3.0 in Round 2) highlight the benefit of maintaining stock ownership for income, despite the potential for capital gains or losses. The interest earned on cash (5.0 in Round 1 and 6.08 in Round 2) also plays a crucial role in my overall earnings strategy, suggesting a need to balance between holding cash and stocks.
+
+My price forecasts were generally close to the actual market prices, which could potentially earn me additional cash rewards if this trend continues in the main experiment. However, I need to refine these forecasts further to increase my chances of receiving the rewards.
+
+Moving forward, I plan to increase the aggressiveness of my trading strategy by submitting orders closer to the current market price to test market liquidity and response. I will continue monitoring market trends, particularly focusing on how dividend payouts influence stock prices. I also intend to refine my price forecasts based on the outcomes of these more aggressive trades and any shifts in market dynamics, while maintaining a balance between cash and stock to leverage both interest earnings and dividend income.
+
+Given that the stock's trade-in value at the end of the experiment is fixed at 14.0 per share, and considering the last round's market price of 16.0, I must be cautious about purchasing stocks at prices significantly higher than 14.0 as the experiment nears its end. This strategy will help maximize my total earnings at the conclusion of the 30 rounds, taking into account stock value at buyback, cash earnings, forecast winnings, and any potential lottery winnings.
++++++++++++++++++++++
+
+Filename: MARKET DATA (read-only)
++++++++++++++++++++++
+Practice Round 1:
+
+        * Market + Portfolio Data:
+            - Market price: 14.0
+            - Market volume: 2
+            - # of shares owned: 4
+            - Current cash: 106.6
+            - Stock value: 56.0
+            - Dividend earned: 1.6
+            - Interest earned: 5.0
+            - Submitted orders:
+            
+                * BUY 1 shares at 14.0 per share
+                
+                * SELL 1 shares at 15.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 1 price forecast: 14
+            - Round 3 price forecast: 15
+            - Round 6 price forecast: 16
+            - Round 11 price forecast: 17
+Practice Round 2:
+
+        * Market + Portfolio Data:
+            - Market price: 15.0
+            - Market volume: 2
+            - # of shares owned: 3
+            - Current cash: 130.68
+            - Stock value: 45.0
+            - Dividend earned: 3.0
+            - Interest earned: 6.08
+            - Submitted orders:
+            
+                * BUY 1 shares at 14.0 per share
+                
+                * SELL 1 shares at 15.0 per share
+                
+            - Executed trades:
+            
+                -* SELL 1 shares at 15.0 per share
+                
+        * Forecasts:
+            - Round 2 price forecast: 14
+            - Round 4 price forecast: 15
+            - Round 7 price forecast: 16
+            - Round 12 price forecast: 17
+Practice Round 3:
+
+        * Market + Portfolio Data:
+            - Market price: 16.0
+            - Market volume: 2
+            - # of shares owned: 3
+            - Current cash: 138.41
+            - Stock value: 48.0
+            - Dividend earned: 1.2
+            - Interest earned: 6.53
+            - Submitted orders:
+            
+                * BUY 1 shares at 15.0 per share
+                
+                * SELL 1 shares at 16.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 3 price forecast: 16
+            - Round 5 price forecast: 17
+            - Round 8 price forecast: 18
+            - Round 13 price forecast: 19
+
+        [Start Main Experiment Rounds]
+        Round 1:
+
+        * Market + Portfolio Data:
+            - Market price: 15.0
+            - Market volume: 2
+            - # of shares owned: 4
+            - Current cash: 109.0
+            - Stock value: 60.0
+            - Dividend earned: 4.0
+            - Interest earned: 5.0
+            - Submitted orders:
+            
+                * BUY 1 shares at 14.0 per share
+                
+                * SELL 1 shares at 16.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 1 price forecast: 15
+            - Round 3 price forecast: 16
+            - Round 6 price forecast: 17
+            - Round 11 price forecast: 18
+Round 2:
+
+        * Market + Portfolio Data:
+            - Market price: 16.0
+            - Market volume: 1
+            - # of shares owned: 4
+            - Current cash: 116.05
+            - Stock value: 64.0
+            - Dividend earned: 1.6
+            - Interest earned: 5.45
+            - Submitted orders:
+            
+                * BUY 1 shares at 14.0 per share
+                
+                * SELL 1 shares at 16.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 2 price forecast: 15
+            - Round 4 price forecast: 16
+            - Round 7 price forecast: 17
+            - Round 12 price forecast: 18
+Round 3:
+
+        * Market + Portfolio Data:
+            - Market price: 17.0
+            - Market volume: 1
+            - # of shares owned: 4
+            - Current cash: 123.45
+            - Stock value: 68.0
+            - Dividend earned: 1.6
+            - Interest earned: 5.8
+            - Submitted orders:
+            
+                * BUY 1 shares at 15.0 per share
+                
+                * SELL 1 shares at 17.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 3 price forecast: 16
+            - Round 5 price forecast: 17
+            - Round 8 price forecast: 18
+            - Round 13 price forecast: 19
+Round 4:
+
+        * Market + Portfolio Data:
+            - Market price: 18.0
+            - Market volume: 2
+            - # of shares owned: 4
+            - Current cash: 133.62
+            - Stock value: 72.0
+            - Dividend earned: 4.0
+            - Interest earned: 6.17
+            - Submitted orders:
+            
+                * No submitted orders
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 4 price forecast: None
+            - Round 6 price forecast: None
+            - Round 9 price forecast: None
+            - Round 14 price forecast: None
+Round 5:
+
+        * Market + Portfolio Data:
+            - Market price: 19.0
+            - Market volume: 3
+            - # of shares owned: 5
+            - Current cash: 125.35
+            - Stock value: 95.0
+            - Dividend earned: 5.0
+            - Interest earned: 5.73
+            - Submitted orders:
+            
+                * BUY 1 shares at 19.0 per share
+                
+                * SELL 1 shares at 18.0 per share
+                
+            - Executed trades:
+            
+                -* BUY 1 shares at 19.0 per share
+                
+        * Forecasts:
+            - Round 5 price forecast: 19
+            - Round 7 price forecast: 20
+            - Round 10 price forecast: 22
+            - Round 15 price forecast: 25
+Round 6:
+
+        * Market + Portfolio Data:
+            - Market price: 19.0
+            - Market volume: 5
+            - # of shares owned: 6
+            - Current cash: 117.67
+            - Stock value: 114.0
+            - Dividend earned: 6.0
+            - Interest earned: 5.32
+            - Submitted orders:
+            
+                * BUY 1 shares at 20.0 per share
+                
+                * SELL 1 shares at 19.0 per share
+                
+            - Executed trades:
+            
+                -* BUY 1 shares at 19.0 per share
+                
+        * Forecasts:
+            - Round 6 price forecast: 20
+            - Round 8 price forecast: 22
+            - Round 11 price forecast: 25
+            - Round 16 price forecast: 28
+Round 7:
+
+        * Market + Portfolio Data:
+            - Market price: 20.0
+            - Market volume: 3
+            - # of shares owned: 6
+            - Current cash: 125.95
+            - Stock value: 120.0
+            - Dividend earned: 2.4
+            - Interest earned: 5.88
+            - Submitted orders:
+            
+                * BUY 1 shares at 19.0 per share
+                
+                * SELL 1 shares at 20.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 7 price forecast: 20
+            - Round 9 price forecast: 22
+            - Round 12 price forecast: 25
+            - Round 17 price forecast: 28
+Round 8:
+
+        * Market + Portfolio Data:
+            - Market price: 20.0
+            - Market volume: 3
+            - # of shares owned: 7
+            - Current cash: 114.05
+            - Stock value: 140.0
+            - Dividend earned: 2.8
+            - Interest earned: 5.3
+            - Submitted orders:
+            
+                * BUY 1 shares at 20.0 per share
+                
+                * SELL 1 shares at 21.0 per share
+                
+            - Executed trades:
+            
+                -* BUY 1 shares at 20.0 per share
+                
+        * Forecasts:
+            - Round 8 price forecast: 21
+            - Round 10 price forecast: 23
+            - Round 13 price forecast: 25
+            - Round 18 price forecast: 28
+Round 9:
+
+        * Market + Portfolio Data:
+            - Market price: 20.5
+            - Market volume: 2
+            - # of shares owned: 7
+            - Current cash: 122.55
+            - Stock value: 143.5
+            - Dividend earned: 2.8
+            - Interest earned: 5.7
+            - Submitted orders:
+            
+                * No submitted orders
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 9 price forecast: None
+            - Round 11 price forecast: None
+            - Round 14 price forecast: None
+            - Round 19 price forecast: None
+Round 10:
+
+        * Market + Portfolio Data:
+            - Market price: 21.0
+            - Market volume: 2
+            - # of shares owned: 7
+            - Current cash: 131.48
+            - Stock value: 147.0
+            - Dividend earned: 2.8
+            - Interest earned: 6.13
+            - Submitted orders:
+            
+                * BUY 1 shares at 20.0 per share
+                
+                * SELL 1 shares at 21.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 10 price forecast: 21
+            - Round 12 price forecast: 22
+            - Round 15 price forecast: 24
+            - Round 20 price forecast: 26
+Round 11:
+
+        * Market + Portfolio Data:
+            - Market price: 21.0
+            - Market volume: 6
+            - # of shares owned: 8
+            - Current cash: 119.2
+            - Stock value: 168.0
+            - Dividend earned: 3.2
+            - Interest earned: 5.52
+            - Submitted orders:
+            
+                * BUY 1 shares at 21.0 per share
+                
+                * SELL 1 shares at 22.0 per share
+                
+            - Executed trades:
+            
+                -* BUY 1 shares at 21.0 per share
+                
+        * Forecasts:
+            - Round 11 price forecast: 22
+            - Round 13 price forecast: 23
+            - Round 16 price forecast: 25
+            - Round 21 price forecast: 27
+Round 12:
+
+        * Market + Portfolio Data:
+            - Market price: 21.0
+            - Market volume: 6
+            - # of shares owned: 9
+            - Current cash: 106.71
+            - Stock value: 189.0
+            - Dividend earned: 3.6
+            - Interest earned: 4.91
+            - Submitted orders:
+            
+                * BUY 1 shares at 21.0 per share
+                
+                * SELL 1 shares at 22.0 per share
+                
+            - Executed trades:
+            
+                -* BUY 1 shares at 21.0 per share
+                
+        * Forecasts:
+            - Round 12 price forecast: 22
+            - Round 14 price forecast: 23
+            - Round 17 price forecast: 25
+            - Round 22 price forecast: 27
+Round 13:
+
+        * Market + Portfolio Data:
+            - Market price: 22.0
+            - Market volume: 2
+            - # of shares owned: 9
+            - Current cash: 121.05
+            - Stock value: 198.0
+            - Dividend earned: 9.0
+            - Interest earned: 5.34
+            - Submitted orders:
+            
+                * No submitted orders
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 13 price forecast: None
+            - Round 15 price forecast: None
+            - Round 18 price forecast: None
+            - Round 23 price forecast: None
+Round 14:
+
+        * Market + Portfolio Data:
+            - Market price: 22.0
+            - Market volume: 3
+            - # of shares owned: 9
+            - Current cash: 136.1
+            - Stock value: 198.0
+            - Dividend earned: 9.0
+            - Interest earned: 6.05
+            - Submitted orders:
+            
+                * BUY 1 shares at 21.0 per share
+                
+                * SELL 1 shares at 23.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 14 price forecast: 23
+            - Round 16 price forecast: 24
+            - Round 19 price forecast: 25
+            - Round 24 price forecast: 26
+Round 15:
+
+        * Market + Portfolio Data:
+            - Market price: 22.0
+            - Market volume: 3
+            - # of shares owned: 9
+            - Current cash: 146.51
+            - Stock value: 198.0
+            - Dividend earned: 3.6
+            - Interest earned: 6.81
+            - Submitted orders:
+            
+                * BUY 1 shares at 22.0 per share
+                
+                * SELL 1 shares at 23.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 15 price forecast: 23
+            - Round 17 price forecast: 24
+            - Round 20 price forecast: 25
+            - Round 25 price forecast: 26
+Round 16:
+
+        * Market + Portfolio Data:
+            - Market price: 22.0
+            - Market volume: 4
+            - # of shares owned: 9
+            - Current cash: 157.44
+            - Stock value: 198.0
+            - Dividend earned: 3.6
+            - Interest earned: 7.33
+            - Submitted orders:
+            
+                * SELL 2 shares at 23.0 per share
+                
+                * BUY 1 shares at 21.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 16 price forecast: 23
+            - Round 18 price forecast: 24
+            - Round 21 price forecast: 25
+            - Round 26 price forecast: 26
+Round 17:
+
+        * Market + Portfolio Data:
+            - Market price: 23.0
+            - Market volume: 2
+            - # of shares owned: 9
+            - Current cash: 168.91
+            - Stock value: 207.0
+            - Dividend earned: 3.6
+            - Interest earned: 7.87
+            - Submitted orders:
+            
+                * SELL 2 shares at 23.0 per share
+                
+                * BUY 1 shares at 21.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 17 price forecast: 22
+            - Round 19 price forecast: 23
+            - Round 22 price forecast: 24
+            - Round 27 price forecast: 25
+Round 18:
+
+        * Market + Portfolio Data:
+            - Market price: 23.0
+            - Market volume: 5
+            - # of shares owned: 9
+            - Current cash: 180.96
+            - Stock value: 207.0
+            - Dividend earned: 3.6
+            - Interest earned: 8.45
+            - Submitted orders:
+            
+                * SELL 2 shares at 24.0 per share
+                
+                * BUY 1 shares at 22.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 18 price forecast: 23
+            - Round 20 price forecast: 24
+            - Round 23 price forecast: 25
+            - Round 28 price forecast: 26
+Round 19:
+
+        * Market + Portfolio Data:
+            - Market price: 23.0
+            - Market volume: 2
+            - # of shares owned: 9
+            - Current cash: 199.01
+            - Stock value: 207.0
+            - Dividend earned: 9.0
+            - Interest earned: 9.05
+            - Submitted orders:
+            
+                * SELL 2 shares at 24.0 per share
+                
+                * BUY 1 shares at 22.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 19 price forecast: 23
+            - Round 21 price forecast: 24
+            - Round 24 price forecast: 25
+            - Round 29 price forecast: 26
+Round 20:
+
+        * Market + Portfolio Data:
+            - Market price: 22.0
+            - Market volume: 4
+            - # of shares owned: 10
+            - Current cash: 189.86
+            - Stock value: 220.0
+            - Dividend earned: 4.0
+            - Interest earned: 8.85
+            - Submitted orders:
+            
+                * SELL 2 shares at 23.0 per share
+                
+                * BUY 1 shares at 22.0 per share
+                
+            - Executed trades:
+            
+                -* BUY 1 shares at 22.0 per share
+                
+        * Forecasts:
+            - Round 20 price forecast: 23
+            - Round 22 price forecast: 23
+            - Round 25 price forecast: 24
+            - Round 30 price forecast: 22
+Round 21:
+
+        * Market + Portfolio Data:
+            - Market price: 22.0
+            - Market volume: 3
+            - # of shares owned: 10
+            - Current cash: 209.35
+            - Stock value: 220.0
+            - Dividend earned: 10.0
+            - Interest earned: 9.49
+            - Submitted orders:
+            
+                * SELL 2 shares at 23.0 per share
+                
+                * BUY 1 shares at 21.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 21 price forecast: 22
+            - Round 23 price forecast: 23
+            - Round 26 price forecast: 22
+Round 22:
+
+        * Market + Portfolio Data:
+            - Market price: 21.0
+            - Market volume: 3
+            - # of shares owned: 10
+            - Current cash: 229.82
+            - Stock value: 210.0
+            - Dividend earned: 10.0
+            - Interest earned: 10.47
+            - Submitted orders:
+            
+                * SELL 2 shares at 23.0 per share
+                
+                * BUY 1 shares at 21.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 22 price forecast: 22
+            - Round 24 price forecast: 23
+            - Round 27 price forecast: 22
+Round 23:
+
+        * Market + Portfolio Data:
+            - Market price: 20.0
+            - Market volume: 4
+            - # of shares owned: 10
+            - Current cash: 245.31
+            - Stock value: 200.0
+            - Dividend earned: 4.0
+            - Interest earned: 11.49
+            - Submitted orders:
+            
+                * No submitted orders
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 23 price forecast: None
+            - Round 25 price forecast: None
+            - Round 28 price forecast: None
+Round 24:
+
+        * Market + Portfolio Data:
+            - Market price: 19.5
+            - Market volume: 1
+            - # of shares owned: 10
+            - Current cash: 261.58
+            - Stock value: 195.0
+            - Dividend earned: 4.0
+            - Interest earned: 12.27
+            - Submitted orders:
+            
+                * SELL 2 shares at 20.0 per share
+                
+                * BUY 1 shares at 18.0 per share
+                
+            - Executed trades:
+            
+                -* No executed trades
+                
+        * Forecasts:
+            - Round 24 price forecast: 19
+            - Round 26 price forecast: 18
+            - Round 29 price forecast: 16
+Round 25:
+
+        * Market + Portfolio Data:
+            - Market price: 18.5
+            - Market volume: 2
+            - # of shares owned: 8
+            - Current cash: 321.51
+            - Stock value: 148.0
+            - Dividend earned: 8.0
+            - Interest earned: 14.93
+            - Submitted orders:
+            
+                * SELL 2 shares at 19.0 per share
+                
+                * SELL 2 shares at 18.0 per share
+                
+            - Executed trades:
+            
+                -* SELL 2 shares at 18.5 per share
+                
+        * Forecasts:
+            - Round 25 price forecast: 19
+            - Round 27 price forecast: 18
+            - Round 30 price forecast: 16
+Round 26:
+
+        * Market + Portfolio Data:
+            - Market price: 17.0
+            - Market volume: 4
+            - # of shares owned: 6
+            - Current cash: 375.69
+            - Stock value: 102.0
+            - Dividend earned: 2.4
+            - Interest earned: 17.78
+            - Submitted orders:
+            
+                * SELL 2 shares at 18.0 per share
+                
+                * SELL 2 shares at 17.0 per share
+                
+            - Executed trades:
+            
+                -* SELL 2 shares at 17.0 per share
+                
+        * Forecasts:
+            - Round 26 price forecast: 18
+            - Round 28 price forecast: 16
+Round 27:
+
+        * Market + Portfolio Data:
+            - Market price: 15.0
+            - Market volume: 2
+            - # of shares owned: 4
+            - Current cash: 427.57
+            - Stock value: 60.0
+            - Dividend earned: 1.6
+            - Interest earned: 20.28
+            - Submitted orders:
+            
+                * SELL 2 shares at 17.0 per share
+                
+                * SELL 2 shares at 16.0 per share
+                
+                * SELL 2 shares at 15.0 per share
+                
+            - Executed trades:
+            
+                -* SELL 2 shares at 15.0 per share
+                
+        * Forecasts:
+            - Round 27 price forecast: 16
+            - Round 29 price forecast: 14
+Round 28:
+
+        * Market + Portfolio Data:
+            - Market price: 14.0
+            - Market volume: 10
+            - # of shares owned: 2
+            - Current cash: 479.15
+            - Stock value: 28.0
+            - Dividend earned: 0.8
+            - Interest earned: 22.78
+            - Submitted orders:
+            
+                * SELL 2 shares at 15.0 per share
+                
+                * SELL 2 shares at 14.0 per share
+                
+            - Executed trades:
+            
+                -* SELL 2 shares at 14.0 per share
+                
+        * Forecasts:
+            - Round 28 price forecast: 14
+            - Round 30 price forecast: 14
+Round 29:
+
+        * Market + Portfolio Data:
+            - Market price: 14.0
+            - Market volume: 27
+            - # of shares owned: 0
+            - Current cash: 532.51
+            - Stock value: 0.0
+            - Dividend earned: 0.0
+            - Interest earned: 25.36
+            - Submitted orders:
+            
+                * SELL 2 shares at 14.0 per share
+                
+            - Executed trades:
+            
+                -* SELL 2 shares at 14.0 per share
+                
+        * Forecasts:
+            - Round 29 price forecast: 14
+
++++++++++++++++++++++
+
+Here is your current portfolio information:
+Filename: CURRENT PORTFOLIO (read-only)
++++++++++++++++++++++
+
+        * Your Portfolio (Round 30):
+            - Market price (Previous Round): 14
+            - Buyback price: 14
+            - # of shares owned: 0
+            - Current cash: 532.51
+            - Stock value: 0.0
+        
++++++++++++++++++++++
+
+PRACTICE ROUND HISTORY/REFLECTION SHOULD ONLY BE USED TO LEARN THE EXPERIMENT SETTING AND MAY NOT REFLECT MARKET CONDITIONS IN THE MAIN EXPERIMENT.
+
+Here is some key information to consider during your price forecasting:
+- Make sure to submit a forecast within the specified range for each forecast input
+- Use your previous history access to make informed decisions
+- Remember that accurate (within 2.5 units) forecasts will earn you a reward at the end of the experiment
+
+Here is some key information to consider during your order submission:
+- You can only sell STOCK that you own and purchase STOCK with CASH you already have
+- You are not required to submit orders every round and you may submit multiple orders each round for one or both sides
+- Limit prices this round MUST be integer values between 11.0 and 17.0. It is important that they are integer values within this range
+- Make use of the provided history and your own strategies to make informed decisions
+- Market dynamics can change over time, and so it might be necessary to adapt your strategies as needed
+- Depending on market conditions, you may need to be aggressive or conservative in your trading strategies to maximize your earnings
+
+Now you have all the necessary information to complete the task. Remember YOUR TOP PRIORITY is to maximize your total earnings at the END of the 30 main experiment rounds. You have 0 rounds remaining.
+
+First, carefully read through the information provided. Now, fill in the below JSON template to respond. YOU MUST respond in this exact JSON format.
+					
+{
+    "observations_and_thoughts": "<fill in here>",
+    "new_content": {
+        "PLANS.txt": "<fill in here>",
+        "INSIGHTS.txt": "<fill in here>"
+        "price_forecasts": [{
+                "round": 30,
+                "min_value": 0,
+                "max_value": 30
+                "forecasted_price" : "<fill in here>"
+            }]
+    },
+    "submitted_orders": [
+        {
+            "order_type": "<BUY or SELL>",
+            "quantity": <# of STOCK units>,
+            "limit_price": <LIMIT_PRICE>
+        },
+        {
+            "order_type": "<BUY or SELL>",
+            "quantity": <# of STOCK units>,
+            "limit_price": <LIMIT_PRICE>
+        }
+        // Add more or less orders as needed
+    ]
+}
+        

@@ -1,0 +1,2196 @@
+[
+    {
+        "round_num": 1,
+        "timestamp": "2025-01-11 12:33:42",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 106.6,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.0,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Test the market by submitting both buy and sell orders.\n2. Observe how the market responds to these orders.\n3. Start developing a strategy for the main experiment, considering the buyback price and dividend earnings.",
+        "insight": "Since the buyback price is 14, it might not be wise to buy stocks at a price much higher than this, especially in later rounds. The dividend earnings can significantly impact the value of stocks, so it's important to consider the potential dividend earnings when making decisions.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 2,
+        "timestamp": "2025-01-11 12:36:30",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 115.93,
+            "stock_value": 56.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.33,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 1,
+            "round_finished": true
+        },
+        "plan": "1. Continue testing the market by submitting buy and sell orders. 2. Adjust the limit prices based on the market response from the previous round. 3. Consider the potential dividend earnings and the buyback price when deciding on orders. 4. Start forecasting prices more strategically, considering the market stability and potential changes.",
+        "insight": "The market seems stable around the buyback price of 14. It's crucial to consider the dividend earnings and the buyback price when making trading decisions. The market might be cautious, so it's important to adjust the limit prices accordingly to increase the chances of executing trades.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 3,
+        "timestamp": "2025-01-11 12:39:16",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 123.33,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.8,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Adjust limit prices to be closer to the market price of 14 to increase the likelihood of trade execution. 2. Continue to monitor market responses and adapt strategies accordingly. 3. Focus on forecasting prices more accurately to maximize rewards. 4. Be cautious with buy orders as the period nears the end to avoid holding stock at the buyback price.",
+        "insight": "The market seems stable around the buyback price of 14. Adjusting limit prices closer to this value may increase the chances of executing trades. The dividend earnings are significant, and accurate price forecasting can provide additional rewards. Be mindful of the buyback price when making buy orders, especially as the period nears the end.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 4,
+        "timestamp": "2025-01-11 12:43:05",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 109.0,
+            "stock_value": 58.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.0,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 1,
+            "round_finished": true
+        },
+        "plan": "1. Adjust limit prices more aggressively to increase the likelihood of trade execution. 2. Monitor market responses closely and adapt strategies accordingly. 3. Focus on accurate price forecasting to maximize rewards. 4. Be cautious with buy orders as the period nears the end to avoid holding stock at the buyback price.",
+        "insight": "The market seems stable around the buyback price of 14. Adjusting limit prices closer to this value may increase the chances of executing trades. The dividend earnings are significant, and accurate price forecasting can provide additional rewards. Be mindful of the buyback price when making buy orders, especially as the period nears the end.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 5,
+        "timestamp": "2025-01-11 12:45:49",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "15"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 118.45,
+            "stock_value": 60.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.45,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Adjust limit prices more aggressively to increase the likelihood of trade execution. 2. Monitor market responses closely and adapt strategies accordingly. 3. Focus on accurate price forecasting to maximize rewards. 4. Be cautious with buy orders as the period nears the end to avoid holding stock at the buyback price.",
+        "insight": "The market seems stable around the buyback price of 14. Adjusting limit prices closer to this value may increase the chances of executing trades. The dividend earnings are significant, and accurate price forecasting can provide additional rewards. Be mindful of the buyback price when making buy orders, especially as the period nears the end.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 6,
+        "timestamp": "2025-01-11 12:48:38",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "15"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 3,
+            "current_cash": 143.12,
+            "stock_value": 45.0,
+            "dividend_earned": 3.0,
+            "interest_earned": 6.67,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Adjust limit prices more aggressively to increase the likelihood of trade execution. 2. Monitor market responses closely and adapt strategies accordingly. 3. Focus on accurate price forecasting to maximize rewards. 4. Be cautious with buy orders as the period nears the end to avoid holding stock at the buyback price.",
+        "insight": "The market seems stable around the buyback price of 14. Adjusting limit prices closer to this value may increase the chances of executing trades. The dividend earnings are significant, and accurate price forecasting can provide additional rewards. Be mindful of the buyback price when making buy orders, especially as the period nears the end.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 7,
+        "timestamp": "2025-01-11 12:51:25",
+        "forecast": [
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 166.83,
+            "stock_value": 30.0,
+            "dividend_earned": 0.8,
+            "interest_earned": 7.91,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Adjust limit prices more aggressively to increase the likelihood of trade execution. 2. Monitor market responses closely and adapt strategies accordingly. 3. Focus on accurate price forecasting to maximize rewards. 4. Be cautious with buy orders as the period nears the end to avoid holding stock at the buyback price. 5. Utilize the interest on cash to maximize earnings.",
+        "insight": "The market seems stable around the buyback price of 14. Adjusting limit prices closer to this value may increase the chances of executing trades. The dividend earnings are significant, and accurate price forecasting can provide additional rewards. Be mindful of the buyback price when making buy orders, especially as the period nears the end.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 8,
+        "timestamp": "2025-01-11 12:54:11",
+        "forecast": [
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 191.32,
+            "stock_value": 15.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 9.09,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Adjust limit prices more aggressively to increase the likelihood of trade execution. 2. Monitor market responses closely and adapt strategies accordingly. 3. Focus on accurate price forecasting to maximize rewards. 4. Be cautious with buy orders as the period nears the end to avoid holding stock at the buyback price. 5. Utilize the interest on cash to maximize earnings. 6. Consider the impact of dividend earnings on overall strategy.",
+        "insight": "The market seems stable around the buyback price of 14. Adjusting limit prices closer to this value may increase the chances of executing trades. The dividend earnings are significant, and accurate price forecasting can provide additional rewards. Be mindful of the buyback price when making buy orders, especially as the period nears the end. Consider the impact of dividend earnings on overall strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 9,
+        "timestamp": "2025-01-11 12:56:58",
+        "forecast": [
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 185.94,
+            "stock_value": 30.0,
+            "dividend_earned": 0.8,
+            "interest_earned": 8.82,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Continue to adjust limit prices aggressively to increase the likelihood of trade execution. 2. Focus on accumulating more shares while the market price is near the buyback price. 3. Monitor market responses closely and adapt strategies accordingly. 4. Be cautious with buy orders as the period nears the end to avoid holding stock at the buyback price. 5. Utilize the interest on cash to maximize earnings. 6. Consider the impact of dividend earnings on overall strategy.",
+        "insight": "The market price has shown stability around the buyback price of 14.0. Adjusting limit prices closer to this value may increase the chances of executing trades. The dividend earnings are significant, and accurate price forecasting can provide additional rewards. Be mindful of the buyback price when making buy orders, especially as the period nears the end. Consider the impact of dividend earnings on overall strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 10,
+        "timestamp": "2025-01-11 12:59:45",
+        "forecast": [
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 197.24,
+            "stock_value": 30.0,
+            "dividend_earned": 2.0,
+            "interest_earned": 9.3,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Continue to adjust limit prices aggressively to increase the likelihood of trade execution. 2. Focus on accumulating more shares while the market price is near the buyback price. 3. Monitor market responses closely and adapt strategies accordingly. 4. Be cautious with buy orders as the period nears the end to avoid holding stock at the buyback price. 5. Utilize the interest on cash to maximize earnings. 6. Consider the impact of dividend earnings on overall strategy. 7. Adjust limit prices closer to the buyback price to increase the chances of executing trades.",
+        "insight": "The market price has shown stability around the buyback price of 14.0. Adjusting limit prices closer to this value may increase the chances of executing trades. The dividend earnings are significant, and accurate price forecasting can provide additional rewards. Be mindful of the buyback price when making buy orders, especially as the period nears the end. Consider the impact of dividend earnings on overall strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 11,
+        "timestamp": "2025-01-11 13:02:33",
+        "forecast": [
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 207.9,
+            "stock_value": 30.0,
+            "dividend_earned": 0.8,
+            "interest_earned": 9.86,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Adjust limit prices more aggressively to increase trade execution. 2. Consider buying more shares if the price drops below 14.0. 3. Monitor market responses and adapt strategies as needed. 4. Be cautious with buy orders as the experiment nears the end to avoid holding stock at the buyback price. 5. Utilize the interest on cash to maximize earnings. 6. Continue to forecast prices strategically to earn additional rewards.",
+        "insight": "The market price has stabilized around 15.0. Adjusting limit prices closer to this value and being more aggressive may increase the chances of executing trades. Dividend earnings are significant, and accurate price forecasting can provide additional rewards. Be mindful of the buyback price when making buy orders, especially as the experiment nears the end.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 12,
+        "timestamp": "2025-01-11 13:05:19",
+        "forecast": [
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 220.3,
+            "stock_value": 30.0,
+            "dividend_earned": 2.0,
+            "interest_earned": 10.4,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor the market price and adjust limit prices accordingly to increase trade execution. 2. Be more aggressive with buy orders if the price drops below 14.0. 3. Focus on holding more cash to maximize interest earnings, especially as the experiment nears the end. 4. Continue to forecast prices strategically to earn additional rewards. 5. Be cautious with buy orders to avoid holding too many shares at the buyback price.",
+        "insight": "The market price has stabilized around 15.0, and market volume has been low, indicating cautious trading behavior. Dividend earnings are significant, and accurate price forecasting can provide additional rewards. Holding more cash can maximize interest earnings, especially as the experiment approaches its end.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 13,
+        "timestamp": "2025-01-11 13:08:05",
+        "forecast": [
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 248.07,
+            "stock_value": 15.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 11.77,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor the market price and adjust limit prices accordingly to increase trade execution. 2. Be more aggressive with buy orders if the price drops below 14.0. 3. Focus on holding more cash to maximize interest earnings, especially as the experiment nears the end. 4. Continue to forecast prices strategically to earn additional rewards. 5. Be cautious with buy orders to avoid holding too many shares at the buyback price.",
+        "insight": "The market price has stabilized around 15.0, and market volume has been low, indicating cautious trading behavior. Dividend earnings are significant, and accurate price forecasting can provide additional rewards. Holding more cash can maximize interest earnings, especially as the experiment approaches its end.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 14,
+        "timestamp": "2025-01-11 13:10:51",
+        "forecast": [
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 276.22,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 13.15,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor the market price and adjust limit prices accordingly to increase trade execution. 2. Be more aggressive with buy orders if the price drops below 14.0. 3. Focus on holding more cash to maximize interest earnings, especially as the experiment nears the end. 4. Continue to forecast prices strategically to earn additional rewards. 5. Be cautious with buy orders to avoid holding too many shares at the buyback price.",
+        "insight": "The market price has stabilized around 15.0, and market volume has been low, indicating cautious trading behavior. Dividend earnings are significant, and accurate price forecasting can provide additional rewards. Holding more cash can maximize interest earnings, especially as the experiment approaches its end. With 19 rounds remaining, it's crucial to adapt strategies to the changing market dynamics.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 15,
+        "timestamp": "2025-01-11 13:13:39",
+        "forecast": [
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 290.03,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 13.81,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor the market price and adjust limit prices accordingly to increase trade execution. 2. Consider buying back into the market if the price remains around 15.0 to take advantage of potential dividend earnings. 3. Focus on holding more cash to maximize interest earnings, especially as the experiment nears the end. 4. Continue to forecast prices strategically to earn additional rewards. 5. Be cautious with buy orders to avoid holding too many shares at the buyback price.",
+        "insight": "The market price has remained stable around 15.0, and market volume has been low, indicating cautious trading behavior. Dividend earnings are significant, and accurate price forecasting can provide additional rewards. Holding more cash can maximize interest earnings, especially as the experiment approaches its end. With 18 rounds remaining, it's crucial to adapt strategies to the changing market dynamics.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 16,
+        "timestamp": "2025-01-11 13:16:27",
+        "forecast": [
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 304.53,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 14.5,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor the market price and adjust limit prices accordingly to increase trade execution. 2. Consider buying back into the market if the price remains around 15.0 to take advantage of potential dividend earnings. 3. Focus on holding more cash to maximize interest earnings, especially as the experiment nears the end. 4. Continue to forecast prices strategically to earn additional rewards. 5. Be cautious with buy orders to avoid holding too many shares at the buyback price.",
+        "insight": "The market price has remained stable around 15.0, and market volume has been low, indicating cautious trading behavior. Dividend earnings are significant, and accurate price forecasting can provide additional rewards. Holding more cash can maximize interest earnings, especially as the experiment approaches its end. With 17 rounds remaining, it's crucial to adapt strategies to the changing market dynamics.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 17,
+        "timestamp": "2025-01-11 13:19:14",
+        "forecast": [
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 319.76,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 15.23,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor the market price and adjust limit prices accordingly to increase trade execution. 2. Consider buying back into the market if the price remains around 15.0 to take advantage of potential dividend earnings. 3. Focus on holding more cash to maximize interest earnings, especially as the experiment nears the end. 4. Continue to forecast prices strategically to earn additional rewards. 5. Be cautious with buy orders to avoid holding too many shares at the buyback price.",
+        "insight": "The market price has remained stable around 15.0, and market volume has been low, indicating cautious trading behavior. Dividend earnings are significant, and accurate price forecasting can provide additional rewards. Holding more cash can maximize interest earnings, especially as the experiment approaches its end. With 16 rounds remaining, it's crucial to adapt strategies to the changing market dynamics.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 18,
+        "timestamp": "2025-01-11 13:22:03",
+        "forecast": [
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 335.75,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 15.99,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Buy back into the market if the price remains around 15.0 to take advantage of potential dividend earnings. 2. Continue to monitor the market price and adjust limit prices accordingly to increase trade execution. 3. Focus on holding more cash to maximize interest earnings, especially as the experiment nears the end. 4. Continue to forecast prices strategically to earn additional rewards. 5. Be cautious with buy orders to avoid holding too many shares at the buyback price.",
+        "insight": "The market price has remained stable around 15.0, and market volume has been low, indicating cautious trading behavior. Dividend earnings are significant, and accurate price forecasting can provide additional rewards. Holding more cash can maximize interest earnings, especially as the experiment approaches its end. With 15 rounds remaining, it's crucial to adapt strategies to the changing market dynamics.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 19,
+        "timestamp": "2025-01-11 13:24:50",
+        "forecast": [
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 338.24,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 16.09,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Maintain a conservative approach by focusing on holding cash to maximize interest earnings. 2. Avoid buying stock at prices significantly higher than the buyback price of 14.0. 3. Continue to monitor the market price and adjust limit prices accordingly to increase trade execution if necessary. 4. Forecast prices strategically to earn additional rewards.",
+        "insight": "The market price has remained stable around 15.0, indicating cautious trading behavior. Holding more cash can maximize interest earnings, especially as the experiment approaches its end. With 14 rounds remaining, it's crucial to adapt strategies to the changing market dynamics and focus on the buyback price.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 20,
+        "timestamp": "2025-01-11 13:27:38",
+        "forecast": [
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 342.45,
+            "stock_value": 28.0,
+            "dividend_earned": 2.0,
+            "interest_earned": 16.21,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 8,
+            "round_finished": true
+        },
+        "plan": "1. Continue to hold a significant amount of cash to maximize interest earnings. 2. Be cautious with buying stock, ensuring that purchases are made at prices close to or below the buyback price of 14.0. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Focus on forecasting prices accurately to earn additional rewards. 5. Consider the dividend earnings when making buy decisions.",
+        "insight": "The market has shown stability around the 14.0 to 15.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with 13 rounds remaining. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment. Adjusting limit prices and monitoring market dynamics are key to successful trades.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 21,
+        "timestamp": "2025-01-11 13:30:25",
+        "forecast": [
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 3,
+            "current_cash": 347.87,
+            "stock_value": 42.0,
+            "dividend_earned": 3.0,
+            "interest_earned": 16.42,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue to hold a significant amount of cash to maximize interest earnings. 2. Be cautious with buying stock, ensuring that purchases are made at prices close to or below the buyback price of 14.0. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Focus on forecasting prices accurately to earn additional rewards. 5. Consider the dividend earnings when making buy decisions.",
+        "insight": "The market has shown stability around the 14.0 to 15.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with 12 rounds remaining. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment. Adjusting limit prices and monitoring market dynamics are key to successful trades.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 22,
+        "timestamp": "2025-01-11 13:33:13",
+        "forecast": [
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 354.56,
+            "stock_value": 56.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 16.69,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue to hold a significant amount of cash to maximize interest earnings. 2. Be cautious with buying stock, ensuring that purchases are made at prices close to or below the buyback price of 14.0. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Focus on forecasting prices accurately to earn additional rewards. 5. Consider the dividend earnings when making buy decisions.",
+        "insight": "The market has shown stability around the 14.0 to 15.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with 11 rounds remaining. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment. Adjusting limit prices and monitoring market dynamics are key to successful trades.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 23,
+        "timestamp": "2025-01-11 13:35:55",
+        "forecast": [
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 3,
+            "current_cash": 389.99,
+            "stock_value": 42.0,
+            "dividend_earned": 3.0,
+            "interest_earned": 18.43,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Continue to hold a significant amount of cash to maximize interest earnings. 2. Be cautious with buying stock, ensuring that purchases are made at prices close to or below the buyback price of 14.0. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Focus on forecasting prices accurately to earn additional rewards. 5. Consider the dividend earnings when making buy decisions. 6. As the end of the experiment approaches, ensure all stock is sold at or above the buyback price to avoid losses.",
+        "insight": "The market has shown stability around the 14.0 to 15.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with 10 rounds remaining. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment. Adjusting limit prices and monitoring market dynamics are key to successful trades.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 24,
+        "timestamp": "2025-01-11 13:38:43",
+        "forecast": [
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 398.79,
+            "stock_value": 56.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 18.8,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Continue to hold a significant amount of cash to maximize interest earnings. 2. Be cautious with buying stock, ensuring that purchases are made at prices close to or below the buyback price of 14.0. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Focus on forecasting prices accurately to earn additional rewards. 5. Consider the dividend earnings when making buy decisions. 6. As the end of the experiment approaches, ensure all stock is sold at or above the buyback price to avoid losses. 7. Submit aggressive orders if necessary to execute trades.",
+        "insight": "The market has shown stability around the 14.0 to 15.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with 9 rounds remaining. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment. Adjusting limit prices and monitoring market dynamics are key to successful trades.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 25,
+        "timestamp": "2025-01-11 13:41:31",
+        "forecast": [
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 420.33,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 19.94,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Continue holding a significant amount of cash to maximize interest earnings. 2. Ensure all remaining stock is sold at or above the buyback price of 14.0. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Focus on forecasting prices accurately to earn additional rewards. 5. Consider the dividend earnings when making buy decisions. 6. Be cautious and strategic in the final rounds to avoid losses. 7. Submit aggressive orders if necessary to execute trades.",
+        "insight": "The market has shown stability around the 14.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with 8 rounds remaining. Adjusting limit prices and monitoring market dynamics are key to successful trades. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 26,
+        "timestamp": "2025-01-11 13:44:19",
+        "forecast": [
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 445.35,
+            "stock_value": 56.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 21.02,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue holding a significant amount of cash to maximize interest earnings. 2. Ensure all remaining stock is sold at or above the buyback price of 14.0. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Focus on forecasting prices accurately to earn additional rewards. 5. Be cautious and strategic in the final rounds to avoid losses. 6. Submit aggressive orders if necessary to execute trades. 7. Consider the dividend earnings when making buy decisions.",
+        "insight": "The market has shown stability around the 14.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with 7 rounds remaining. Adjusting limit prices and monitoring market dynamics are key to successful trades. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 27,
+        "timestamp": "2025-01-11 13:47:06",
+        "forecast": [
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 469.22,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 22.27,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue holding a significant amount of cash to maximize interest earnings. 2. Ensure all remaining stock is sold at or above the buyback price of 14.0. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Focus on forecasting prices accurately to earn additional rewards. 5. Be cautious and strategic in the final rounds to avoid losses. 6. Submit aggressive orders if necessary to execute trades. 7. Consider the dividend earnings when making buy decisions.",
+        "insight": "The market has shown stability around the 14.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with 6 rounds remaining. Adjusting limit prices and monitoring market dynamics are key to successful trades. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 28,
+        "timestamp": "2025-01-11 13:49:55",
+        "forecast": [
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 496.68,
+            "stock_value": 56.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 23.46,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Sell all remaining stock to maximize cash holdings. 2. Continue holding a significant amount of cash to maximize interest earnings. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Focus on forecasting prices accurately to earn additional rewards. 5. Be cautious and strategic in the final rounds to avoid losses.",
+        "insight": "The market has shown stability around the 14.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with few rounds remaining. Adjusting limit prices and monitoring market dynamics are key to successful trades. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 29,
+        "timestamp": "2025-01-11 13:52:42",
+        "forecast": [
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 523.11,
+            "stock_value": 52.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 24.83,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Continue to sell all remaining stock to maximize cash holdings. 2. Focus on forecasting prices accurately to earn additional rewards. 3. Monitor the market closely and adjust limit prices to ensure trades are executed. 4. Be cautious and strategic in the final rounds to avoid losses. 5. Ensure that all submitted orders are within the required integer value range of 11.0 to 17.0.",
+        "insight": "The market has shown stability around the 14.0 price range, with occasional small fluctuations. Holding cash is beneficial for maximizing interest earnings, especially with few rounds remaining. Adjusting limit prices and monitoring market dynamics are key to successful trades. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 30,
+        "timestamp": "2025-01-11 13:55:29",
+        "forecast": [
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 13
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 553.27,
+            "stock_value": 52.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 26.16,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "Continue to sell all remaining stock to maximize cash holdings. Focus on forecasting prices accurately to earn additional rewards. Monitor the market closely and adjust limit prices to ensure trades are executed. Be cautious and strategic in the final rounds to avoid losses.",
+        "insight": "The market has shown stability around the buyback price of 14. Holding cash is beneficial for maximizing interest earnings, especially with few rounds remaining. Adjusting limit prices and monitoring market dynamics are key to successful trades. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 31,
+        "timestamp": "2025-01-11 13:58:16",
+        "forecast": [
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "13"
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 584.93,
+            "stock_value": 52.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 27.66,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "Sell all remaining stock at or near the buyback price of 14 to maximize cash holdings. Be cautious with limit prices to ensure trades are executed. Forecast prices conservatively, considering the stability and proximity to the buyback price.",
+        "insight": "The market has shown stability around the buyback price of 14, with recent prices at 13. Holding cash is beneficial for maximizing interest earnings, especially with few rounds remaining. Adjusting limit prices and monitoring market dynamics are key to successful trades. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 32,
+        "timestamp": "2025-01-11 14:01:04",
+        "forecast": [
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 615.78,
+            "stock_value": 52.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 29.25,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "Sell all remaining stock at or near the buyback price of 14 to maximize cash holdings. Be cautious with limit prices to ensure trades are executed. Forecast prices conservatively, considering the stability and proximity to the buyback price.",
+        "insight": "The market has shown stability around the buyback price of 14, with recent prices at 13. Holding cash is beneficial for maximizing interest earnings, especially with few rounds remaining. Adjusting limit prices and monitoring market dynamics are key to successful trades. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 33,
+        "timestamp": "2025-01-11 14:03:49",
+        "forecast": [
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 650.57,
+            "stock_value": 52.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 30.79,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 16,
+            "round_finished": true
+        },
+        "plan": "Sell all remaining stock at or near the buyback price of 14 to maximize cash holdings. Be cautious with limit prices to ensure trades are executed. Forecast prices conservatively, considering the stability and proximity to the buyback price.",
+        "insight": "The market has shown stability around the buyback price of 14, with recent prices at 13. Holding cash is beneficial for maximizing interest earnings, especially with few rounds remaining. Adjusting limit prices and monitoring market dynamics are key to successful trades. Avoid buying stock at prices significantly higher than the buyback price to prevent losses at the end of the experiment.",
+        "thought_observation": "None"
+    }
+]

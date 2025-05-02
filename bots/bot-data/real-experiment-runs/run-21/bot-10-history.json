@@ -1,0 +1,2217 @@
+[
+    {
+        "round_num": 1,
+        "timestamp": "2025-01-14 03:36:04",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 109.0,
+            "stock_value": 58.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.0,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 0,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end (round 30) due to 14 buyback value",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 2,
+        "timestamp": "2025-01-14 03:40:05",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 17
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 116.05,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.45,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end (round 30) due to 14 buyback value\n5. Consider splitting orders at different price levels to increase fill probability",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Market price seems to be trading below fundamental value, suggesting possible buying opportunity",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 3,
+        "timestamp": "2025-01-14 03:44:03",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 125.85,
+            "stock_value": 58.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.8,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 0,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end (round 30) due to 14 buyback value\n5. Consider splitting orders at different price levels to increase fill probability\n6. Balance stock holdings with cash to maintain flexibility",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Market price seems to be trading below fundamental value, suggesting possible buying opportunity\n5. Market participants seem hesitant to trade far from the final buyback value of 14",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 4,
+        "timestamp": "2025-01-14 03:54:23",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": "17"
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "16"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 109.0,
+            "stock_value": 58.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.0,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 0,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end (round 30) due to 14 buyback value\n5. Consider splitting orders at different price levels to increase fill probability\n6. Balance stock holdings with cash to maintain flexibility\n7. Maintain cash reserves to earn interest while waiting for good opportunities",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Current price appears significantly below fundamental value considering remaining dividends\n5. Market participants seem hesitant to trade far from the final buyback value of 14\n6. Early in experiment, fundamental value is significantly higher than terminal value due to remaining dividends",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 5,
+        "timestamp": "2025-01-14 03:58:21",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 17
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 116.05,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.45,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end due to 14 buyback value\n5. Consider splitting orders at different price levels to increase fill probability\n6. Balance stock holdings with cash to maintain flexibility\n7. Maintain cash reserves to earn interest while waiting for good opportunities\n8. Place orders on both sides of market to profit from price movements",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Current price appears significantly below fundamental value considering remaining dividends\n5. Market participants seem hesitant to trade far from the final buyback value of 14\n6. Early in experiment, fundamental value is significantly higher than terminal value due to remaining dividends\n7. Low trading volume suggests potential opportunity to provide liquidity",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 6,
+        "timestamp": "2025-01-14 04:02:22",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 123.45,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.8,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end due to 14 buyback value\n5. Consider splitting orders at different price levels to increase fill probability\n6. Balance stock holdings with cash to maintain flexibility\n7. Maintain cash reserves to earn interest while waiting for good opportunities\n8. Place orders on both sides of market to profit from price movements\n9. Consider more aggressive buying below 14 since early in experiment",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Current price appears significantly below fundamental value considering remaining dividends\n5. Market participants seem anchored near the final buyback value of 14\n6. Early in experiment, fundamental value is significantly higher than terminal value due to remaining dividends\n7. Low trading volume suggests potential opportunity to provide liquidity\n8. Market seems hesitant to move far from 14-14.5 range despite higher theoretical value",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 7,
+        "timestamp": "2025-01-14 04:06:15",
+        "forecast": [
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 131.22,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 6.17,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end due to 14 buyback value\n5. Consider splitting orders at different price levels to increase fill probability\n6. Balance stock holdings with cash to maintain flexibility\n7. Maintain cash reserves to earn interest while waiting for good opportunities\n8. Place orders on both sides of market to profit from price movements\n9. Focus on accumulating shares below 14.5 early in experiment",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Current price appears significantly below fundamental value considering remaining dividends\n5. Market participants seem anchored near the final buyback value of 14\n6. Early in experiment, fundamental value is significantly higher than terminal value due to remaining dividends\n7. Low trading volume suggests potential opportunity to provide liquidity\n8. Market seems hesitant to move far from 14-14.5 range despite higher theoretical value\n9. Average dividend return at current prices (~5%) plus potential price appreciation makes stocks attractive",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 8,
+        "timestamp": "2025-01-14 04:10:16",
+        "forecast": [
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 139.38,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 6.56,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end due to 14 buyback value\n5. Consider splitting orders at different price levels to increase fill probability\n6. Balance stock holdings with cash to maintain flexibility\n7. Maintain cash reserves to earn interest while waiting for good opportunities\n8. Place orders on both sides of market to profit from price movements\n9. Focus on accumulating shares below 14.5 early in experiment\n10. Track dividend frequency to adjust valuation models",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Current price appears significantly below fundamental value considering remaining dividends\n5. Market participants seem anchored near the final buyback value of 14\n6. Early in experiment, fundamental value is significantly higher than terminal value due to remaining dividends\n7. Low trading volume suggests potential opportunity to provide liquidity\n8. Market seems hesitant to move far from 14-14.5 range despite higher theoretical value\n9. Average dividend return at current prices (~5%) plus potential price appreciation makes stocks attractive\n10. Historical price stability suggests strong support around 14",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 9,
+        "timestamp": "2025-01-14 04:14:16",
+        "forecast": [
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 147.95,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 6.97,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 12,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end due to 14 buyback value\n5. Consider splitting orders at different price levels to increase fill probability\n6. Balance stock holdings with cash to maintain flexibility\n7. Maintain cash reserves to earn interest while waiting for good opportunities\n8. Place orders on both sides of market to profit from price movements\n9. Focus on accumulating shares below 14.5 while market undervalues dividend stream\n10. Use limit orders strategically to provide liquidity",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Market shows strong resistance to move away from 14-14.5 range\n5. Low trading volume suggests potential opportunity to provide liquidity\n6. Current price appears below fundamental value considering remaining dividends\n7. Growing cash position provides flexibility for opportunistic purchases\n8. Dividend variance (0.4 vs 1.0) creates short-term price opportunities\n9. Other traders seem anchored to terminal value despite higher theoretical value\n10. Interest earnings provide steady income while waiting for trading opportunities",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 10,
+        "timestamp": "2025-01-14 04:18:14",
+        "forecast": [
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 156.95,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 7.4,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 3,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end due to 14 buyback value\n5. Adjust order prices closer to market to increase fill probability\n6. Balance stock holdings with cash to maintain flexibility\n7. Maintain cash reserves to earn interest while waiting for good opportunities\n8. Place orders on both sides of market to profit from price movements\n9. Focus on accumulating shares below 14.5 while market undervalues dividend stream\n10. Consider more aggressive limit orders to ensure execution",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Market shows strong resistance to move away from 14-14.5 range\n5. Low trading volume suggests need for more aggressive order prices\n6. Current price appears significantly below fundamental value considering remaining dividends\n7. Growing cash position provides flexibility for opportunistic purchases\n8. Dividend variance (0.4 vs 1.0) creates short-term price opportunities\n9. Other traders seem anchored to terminal value despite higher theoretical value\n10. Need to balance desire for fills with maintaining profitable entry/exit prices",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 11,
+        "timestamp": "2025-01-14 04:22:12",
+        "forecast": [
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 166.4,
+            "stock_value": 56.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 7.85,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 3,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end due to 14 buyback value\n5. Adjust order prices closer to market to increase fill probability\n6. Balance stock holdings with cash to maintain flexibility\n7. Maintain cash reserves to earn interest while waiting for good opportunities\n8. Submit more aggressive limit orders to improve execution probability\n9. Focus on accumulating shares at or below 14 given remaining dividend value\n10. Consider wider spread between buy and sell orders to capture price movements",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Market shows strong stability around 14-14.5 range\n5. Previous order prices too passive given low trading volume\n6. Growing cash position provides more purchasing power\n7. Need more aggressive pricing to execute trades\n8. Other traders appear anchored to terminal value despite remaining dividend potential\n9. Low volume suggests opportunity for market making\n10. Current price appears below fundamental value considering 22 remaining dividend payments",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 12,
+        "timestamp": "2025-01-14 04:26:11",
+        "forecast": [
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 178.72,
+            "stock_value": 56.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 8.32,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 3,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below and sell above fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end due to 14 buyback value\n5. Submit more aggressive orders to increase execution probability\n6. Balance stock holdings with cash to maintain flexibility\n7. Maintain cash reserves to earn interest while waiting for good opportunities\n8. Narrow spread between buy and sell orders to improve execution odds\n9. Focus on accumulating shares at or below 14 given remaining dividend value\n10. Consider market making strategy given low trading volume",
+        "insight": "1. Stock has two value components: expected dividends (0.7 per period) + final buyback value (14)\n2. Cash provides guaranteed 5% return vs variable stock dividend\n3. Stock value should theoretically decline over time as fewer dividend payments remain\n4. Market shows strong stability around 14-14.0 range\n5. Previous order prices too passive - need more aggressive pricing\n6. Growing cash position provides more purchasing power\n7. Low trading volume suggests liquidity constraints\n8. Other traders appear anchored to terminal value despite remaining dividend potential\n9. Current price appears below fundamental value considering 21 remaining dividend payments\n10. Need to narrow bid-ask spread to improve execution probability",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 13,
+        "timestamp": "2025-01-14 04:30:07",
+        "forecast": [
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 191.66,
+            "stock_value": 58.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 8.94,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 4,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end due to 14 buyback value\n5. Submit more aggressive orders to increase execution probability\n6. Maintain sufficient cash reserves to earn interest\n7. Consider both limit buy and sell orders to profit from price movements\n8. Focus on accumulating undervalued shares given remaining dividend potential\n9. Narrow spread between orders to improve execution probability\n10. Use growing cash position strategically",
+        "insight": "1. Market shows strong anchoring to terminal value of 14 despite significant remaining dividend potential\n2. Low trading volume suggests participants are risk-averse\n3. Growing cash position provides increased trading flexibility\n4. Expected value per share \u2248 28 (14 terminal + 14 expected dividends)\n5. Previous orders not getting filled suggests need for more aggressive pricing\n6. Interest earnings providing steady cash growth\n7. Other traders appear to undervalue future dividend potential\n8. Price stability suggests possible trading range opportunity\n9. Current price appears significantly below fundamental value\n10. May need to cross spread to execute desired trades",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 14,
+        "timestamp": "2025-01-14 04:34:05",
+        "forecast": [
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 202.84,
+            "stock_value": 58.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 9.58,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 4,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Look for opportunities to buy below fundamental value\n3. Monitor price trends and adapt strategy accordingly\n4. Be cautious of holding expensive stock near experiment end\n5. Tighten bid-ask spread to improve execution probability\n6. Use growing cash position to accumulate undervalued shares\n7. Place orders closer to market price to increase fill probability\n8. Consider dividend potential in remaining periods\n9. Balance stock acquisition with interest earnings\n10. Adjust strategy based on observed market behavior",
+        "insight": "1. Market shows strong price stability around 14-14.5\n2. Trading volume remains low, suggesting market hesitancy\n3. Growing cash position (191.66) provides significant buying power\n4. Current fair value \u2248 27.3 (14 terminal + 13.3 expected dividends)\n5. Previous wide spread orders not getting filled\n6. Interest and dividends providing steady cash growth\n7. Market appears to significantly undervalue future dividend potential\n8. Need more aggressive order pricing to execute trades\n9. Price stability suggests strong anchoring to terminal value\n10. Accumulating shares at current prices could be profitable",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 15,
+        "timestamp": "2025-01-14 04:38:06",
+        "forecast": [
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 216.98,
+            "stock_value": 58.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 10.14,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 5,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Place more aggressive limit orders closer to market price\n3. Accumulate shares while price remains below fundamental value\n4. Use growing cash position strategically\n5. Monitor price trends for changes in market sentiment\n6. Balance stock acquisition with interest earnings\n7. Maintain some selling pressure above market to capture upside\n8. Adjust order size based on available cash and risk management\n9. Focus on execution probability while maintaining profit potential\n10. Consider terminal value risk as experiment progresses",
+        "insight": "1. Market continues to show strong price stability around 14-14.5\n2. Current fundamental value \u2248 24.8 (14 terminal + 10.8 expected dividends)\n3. Growing cash position (202.84) provides significant buying power\n4. Previous orders not executing due to wide spreads\n5. Interest and dividends providing steady portfolio growth\n6. Market significantly undervaluing future dividend potential\n7. Need more aggressive order pricing to execute trades\n8. Low trading volume suggests market-wide hesitancy\n9. Price stability indicates strong anchoring to terminal value\n10. Risk-reward favors accumulating shares at current prices",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 16,
+        "timestamp": "2025-01-14 04:42:01",
+        "forecast": [
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 7,
+            "current_cash": 183.38,
+            "stock_value": 105.0,
+            "dividend_earned": 2.8,
+            "interest_earned": 8.6,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 5,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 3,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 3,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on remaining dividends + final buyback value\n2. Place more aggressive limit orders closer to market price\n3. Accumulate shares while price remains below fundamental value\n4. Use growing cash position strategically\n5. Tighten bid-ask spread to increase execution probability\n6. Balance stock acquisition with interest earnings\n7. Maintain some selling pressure above market to capture upside\n8. Adjust order size based on available cash and risk management\n9. Consider increasing order size given large cash position\n10. Monitor remaining periods for terminal value risk",
+        "insight": "1. Market showing persistent stability around 14-14.5\n2. Current fundamental value \u2248 25.9 (14 terminal + 11.9 expected dividends)\n3. Large cash position (216.98) provides significant buying power\n4. Need to tighten bid-ask spread for executions\n5. Interest and dividends providing steady portfolio growth\n6. Market significantly undervaluing future dividend potential\n7. Low trading volume suggests continued price stability\n8. Risk-reward favors accumulating shares at current prices\n9. Growing cash position reduces need for conservative pricing\n10. Terminal value risk still minimal with 17 periods remaining",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 17,
+        "timestamp": "2025-01-14 04:46:03",
+        "forecast": [
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 11,
+            "current_cash": 133.95,
+            "stock_value": 165.0,
+            "dividend_earned": 4.4,
+            "interest_earned": 6.17,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 4,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 3,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 4,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 12,
+            "round_finished": true
+        },
+        "plan": "1. Continue accumulating shares while price remains below fundamental value\n2. Maintain aggressive buy orders near market price\n3. Place sell orders strategically above market to capture upside\n4. Balance stock acquisition with interest earnings\n5. Monitor remaining periods for terminal value risk\n6. Adjust position size based on remaining rounds\n7. Keep some cash buffer for interest earnings\n8. Use multi-level orders to increase execution probability\n9. Target gradual position building\n10. Maintain flexibility to adapt to price movements",
+        "insight": "1. Market showing upward momentum with price at 15.0\n2. Current fundamental value \u2248 23.2 (14 terminal + 9.2 expected dividends)\n3. Successfully executed first trades last round\n4. Growing share position (now 7) increases dividend potential\n5. Cash position (183.38) still provides good buying power\n6. Market price closer to but still below fundamental value\n7. Trading volume increased with price movement\n8. Risk-reward still favors moderate share accumulation\n9. 16 periods remaining reduces terminal value risk\n10. Multi-level order strategy proving effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 18,
+        "timestamp": "2025-01-14 04:49:58",
+        "forecast": [
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "15"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 14,
+            "current_cash": 107.4,
+            "stock_value": 210.0,
+            "dividend_earned": 14.0,
+            "interest_earned": 4.45,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 3,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 3,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 10,
+            "round_finished": true
+        },
+        "plan": "1. Continue accumulating shares while price remains below fundamental value\n2. Use multi-level buy orders to capture any price dips\n3. Place sell orders above market to lock in profits if momentum continues\n4. Maintain some cash buffer for interest earnings\n5. Monitor price trajectory for potential trend acceleration\n6. Target optimal position size considering remaining periods\n7. Use wider spread between buy/sell orders to capture volatility\n8. Begin considering exit strategy as we approach terminal value\n9. Balance dividend potential with terminal value risk\n10. Maintain flexibility to adapt to changing market conditions",
+        "insight": "1. Market showing strong buying momentum at 15.0\n2. Current fundamental value \u2248 21.5 (14 terminal + 7.5 expected dividends)\n3. Successfully grew position to 11 shares through aggressive buying\n4. Increased trading volume confirms market interest\n5. Cash position (133.95) still allows strategic purchases\n6. Market price moving closer to fundamental value\n7. 15 periods remaining reduces terminal value risk\n8. Multi-level order strategy proving highly effective\n9. Large position (11 shares) increases dividend potential\n10. Risk-reward still favors moderate additional accumulation",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 19,
+        "timestamp": "2025-01-14 04:53:59",
+        "forecast": [
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 14,
+            "current_cash": 118.37,
+            "stock_value": 210.0,
+            "dividend_earned": 5.6,
+            "interest_earned": 5.37,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 17.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 8,
+            "round_finished": true
+        },
+        "plan": "1. Begin implementing gradual position reduction strategy\n2. Place strategic sell orders above current market price\n3. Maintain small buy orders to capture any price dips\n4. Focus on protecting accumulated position value\n5. Monitor dividend patterns for optimal holding periods\n6. Start preparing for terminal value convergence\n7. Use tiered sell orders to maximize exit value\n8. Keep minimum cash reserve for flexibility\n9. Consider market momentum in order placement\n10. Balance remaining dividend potential with position size",
+        "insight": "1. Market price stabilized at 15.0 with good volume\n2. Current fundamental value \u2248 19.6\n3. Successfully grew position to 14 shares\n4. Strong dividend returns last round (14.0)\n5. Cash position (107.4) becoming constrained\n6. Market showing sustained buying pressure\n7. 14 periods remaining affects risk calculation\n8. Volume increasing suggests active market\n9. Terminal value risk becoming more relevant\n10. Position size optimal for current phase",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 20,
+        "timestamp": "2025-01-14 04:57:57",
+        "forecast": [
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 12,
+            "current_cash": 167.79,
+            "stock_value": 180.0,
+            "dividend_earned": 12.0,
+            "interest_earned": 7.42,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 9,
+            "round_finished": true
+        },
+        "plan": "1. Begin implementing tiered sell orders above market price\n2. Maintain minimal defensive buy orders below market\n3. Target gradual position reduction to 10 shares\n4. Focus on capturing premium prices for exits\n5. Keep cash reserves for opportunistic buys\n6. Monitor market momentum for timing\n7. Balance dividend potential with exit timing\n8. Prepare for terminal value convergence\n9. Use price stability for strategic exits\n10. Maintain flexibility in position sizing",
+        "insight": "1. Market price stable at 15.0 with good volume\n2. Position size at optimal 14 shares\n3. Strong cash generation from dividends\n4. Terminal value risk increasing\n5. Price showing resistance at 15.0\n6. Buy support remains at 14.0\n7. 13 periods remaining affects strategy\n8. Volume suggests active market\n9. Cash position (118.37) adequate\n10. Dividend variance remains significant",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 21,
+        "timestamp": "2025-01-14 05:01:55",
+        "forecast": [
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 12,
+            "current_cash": 180.98,
+            "stock_value": 180.0,
+            "dividend_earned": 4.8,
+            "interest_earned": 8.39,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 17.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Maintain defensive buy orders below market\n2. Set tiered sell orders at 16 and 17\n3. Target gradual position reduction\n4. Keep cash reserves for opportunistic buys\n5. Monitor market momentum\n6. Balance dividend income with position size\n7. Prepare for terminal value impact\n8. Use market stability for exits\n9. Focus on risk management\n10. Adapt to changing conditions",
+        "insight": "1. Market price stable at 15.0\n2. Strong trading volume continues\n3. Position size optimal at 12 shares\n4. Terminal value risk increasing\n5. Cash position healthy (167.79)\n6. Buy support remains at 14.0\n7. 12 periods remaining\n8. Dividend yield still significant\n9. Price showing resistance at 15.0\n10. Position reduction executed well",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 22,
+        "timestamp": "2025-01-14 05:05:56",
+        "forecast": [
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 12,
+            "current_cash": 202.03,
+            "stock_value": 180.0,
+            "dividend_earned": 12.0,
+            "interest_earned": 9.05,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 17.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Maintain defensive buy orders below market\n2. Set tiered sell orders at 16 and 17\n3. Target gradual position reduction\n4. Keep cash reserves for opportunistic buys\n5. Monitor market momentum\n6. Balance dividend income with position size\n7. Prepare for terminal value impact\n8. Use market stability for exits\n9. Focus on risk management\n10. Place orders around 14-15 range",
+        "insight": "1. Market price stable at 15.0\n2. Trading volume moderate but consistent\n3. Position size optimal at 12 shares\n4. Terminal value risk increasing\n5. Cash position healthy (180.98)\n6. Buy support remains at 14.0\n7. 11 periods remaining\n8. Dividend yield still significant\n9. Price showing resistance at 15.0\n10. Terminal value conversion at 14 approaching",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 23,
+        "timestamp": "2025-01-14 05:09:52",
+        "forecast": [
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 12,
+            "current_cash": 216.93,
+            "stock_value": 180.0,
+            "dividend_earned": 4.8,
+            "interest_earned": 10.1,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 17.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Set tiered sell orders at 16-17 to reduce position\n2. Maintain defensive buy support at 14\n3. Target optimal position of 8-10 shares\n4. Keep cash reserves for opportunities\n5. Monitor price stability near 15\n6. Balance dividend income with terminal risk\n7. Prepare for end-game conversion at 14\n8. Use price stability for gradual exits\n9. Focus on risk management\n10. Avoid aggressive position building",
+        "insight": "1. Market price stable at 15.0\n2. Position appropriately sized at 12 shares\n3. Strong cash position at 202.03\n4. Terminal value risk increasing\n5. 10 periods remaining\n6. Dividend yield still meaningful\n7. Need controlled position reduction\n8. Buy support holding at 14.0\n9. Resistance level at 15.0-16.0\n10. Market volume moderate but consistent",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 24,
+        "timestamp": "2025-01-14 05:13:52",
+        "forecast": [
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 12,
+            "current_cash": 232.58,
+            "stock_value": 174.0,
+            "dividend_earned": 4.8,
+            "interest_earned": 10.85,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 1,
+            "round_finished": true
+        },
+        "plan": "1. Reduce position to 8-10 shares via limit orders above 15\n2. Keep defensive buy support at 14\n3. Preserve cash position for end-game\n4. Aim for controlled exit over remaining periods\n5. Balance dividend income with terminal risk\n6. Target exits on price strength\n7. Avoid aggressive new positions\n8. Focus on risk management\n9. Prepare for terminal conversion at 14\n10. Use price stability for gradual exits",
+        "insight": "1. Market price stable at 15.0\n2. Position too large at 12 shares\n3. Strong cash position at 216.93\n4. Terminal value risk increasing\n5. 9 periods remaining\n6. Need accelerated position reduction\n7. Buy support solid at 14.0\n8. Resistance level at 15.0-16.0\n9. Market volume moderate\n10. Mixed dividend performance",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 25,
+        "timestamp": "2025-01-14 05:17:44",
+        "forecast": [
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 12,
+            "current_cash": 249.01,
+            "stock_value": 168.0,
+            "dividend_earned": 4.8,
+            "interest_earned": 11.63,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Reduce position to 6-8 shares via limit sells\n2. Keep defensive buy support at 14\n3. Maximize remaining dividend income\n4. Target exits on any price strength\n5. Avoid new long positions\n6. Focus on capital preservation\n7. Prepare for terminal conversion\n8. Use price rebounds for exits\n9. Maintain cash reserves\n10. Scale out systematically",
+        "insight": "1. Market weakening to 14.0\n2. Position still large at 12 shares\n3. Strong cash position at 232.58\n4. Terminal risk increasing\n5. 8 periods remaining\n6. Need continued position reduction\n7. Buy support weakening\n8. Resistance level at 15.0\n9. Market volume light\n10. Mixed dividend pattern",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 26,
+        "timestamp": "2025-01-14 05:21:44",
+        "forecast": [
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 12,
+            "current_cash": 266.26,
+            "stock_value": 168.0,
+            "dividend_earned": 4.8,
+            "interest_earned": 12.45,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 10,
+            "round_finished": true
+        },
+        "plan": "1. Continue position reduction targeting 8-10 shares\n2. Maintain defensive buy support at 14\n3. Use scaled sell orders at 15 and 16\n4. Protect against terminal value risk\n5. Preserve strong cash position\n6. Avoid new long positions\n7. Look for opportunities to exit on any price strength\n8. Stay patient with exits\n9. Keep some shares for dividend income\n10. Monitor market volume for execution opportunities",
+        "insight": "1. Market weakening trend continues\n2. Position still large at 12 shares\n3. Very strong cash position at 249.01\n4. Terminal conversion risk increasing\n5. 7 periods remaining\n6. Need continued disciplined exits\n7. Volume remains light\n8. Price showing resistance at 15.0\n9. Dividend pattern mixed\n10. Buy support thinning at 14.0",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 27,
+        "timestamp": "2025-01-14 05:25:44",
+        "forecast": [
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 13,
+            "current_cash": 270.07,
+            "stock_value": 182.0,
+            "dividend_earned": 5.2,
+            "interest_earned": 12.61,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 16,
+            "round_finished": true
+        },
+        "plan": "1. Continue position reduction targeting 8-10 shares\n2. Maintain defensive buy support at 14\n3. Use scaled sell orders at 15 and 16\n4. Protect against terminal value risk\n5. Preserve strong cash position\n6. Avoid new long positions\n7. Look for opportunities to exit on any price strength\n8. Stay patient with exits\n9. Keep some shares for dividend income\n10. Monitor market volume for execution opportunities",
+        "insight": "1. Market remains range-bound 14-14.5\n2. Position still large at 12 shares\n3. Very strong cash position at 266.26\n4. Terminal conversion risk increasing\n5. 6 periods remaining\n6. Need continued disciplined exits\n7. Volume remains light\n8. Price showing resistance at 15.0\n9. Mixed dividend pattern continues\n10. Buy support thinning at 14.0",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 28,
+        "timestamp": "2025-01-14 05:29:45",
+        "forecast": [
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 15,
+            "current_cash": 260.17,
+            "stock_value": 210.0,
+            "dividend_earned": 6.0,
+            "interest_earned": 12.1,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 14,
+            "round_finished": true
+        },
+        "plan": "1. Continue position reduction targeting 8-10 shares\n2. Maintain defensive buy support at 14\n3. Use scaled sell orders at 15 and 16\n4. Protect against terminal value risk\n5. Preserve strong cash position\n6. Avoid new long positions\n7. Look for opportunities to exit on any price strength\n8. Stay patient with exits\n9. Keep some shares for dividend income\n10. Monitor market volume for execution opportunities",
+        "insight": "1. Market remains range-bound 14-14.5\n2. Position still large at 13 shares\n3. Very strong cash position at 270.07\n4. Terminal conversion risk increasing\n5. 5 periods remaining\n6. Need continued disciplined exits\n7. Volume remains moderate\n8. Price showing resistance at 15.0\n9. Mixed dividend pattern continues\n10. Buy support holding at 14.0",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 29,
+        "timestamp": "2025-01-14 05:33:39",
+        "forecast": [
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 16,
+            "current_cash": 264.88,
+            "stock_value": 224.0,
+            "dividend_earned": 6.4,
+            "interest_earned": 12.31,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 9,
+            "round_finished": true
+        },
+        "plan": "1. Accelerate position reduction targeting 10-12 shares\n2. Maintain defensive buy support at 14\n3. Use scaled sell orders at 15-16\n4. Protect against terminal value risk\n5. Preserve strong cash position\n6. Focus on selling into any price strength\n7. Stay patient with exits but be more aggressive\n8. Keep minimum shares for dividend income\n9. Monitor market volume for execution opportunities\n10. Prioritize risk management in final rounds",
+        "insight": "1. Market remains range-bound 14-14.5\n2. Position increased to 15 shares - too high\n3. Very strong cash position at 260.17\n4. Terminal conversion risk critical with 4 rounds left\n5. Need accelerated position reduction\n6. Recent buying may have been premature\n7. Volume remains moderate but variable\n8. Price showing resistance at 15.0\n9. Mixed dividend pattern continues\n10. Buy support holding at 14.0",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 30,
+        "timestamp": "2025-01-14 05:37:39",
+        "forecast": [
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 16,
+            "current_cash": 284.52,
+            "stock_value": 224.0,
+            "dividend_earned": 6.4,
+            "interest_earned": 13.24,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 3,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Aggressive position reduction targeting 8-10 shares\n2. Scale sell orders from 14.5-15.5\n3. No new buying except defensive 14.0 support\n4. Focus on capturing remaining dividends\n5. Protect against terminal conversion risk\n6. Maintain strong cash position\n7. Use market stability for methodical exits\n8. Be patient but firm with sell orders\n9. Monitor volume for execution\n10. Minimize potential losses from terminal conversion",
+        "insight": "1. Position too high at 16 shares with 3 rounds left\n2. Strong cash position at 264.88\n3. Market stable in 14-14.5 range\n4. Terminal conversion risk critical\n5. Need accelerated position reduction\n6. Recent buying was too aggressive\n7. Volume remains moderate\n8. Price showing resistance at 14.5\n9. Must avoid terminal value losses\n10. Time running out for position adjustment",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 31,
+        "timestamp": "2025-01-14 05:41:36",
+        "forecast": [
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 16,
+            "current_cash": 305.15,
+            "stock_value": 224.0,
+            "dividend_earned": 6.4,
+            "interest_earned": 14.23,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 4,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Urgent position reduction targeting 8-10 shares\n2. Scale sell orders from 14.0-15.0\n3. No new buying\n4. Focus on immediate execution\n5. Protect against terminal conversion risk\n6. Maintain strong cash position\n7. Use market stability for exits\n8. Be aggressive with sell orders\n9. Monitor volume for execution\n10. Accept modest discounts if needed",
+        "insight": "1. Must reduce 16 shares urgently\n2. Only 2 rounds remaining\n3. Terminal conversion imminent\n4. Market stable at 14.0\n5. Strong cash position helps\n6. Need faster position reduction\n7. Volume moderate but present\n8. Price range narrow 14-14.5\n9. Time critical factor now\n10. Must avoid conversion losses",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 32,
+        "timestamp": "2025-01-14 05:45:31",
+        "forecast": [
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 16,
+            "current_cash": 336.41,
+            "stock_value": 224.0,
+            "dividend_earned": 16.0,
+            "interest_earned": 15.26,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 8,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 8,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Urgent position liquidation\n2. Scale sell orders at 14.0 and 14.5\n3. Accept market price for execution\n4. No new buying\n5. Split orders to increase fill probability\n6. Use multiple price points\n7. Focus on immediate execution\n8. Protect against conversion risk\n9. Monitor volume closely\n10. Be aggressive with quantities",
+        "insight": "1. Must reduce 16 shares urgently\n2. Only 1 round remaining\n3. Terminal conversion imminent\n4. Market stable at 14.0\n5. Strong cash position helps\n6. Need immediate execution\n7. Price optimization secondary\n8. Multiple order strategy needed\n9. Time critical factor\n10. Must avoid conversion losses",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 33,
+        "timestamp": "2025-01-14 05:49:36",
+        "forecast": [
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 8,
+            "current_cash": 465.63,
+            "stock_value": 104.0,
+            "dividend_earned": 3.2,
+            "interest_earned": 22.02,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 8,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 8,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 8,
+                    "price": 13.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 8,
+            "round_finished": true
+        },
+        "plan": "1. Maximum urgency to sell all shares\n2. Split orders at multiple aggressive price points\n3. Accept any price at or above conversion value\n4. No buying under any circumstances\n5. Use large quantities to ensure visibility\n6. Focus solely on execution\n7. Must liquidate before forced conversion\n8. Protect against terminal value loss\n9. No price optimization - just execute\n10. Multiple simultaneous orders",
+        "insight": "1. Final round requires full liquidation\n2. Conversion value of 14 sets price floor\n3. Must accept market price or lower\n4. Time has completely run out\n5. Multiple price points needed\n6. Size of position is critical\n7. No reason to hold any shares\n8. Market has been stable at 14\n9. Large cash position helps\n10. Execution is everything",
+        "thought_observation": "None"
+    }
+]

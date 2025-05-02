@@ -1,0 +1,2113 @@
+[
+    {
+        "round_num": 1,
+        "timestamp": "2025-01-11 10:48:32",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "17"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 106.6,
+            "stock_value": 58.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.0,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 0,
+            "round_finished": true
+        },
+        "plan": "1. Test conservative price forecasting.\n2. Make small initial trades to understand market dynamics.\n3. Observe how dividends and interest affect the cash balance.",
+        "insight": "1. Since the dividends are either 0.4 or 1.0, the average expected dividend per share is 0.7.\n2. The interest rate of 5% on cash provides a stable but modest return.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 2,
+        "timestamp": "2025-01-11 10:51:20",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 115.93,
+            "stock_value": 60.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.33,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Adjust price forecasting based on observed market prices.\n2. Continue making small initial trades to understand market dynamics.\n3. Test buying at lower prices and selling at higher prices to maximize profit.",
+        "insight": "1. The market may be more conservative than anticipated, with prices hovering around 14.5.\n2. Buying at lower prices (e.g., 13 or 14) and selling at higher prices (e.g., 15 or 16) could be a profitable strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 3,
+        "timestamp": "2025-01-11 10:54:09",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": null
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": null
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": null
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": null
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 123.33,
+            "stock_value": 64.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.8,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 16.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Continue making small trades to understand market dynamics better.\n2. Focus on buying at lower prices (e.g., 13 or 14) and selling at higher prices (e.g., 15 or 16).\n3. Adjust price forecasting based on observed market prices and trends.",
+        "insight": "1. The market may be more conservative than anticipated, with prices hovering around 14.5.\n2. Buying at lower prices (e.g., 13 or 14) and selling at higher prices (e.g., 15 or 16) could be a profitable strategy.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 4,
+        "timestamp": "2025-01-11 10:57:55",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "17"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 106.6,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.0,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Adjust buying and selling prices closer to the observed market prices (e.g., buy at 14.5 or 15.0, sell at 16.0 or slightly higher).\n2. Be more aggressive in crossing the spread to ensure trades are executed.\n3. Adjust price forecasting based on observed market prices and trends.",
+        "insight": "1. The market is more conservative than anticipated, with prices hovering around 14.5.\n2. Adjusting buying and selling prices closer to the observed market prices could be a profitable strategy.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 5,
+        "timestamp": "2025-01-11 11:00:42",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "17"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 115.93,
+            "stock_value": 64.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.33,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 16.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 1,
+            "round_finished": true
+        },
+        "plan": "1. Adjust buying and selling prices closer to the observed market prices (e.g., buy at 14.5 or 15.0, sell at 16.0 or slightly higher).\n2. Be more aggressive in crossing the spread to ensure trades are executed.\n3. Adjust price forecasting based on observed market prices and trends.\n4. Maintain a balance between cash and stock investments to leverage interest earnings.\n5. Monitor market dynamics and adapt strategies as needed.",
+        "insight": "1. The market is more conservative than anticipated, with prices hovering around 14.5.\n2. Adjusting buying and selling prices closer to the observed market prices could be a profitable strategy.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. Aggressive strategies may be needed to ensure trades are executed, especially when the market price is above the trade-in value.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 6,
+        "timestamp": "2025-01-11 11:03:30",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 35,
+                "field": "f0",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 35,
+                "field": "f1",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 17
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 50,
+                "field": "f3",
+                "input_forecast": 17
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 123.33,
+            "stock_value": 64.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.8,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 17.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 16.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Adjust buying and selling prices closer to the current market price (e.g., buy at 15.0 or 16.0, sell at 17.0 or slightly higher).\n2. Be more aggressive in crossing the spread to ensure trades are executed.\n3. Adjust price forecasting based on observed trends and market dynamics.\n4. Maintain a balance between cash and stock investments to leverage interest earnings.\n5. Monitor market dynamics and adapt strategies as needed.",
+        "insight": "1. The market price has fluctuated between 14.5 and 16.0, indicating a conservative market.\n2. Adjusting buying and selling prices closer to the observed market prices could be a profitable strategy.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. Aggressive strategies may be needed to ensure trades are executed, especially when the market price is above the trade-in value.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 7,
+        "timestamp": "2025-01-11 11:06:18",
+        "forecast": [
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 35,
+                "field": "f0",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f1",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "17"
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 50,
+                "field": "f3",
+                "input_forecast": "17"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 133.5,
+            "stock_value": 68.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 6.17,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 17.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 17.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue adjusting buying and selling prices closer to the current market price (e.g., buy at 15.0 or 16.0, sell at 17.0 or slightly higher).\n2. Be more aggressive in crossing the spread to ensure trades are executed.\n3. Adjust price forecasting based on observed trends and market dynamics.\n4. Maintain a balance between cash and stock investments to leverage interest earnings.\n5. Monitor market dynamics and adapt strategies as needed.",
+        "insight": "1. The market price has remained relatively stable between 14.5 and 16.0, indicating a conservative market.\n2. Adjusting buying and selling prices closer to the observed market prices could be a profitable strategy.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. Aggressive strategies may be needed to ensure trades are executed, especially when the market price is above the trade-in value.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 8,
+        "timestamp": "2025-01-11 11:09:03",
+        "forecast": [
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 35,
+                "field": "f0",
+                "input_forecast": "17"
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 35,
+                "field": "f1",
+                "input_forecast": "18"
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 45,
+                "field": "f2",
+                "input_forecast": "19"
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 55,
+                "field": "f3",
+                "input_forecast": "20"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 144.18,
+            "stock_value": 68.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 6.68,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 17.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 18.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 17.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Adjust buying and selling prices to be more aggressive and closer to the current market price (e.g., buy at 16.0 or 17.0, sell at 18.0 or slightly higher).\n2. Continue to be more aggressive in crossing the spread to ensure trades are executed.\n3. Adjust price forecasting based on observed trends and market dynamics.\n4. Maintain a balance between cash and stock investments to leverage interest earnings.\n5. Monitor market dynamics and adapt strategies as needed.",
+        "insight": "1. The market price has been increasing steadily, indicating a more aggressive market.\n2. Adjusting buying and selling prices closer to the observed market prices could be a profitable strategy.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. Aggressive strategies may be needed to ensure trades are executed, especially when the market price is above the trade-in value.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 9,
+        "timestamp": "2025-01-11 11:11:51",
+        "forecast": [
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f0",
+                "input_forecast": 17
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 35,
+                "field": "f1",
+                "input_forecast": 18
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f2",
+                "input_forecast": 19
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 55,
+                "field": "f3",
+                "input_forecast": 20
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 155.39,
+            "stock_value": 68.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 7.21,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 18.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 17.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Adjust buying prices to be closer to the current market price (e.g., buy at 16.0 or 17.0).\n2. Be more aggressive in crossing the spread to ensure trades are executed.\n3. Continue to monitor market dynamics and adapt strategies as needed.\n4. Maintain a balance between cash and stock investments to leverage interest earnings.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.",
+        "insight": "1. The market price has been increasing steadily, indicating a more aggressive market.\n2. Adjusting buying prices closer to the observed market prices could be a profitable strategy.\n3. Aggressive strategies may be needed to ensure trades are executed, especially when the market price is above the trade-in value.\n4. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 10,
+        "timestamp": "2025-01-11 11:14:39",
+        "forecast": [
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 35,
+                "field": "f0",
+                "input_forecast": "18"
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 35,
+                "field": "f1",
+                "input_forecast": "18"
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f2",
+                "input_forecast": "19"
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 55,
+                "field": "f3",
+                "input_forecast": "20"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 164.76,
+            "stock_value": 70.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 7.77,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 17.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 18.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 17.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Continue to adjust buying prices to be closer to the current market price (e.g., buy at 16.0 or 17.0).\n2. Be more aggressive in crossing the spread to ensure trades are executed.\n3. Monitor market dynamics and adapt strategies as needed.\n4. Maintain a balance between cash and stock investments to leverage interest earnings.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.",
+        "insight": "1. The market price has been increasing steadily, indicating a more aggressive market.\n2. Adjusting buying prices closer to the observed market prices could be a profitable strategy.\n3. Aggressive strategies may be needed to ensure trades are executed, especially when the market price is above the trade-in value.\n4. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 11,
+        "timestamp": "2025-01-11 11:17:27",
+        "forecast": [
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 35,
+                "field": "f0",
+                "input_forecast": 18
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 35,
+                "field": "f1",
+                "input_forecast": 19
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 45,
+                "field": "f2",
+                "input_forecast": 20
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 55,
+                "field": "f3",
+                "input_forecast": 22
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 174.6,
+            "stock_value": 72.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 8.24,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 18.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 18.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Adjust buying prices to be closer to the current market price (e.g., buy at 16.5 or 17.0).\n2. Be more aggressive in crossing the spread to ensure trades are executed.\n3. Monitor market dynamics and adapt strategies as needed.\n4. Maintain a balance between cash and stock investments to leverage interest earnings.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.",
+        "insight": "1. The market price has been increasing steadily, indicating an aggressive market.\n2. Adjusting buying prices closer to the observed market prices could be a profitable strategy.\n3. Aggressive strategies may be needed to ensure trades are executed, especially when the market price is above the trade-in value.\n4. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 12,
+        "timestamp": "2025-01-11 11:20:15",
+        "forecast": [
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": 19
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": 20
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 45,
+                "field": "f2",
+                "input_forecast": 22
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 55,
+                "field": "f3",
+                "input_forecast": 24
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 187.33,
+            "stock_value": 76.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 8.73,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 17.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 19.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 19.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Continue to adjust buying prices closer to the current market price (e.g., buy at 17.0 or 18.0).\n2. Be more aggressive in crossing the spread to ensure trades are executed.\n3. Monitor market dynamics and adapt strategies as needed.\n4. Maintain a balance between cash and stock investments to leverage interest earnings.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Consider the approaching end of the experiment and the buyback price of 14 when making decisions.",
+        "insight": "1. The market price has been steadily increasing, indicating an aggressive market.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue increasing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 13,
+        "timestamp": "2025-01-11 11:22:57",
+        "forecast": [
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": "20"
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": "21"
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 50,
+                "field": "f2",
+                "input_forecast": "22"
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 60,
+                "field": "f3",
+                "input_forecast": "20"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 198.3,
+            "stock_value": 80.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 9.37,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 19.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 20.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 20.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue to adjust buying prices closer to the current market price (e.g., buy at 18.0 or 19.0).\n2. Be more aggressive in crossing the spread to ensure trades are executed.\n3. Monitor market dynamics and adapt strategies as needed.\n4. Maintain a balance between cash and stock investments to leverage interest earnings.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Consider the approaching end of the experiment and the buyback price of 14 when making decisions.\n7. Aim to sell stocks as the experiment nears its end to avoid losses from the buyback price.",
+        "insight": "1. The market price has been steadily increasing, indicating an aggressive market.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue increasing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 14,
+        "timestamp": "2025-01-11 11:25:45",
+        "forecast": [
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": 21
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": 22
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 50,
+                "field": "f2",
+                "input_forecast": 23
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 60,
+                "field": "f3",
+                "input_forecast": 20
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 212.22,
+            "stock_value": 80.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 9.92,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 21.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 19.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 20.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed.\n2. Start considering selling stocks to approach the buyback price of 14 as the experiment nears its end.\n3. Maintain a balance between cash and stock investments to leverage interest earnings.\n4. Be more aggressive in crossing the spread to ensure trades are executed.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Submit orders within the integer value range of 17.0 to 23.0.",
+        "insight": "1. The market price has been steadily increasing, indicating an aggressive market.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue increasing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.\n7. Market volume has been low, suggesting limited trading activity.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 15,
+        "timestamp": "2025-01-11 11:28:33",
+        "forecast": [
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": 21
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": 22
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 50,
+                "field": "f2",
+                "input_forecast": 24
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 60,
+                "field": "f3",
+                "input_forecast": 26
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 226.83,
+            "stock_value": 80.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 10.61,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 21.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 19.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 20.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed.\n2. Start considering selling stocks to approach the buyback price of 14 as the experiment nears its end.\n3. Maintain a balance between cash and stock investments to leverage interest earnings.\n4. Be more aggressive in crossing the spread to ensure trades are executed.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Submit orders within the integer value range of 17.0 to 23.0.",
+        "insight": "1. The market price has been steadily increasing, indicating an aggressive market.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue increasing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.\n7. Market volume has been low, suggesting limited trading activity.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 16,
+        "timestamp": "2025-01-11 11:31:19",
+        "forecast": [
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": 21
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": 22
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 50,
+                "field": "f2",
+                "input_forecast": 23
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 60,
+                "field": "f3",
+                "input_forecast": 24
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 239.77,
+            "stock_value": 80.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 11.34,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 21.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 19.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 20.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed.\n2. Start considering selling stocks to approach the buyback price of 14 as the experiment nears its end.\n3. Maintain a balance between cash and stock investments to leverage interest earnings.\n4. Be more aggressive in crossing the spread to ensure trades are executed.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Submit orders within the integer value range of 17.0 to 23.0.\n7. Consider selling some stocks to secure profits given the current high market price.",
+        "insight": "1. The market price has been steadily increasing, indicating an aggressive market.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue increasing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.\n7. Market volume has been low, suggesting limited trading activity.\n8. Given the current high market price, selling some stocks to secure profits might be a good strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 17,
+        "timestamp": "2025-01-11 11:34:07",
+        "forecast": [
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": 21
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": 22
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 50,
+                "field": "f2",
+                "input_forecast": 23
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 60,
+                "field": "f3",
+                "input_forecast": 20
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 3,
+            "current_cash": 275.76,
+            "stock_value": 60.0,
+            "dividend_earned": 3.0,
+            "interest_earned": 12.99,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 20.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 19.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 20.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 20.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed.\n2. Start selling more stocks to approach the buyback price of 14 as the experiment nears its end.\n3. Maintain a balance between cash and stock investments to leverage interest earnings.\n4. Be more aggressive in crossing the spread to ensure trades are executed.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Submit orders within the integer value range of 17.0 to 23.0.\n7. Consider selling some stocks to secure profits given the current high market price.",
+        "insight": "1. The market price has been steadily increasing, indicating an aggressive market.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue increasing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.\n7. Market volume has been low, suggesting limited trading activity.\n8. Given the current high market price, selling some stocks to secure profits might be a good strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 18,
+        "timestamp": "2025-01-11 11:36:56",
+        "forecast": [
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": "20"
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": "21"
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 50,
+                "field": "f2",
+                "input_forecast": "22"
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 60,
+                "field": "f3",
+                "input_forecast": "20"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 312.55,
+            "stock_value": 40.0,
+            "dividend_earned": 2.0,
+            "interest_earned": 14.79,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 20.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 19.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 20.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 20.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed.\n2. Sell more stocks to approach the buyback price of 14 as the experiment nears its end.\n3. Maintain a balance between cash and stock investments to leverage interest earnings.\n4. Be more aggressive in crossing the spread to ensure trades are executed.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Submit orders within the integer value range of 17.0 to 23.0.\n7. Consider selling more stocks to secure profits given the current high market price.",
+        "insight": "1. The market price has stabilized at 20.0, indicating a potential plateau.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue stabilizing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.\n7. Market volume has been low, suggesting limited trading activity.\n8. Given the current high market price, selling more stocks to secure profits might be a good strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 19,
+        "timestamp": "2025-01-11 11:39:44",
+        "forecast": [
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": "20"
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": "21"
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 50,
+                "field": "f2",
+                "input_forecast": "22"
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 60,
+                "field": "f3",
+                "input_forecast": "20"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 349.13,
+            "stock_value": 19.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 16.58,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 20.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 19.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 19.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 19.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed.\n2. Sell more stocks to approach the buyback price of 14 as the experiment nears its end.\n3. Maintain a balance between cash and stock investments to leverage interest earnings.\n4. Be more aggressive in crossing the spread to ensure trades are executed.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Submit orders within the integer value range of 17.0 to 23.0.\n7. Consider selling more stocks to secure profits given the current high market price.",
+        "insight": "1. The market price has stabilized at 20.0, indicating a potential plateau.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue stabilizing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.\n7. Market volume has been low, suggesting limited trading activity.\n8. Given the current high market price, selling more stocks to secure profits might be a good strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 20,
+        "timestamp": "2025-01-11 11:42:31",
+        "forecast": [
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": "19"
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": "19"
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 50,
+                "field": "f2",
+                "input_forecast": "18"
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 60,
+                "field": "f3",
+                "input_forecast": "17"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 367.59,
+            "stock_value": 19.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 17.46,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 20.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 19.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed.\n2. Aggressively sell the remaining stock to approach the buyback price of 14 as the experiment nears its end.\n3. Maintain a balance between cash and stock investments to leverage interest earnings.\n4. Be more aggressive in crossing the spread to ensure trades are executed.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Submit orders within the integer value range of 16.0 to 22.0.\n7. Consider selling the remaining stock to secure profits given the current high market price.",
+        "insight": "1. The market price has stabilized around 19.0, indicating a potential plateau.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue stabilizing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.\n7. Market volume has been low, suggesting limited trading activity.\n8. Given the current high market price, selling the remaining stock to secure profits might be a good strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 21,
+        "timestamp": "2025-01-11 11:45:18",
+        "forecast": [
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": "19"
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": "19"
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 50,
+                "field": "f2",
+                "input_forecast": "18"
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 60,
+                "field": "f3",
+                "input_forecast": "17"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 386.97,
+            "stock_value": 18.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 18.38,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 19.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 18.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed.\n2. Aggressively sell the remaining stock to approach the buyback price of 14 as the experiment nears its end.\n3. Maintain a balance between cash and stock investments to leverage interest earnings.\n4. Be more aggressive in crossing the spread to ensure trades are executed.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Submit orders within the integer value range of 16.0 to 22.0.\n7. Consider selling the remaining stock to secure profits given the current high market price.",
+        "insight": "1. The market price has stabilized around 19.0, indicating a potential plateau.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue stabilizing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.\n7. Market volume has been low, suggesting limited trading activity.\n8. Given the current high market price, selling the remaining stock to secure profits might be a good strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 22,
+        "timestamp": "2025-01-11 11:48:06",
+        "forecast": [
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 40,
+                "field": "f0",
+                "input_forecast": 18
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 40,
+                "field": "f1",
+                "input_forecast": 18
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 45,
+                "field": "f2",
+                "input_forecast": 17
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 55,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 406.72,
+            "stock_value": 17.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 19.35,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 18.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 17.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed.\n2. Aggressively sell the remaining stock to approach the buyback price of 14 as the experiment nears its end.\n3. Maintain a balance between cash and stock investments to leverage interest earnings.\n4. Be more aggressive in crossing the spread to ensure trades are executed.\n5. Improve price forecasting accuracy based on observed trends and market dynamics.\n6. Submit orders within the integer value range of 15.0 to 21.0.\n7. Consider selling the remaining stock to secure profits given the current high market price.",
+        "insight": "1. The market price has stabilized around 19.0, indicating a potential plateau.\n2. More aggressive buying and selling prices may be needed to execute trades.\n3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments.\n4. The market price is likely to continue stabilizing, but caution is advised as the end of the experiment approaches.\n5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold.\n6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important.\n7. Market volume has been low, suggesting limited trading activity.\n8. Given the current high market price, selling the remaining stock to secure profits might be a good strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 23,
+        "timestamp": "2025-01-11 11:50:47",
+        "forecast": [
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 35,
+                "field": "f0",
+                "input_forecast": 18
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 35,
+                "field": "f1",
+                "input_forecast": 18
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 45,
+                "field": "f2",
+                "input_forecast": 17
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 55,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 428.06,
+            "stock_value": 16.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 20.34,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 17.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 16.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed. 2. Aggressively sell the remaining stock to approach the buyback price of 14 as the experiment nears its end. 3. Maintain a balance between cash and stock investments to leverage interest earnings. 4. Be more aggressive in crossing the spread to ensure trades are executed. 5. Improve price forecasting accuracy based on observed trends and market dynamics. 6. Submit orders within the integer value range of 14.0 to 20.0. 7. Consider selling the remaining stock to secure profits given the current high market price.",
+        "insight": "1. The market price has stabilized around 19.0, indicating a potential plateau. 2. More aggressive buying and selling prices may be needed to execute trades. 3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments. 4. The market price is likely to continue stabilizing, but caution is advised as the end of the experiment approaches. 5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold. 6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important. 7. Market volume has been low, suggesting limited trading activity. 8. Given the current high market price, selling the remaining stock to secure profits might be a good strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 24,
+        "timestamp": "2025-01-11 11:53:35",
+        "forecast": [
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 35,
+                "field": "f0",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 35,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 450.46,
+            "stock_value": 14.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 21.4,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue to monitor market dynamics and adjust strategies as needed. 2. Aggressively sell the remaining stock to approach the buyback price of 14 as the experiment nears its end. 3. Maintain a balance between cash and stock investments to leverage interest earnings. 4. Be more aggressive in crossing the spread to ensure trades are executed. 5. Improve price forecasting accuracy based on observed trends and market dynamics. 6. Submit orders within the integer value range of 14.0 to 20.0. 7. Consider selling the remaining stock to secure profits given the current high market price.",
+        "insight": "1. The market price has stabilized around 19.0, indicating a potential plateau. 2. More aggressive buying and selling prices may be needed to execute trades. 3. Interest earnings on cash provide a steady income, so it's important to maintain a balance between cash and stock investments. 4. The market price is likely to continue stabilizing, but caution is advised as the end of the experiment approaches. 5. Accurate price forecasting can provide additional earnings, so it's crucial to stay within the reward threshold. 6. As the experiment nears its end, selling stocks to avoid losses from the buyback price becomes more important. 7. Market volume has been low, suggesting limited trading activity. 8. Given the current high market price, selling the remaining stock to secure profits might be a good strategy.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 25,
+        "timestamp": "2025-01-11 11:56:23",
+        "forecast": [
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 473.38,
+            "stock_value": 12.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 22.52,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Hold the remaining stock to secure the buyback value at the end of the experiment. 2. Focus on accurate price forecasting to earn additional cash rewards. 3. Monitor the market closely for any unexpected changes in price trends.",
+        "insight": "1. The market price has dropped to the buyback value, indicating a sell-off by participants. 2. Accurate price forecasting is essential to maximize earnings from cash rewards. 3. Holding onto the remaining stock until the end can secure the buyback value and avoid potential losses.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 26,
+        "timestamp": "2025-01-11 11:59:11",
+        "forecast": [
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 30,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 486.45,
+            "stock_value": 24.0,
+            "dividend_earned": 2.0,
+            "interest_earned": 23.07,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 12.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 8,
+            "round_finished": true
+        },
+        "plan": "1. Continue holding the remaining stock to secure the buyback value at the end of the experiment. 2. Submit accurate price forecasts to earn additional cash rewards. 3. Monitor the market closely for any changes in price trends and adapt strategies accordingly.",
+        "insight": "1. The market price has been declining and is now below the buyback value, indicating a significant sell-off by participants. 2. Accurate price forecasting is essential to maximize earnings from cash rewards. 3. Holding onto the remaining stock until the end can secure the buyback value and avoid potential losses.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 27,
+        "timestamp": "2025-01-11 12:01:55",
+        "forecast": [
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 487.17,
+            "stock_value": 48.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 23.12,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 12.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 21,
+            "round_finished": true
+        },
+        "plan": "1. Continue holding the remaining stock to secure the buyback value at the end of the experiment. 2. Submit conservative buy orders at the current market price or slightly above to take advantage of any potential rebound. 3. Adjust price forecasts based on the observed downward trend to maximize earnings from cash rewards.",
+        "insight": "1. The market price has been declining steadily, indicating a significant sell-off by participants. 2. Holding onto the remaining stock until the end can secure the buyback value and avoid potential losses. 3. Conservative buy orders at the current market price or slightly above may be beneficial given the recent trend.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 28,
+        "timestamp": "2025-01-11 12:04:47",
+        "forecast": [
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": "13"
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": "13"
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f2",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 488.73,
+            "stock_value": 72.0,
+            "dividend_earned": 2.4,
+            "interest_earned": 23.16,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 12.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 20,
+            "round_finished": true
+        },
+        "plan": "1. Continue holding the remaining stock to secure the buyback value at the end of the experiment. 2. Submit conservative buy orders at the current market price or slightly above to take advantage of any potential rebound. 3. Adjust price forecasts based on the observed downward trend to maximize earnings from cash rewards. 4. Focus on accumulating cash through interest earnings and conservative trading.",
+        "insight": "1. The market price has been declining steadily, indicating a significant sell-off by participants. 2. Holding onto the remaining stock until the end can secure the buyback value and avoid potential losses. 3. Conservative buy orders at the current market price or slightly above may be beneficial given the recent trend. 4. Accumulating cash through interest earnings can provide a steady income stream, especially if trading opportunities are limited.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 29,
+        "timestamp": "2025-01-11 12:07:31",
+        "forecast": [
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 13
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 539.97,
+            "stock_value": 48.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 25.64,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 12.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 19,
+            "round_finished": true
+        },
+        "plan": "1. Continue holding the remaining stock to secure the buyback value at the end of the experiment. 2. Submit aggressive sell orders at the current market price or slightly below to take advantage of any potential rebound. 3. Adjust price forecasts based on the observed downward trend to maximize earnings from cash rewards. 4. Focus on accumulating cash through interest earnings and conservative trading.",
+        "insight": "1. The market price has been declining steadily, indicating a significant sell-off by participants. 2. Holding onto the remaining stock until the end can secure the buyback value and avoid potential losses. 3. Aggressive sell orders at the current market price or slightly below may be beneficial given the recent trend. 4. Accumulating cash through interest earnings can provide a steady income stream, especially if trading opportunities are limited.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 30,
+        "timestamp": "2025-01-11 12:10:18",
+        "forecast": [
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 12
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": 12
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 594.17,
+            "stock_value": 24.0,
+            "dividend_earned": 2.0,
+            "interest_earned": 28.2,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 12.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 12,
+            "round_finished": true
+        },
+        "plan": "1. Submit aggressive sell orders at the current market price or slightly above to liquidate remaining stock. 2. Focus on accumulating cash through interest earnings and conservative trading. 3. Adjust price forecasts based on the observed downward trend to maximize earnings from cash rewards.",
+        "insight": "1. The market price has declined significantly, indicating a strong sell-off by participants. 2. Holding onto the remaining stock until the end can secure the buyback value and avoid potential losses. 3. Aggressive sell orders at the current market price or slightly above may be beneficial given the recent trend. 4. Accumulating cash through interest earnings can provide a steady income stream, especially if trading opportunities are limited.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 31,
+        "timestamp": "2025-01-11 12:13:05",
+        "forecast": [
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": null
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 25,
+                "field": "f1",
+                "input_forecast": null
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 649.08,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 30.91,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 12.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 11.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 2,
+                    "price": 12.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Aggressively sell the remaining stock at the current market price or slightly below to ensure liquidation before the end of the experiment. 2. Focus on accumulating cash through interest earnings in the final rounds. 3. Adjust price forecasts based on the observed downward trend to maximize earnings from cash rewards.",
+        "insight": "1. The market price has declined significantly, indicating a strong sell-off by participants. 2. Holding onto the remaining stock until the end can secure the buyback value and avoid potential losses. 3. Aggressive sell orders at the current market price or slightly below may be beneficial given the recent trend. 4. Accumulating cash through interest earnings can provide a steady income stream, especially if trading opportunities are limited.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 32,
+        "timestamp": "2025-01-11 12:15:53",
+        "forecast": [
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 12
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 681.53,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 32.45,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 0,
+                    "price": 0.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 0,
+                    "price": 0.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 12.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 11,
+            "round_finished": true
+        },
+        "plan": "1. Focus on accumulating cash through interest earnings. 2. Submit conservative price forecasts based on the observed downward trend. 3. Do not attempt to buy any shares as the market price is below the buyback price of 14 and the experiment is ending.",
+        "insight": "1. The market price has consistently declined in the last few rounds, indicating a strong sell-off by participants. 2. Holding onto cash is beneficial in the final rounds to maximize interest earnings. 3. Conservative price forecasting can help secure additional rewards.",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 33,
+        "timestamp": "2025-01-11 12:18:40",
+        "forecast": [
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 25,
+                "field": "f0",
+                "input_forecast": 12
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 715.61,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 34.08,
+            "submitted_orders": [
+                {
+                    "order_type": "NONE",
+                    "num_shares": 0,
+                    "price": 0.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 0,
+            "round_finished": true
+        },
+        "plan": "1. Focus on submitting accurate price forecasts to secure the additional reward. 2. No need to submit any buy or sell orders in the final round.",
+        "insight": "1. The market has shown a strong sell-off trend in the final rounds, with the price dropping to 12. 2. Holding cash in the final rounds has proven beneficial due to interest earnings. 3. Accurate price forecasting is crucial for earning additional rewards.",
+        "thought_observation": "None"
+    }
+]

@@ -1,0 +1,2087 @@
+[
+    {
+        "round_num": 1,
+        "timestamp": "2025-01-14 01:06:01",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 15
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 106.6,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.0,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 13.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on expected dividends and buyback price\n2. Look for opportunities to buy below fundamental value\n3. Test submitting orders on both sides of the market to understand price formation\n4. Monitor how other participants value the asset",
+        "insight": "1. Stock has two sources of value: dividends and final buyback\n2. Expected dividend per period is 0.7 ((0.4 + 1.0)/2)\n3. Current price equals final buyback value, suggesting market might be fairly priced\n4. Need to consider opportunity cost between 5% interest on cash vs. expected dividend returns",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 2,
+        "timestamp": "2025-01-14 01:09:54",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 113.53,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 5.33,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 0,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on expected dividends and buyback price\n2. Look for opportunities to buy below fundamental value\n3. Test submitting orders on both sides of the market to understand price formation\n4. Monitor how other participants value the asset\n5. Keep some cash available to earn interest while maintaining stock position for dividends",
+        "insight": "1. Stock has two sources of value: dividends and final buyback\n2. Expected dividend per period is 0.7 ((0.4 + 1.0)/2)\n3. Current price equals final buyback value + expected future dividends\n4. Need to consider opportunity cost between 5% interest on cash vs. expected dividend returns\n5. Market seems to be pricing in both dividend potential and final buyback value",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 3,
+        "timestamp": "2025-01-14 01:13:51",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 123.21,
+            "stock_value": 58.0,
+            "dividend_earned": 4.0,
+            "interest_earned": 5.68,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 0,
+            "round_finished": true
+        },
+        "plan": "1. Calculate fundamental value based on expected dividends and buyback price\n2. Look for opportunities to buy below fundamental value\n3. Test submitting orders on both sides of the market to understand price formation\n4. Monitor how other participants value the asset\n5. Keep some cash available to earn interest while maintaining stock position for dividends\n6. Consider reducing stock position if price rises significantly above fundamental value",
+        "insight": "1. Stock has two sources of value: dividends and final buyback\n2. Expected dividend per period is 0.7 ((0.4 + 1.0)/2)\n3. Current price equals final buyback value + expected future dividends\n4. Need to consider opportunity cost between 5% interest on cash vs. expected dividend returns\n5. Market seems to be pricing in both dividend potential and final buyback value\n6. Market price has shown stability around 15, suggesting possible equilibrium",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 4,
+        "timestamp": "2025-01-14 01:24:14",
+        "forecast": [
+            {
+                "forecasted_round": 1,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 17
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 79.5,
+            "stock_value": 90.0,
+            "dividend_earned": 6.0,
+            "interest_earned": 3.5,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 2,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period based on remaining dividends + buyback\n2. Look for opportunities to buy below 15 given current fundamental value\n3. Maintain sufficient cash buffer for interest earnings and future opportunities\n4. Place orders on both sides of market but focus on buying at current prices\n5. Monitor trading volume and price trends for market sentiment\n6. Begin reducing stock position as we approach final rounds",
+        "insight": "1. Stock fundamental value = remaining expected dividends + final buyback\n2. Current price appears below fundamental value suggesting buying opportunity\n3. Market showing stability around 14-15 range in practice rounds\n4. Low trading volume suggests possible lack of market consensus\n5. Need to balance immediate trading opportunities with long-term value\n6. Consider impact of 5% interest rate when calculating true fundamental value",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 5,
+        "timestamp": "2025-01-14 01:28:16",
+        "forecast": [
+            {
+                "forecasted_round": 2,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 85.88,
+            "stock_value": 90.0,
+            "dividend_earned": 2.4,
+            "interest_earned": 3.98,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period based on remaining dividends + buyback\n2. Look for opportunities to buy below 15 given current fundamental value\n3. Maintain sufficient cash buffer for interest earnings and future opportunities\n4. Place orders on both sides of market but focus on defensive selling given current position\n5. Monitor trading volume and price trends for market sentiment\n6. Begin reducing stock position as we approach final rounds\n7. Consider impact of interest rate when evaluating stock vs cash holdings",
+        "insight": "1. Stock fundamental value = remaining expected dividends + final buyback\n2. Active trading volume in Round 1 suggests good market liquidity\n3. Market price holding steady at 15 indicates possible equilibrium level\n4. Current position of 6 shares provides good dividend exposure\n5. Need to balance immediate trading opportunities with long-term value\n6. Consider impact of 5% interest rate when calculating true fundamental value\n7. Important to maintain some cash buffer for future opportunities",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 6,
+        "timestamp": "2025-01-14 01:32:14",
+        "forecast": [
+            {
+                "forecasted_round": 3,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 92.57,
+            "stock_value": 90.0,
+            "dividend_earned": 2.4,
+            "interest_earned": 4.29,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period based on remaining dividends + buyback\n2. Look for opportunities to buy below 15 given current fundamental value\n3. Maintain sufficient cash buffer for interest earnings and future opportunities\n4. Place orders on both sides of market to capture price movements\n5. Monitor trading volume and price trends for market sentiment\n6. Begin reducing stock position as we approach final rounds\n7. Consider impact of interest rate when evaluating stock vs cash holdings\n8. Be prepared to adjust strategy if market shows significant price movements",
+        "insight": "1. Stock fundamental value = remaining expected dividends + final buyback\n2. Market showing consistent trading volume suggesting good liquidity\n3. Price stability around 15 indicates rational market pricing\n4. Current position of 6 shares provides good dividend exposure while maintaining cash buffer\n5. Need to balance immediate trading opportunities with long-term value\n6. 5% interest rate provides good alternative return on cash holdings\n7. Important to maintain flexibility for future opportunities\n8. Recent trades at 15 suggest market participants value stock near fundamental value",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 7,
+        "timestamp": "2025-01-14 01:36:10",
+        "forecast": [
+            {
+                "forecasted_round": 4,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 103.2,
+            "stock_value": 90.0,
+            "dividend_earned": 6.0,
+            "interest_earned": 4.63,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period based on remaining dividends + buyback\n2. Look for opportunities to buy below 15 given current fundamental value\n3. Maintain sufficient cash buffer for interest earnings and future opportunities\n4. Place orders on both sides of market to capture price movements\n5. Monitor trading volume and price trends for market sentiment\n6. Begin reducing stock position as we approach final rounds\n7. Consider impact of interest rate when evaluating stock vs cash holdings\n8. Be prepared to adjust strategy if market shows significant price movements",
+        "insight": "1. Stock fundamental value = remaining expected dividends + final buyback\n2. Market showing consistent trading volume suggesting good liquidity\n3. Price stability around 15 indicates rational market pricing\n4. Current position of 6 shares provides good dividend exposure while maintaining cash buffer\n5. Need to balance immediate trading opportunities with long-term value\n6. 5% interest rate provides good alternative return on cash holdings\n7. Important to maintain flexibility for future opportunities\n8. Trading volume suggests participants actively managing positions",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 8,
+        "timestamp": "2025-01-14 01:40:09",
+        "forecast": [
+            {
+                "forecasted_round": 5,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 114.36,
+            "stock_value": 90.0,
+            "dividend_earned": 6.0,
+            "interest_earned": 5.16,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 8,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period based on remaining dividends + buyback\n2. Look for opportunities to buy below 15 given current fundamental value\n3. Maintain sufficient cash buffer for interest earnings and future opportunities\n4. Place orders on both sides of market to capture price movements\n5. Monitor trading volume and price trends for market sentiment\n6. Begin reducing stock position after round 20\n7. Consider impact of interest rate when evaluating stock vs cash holdings\n8. Be prepared to adjust strategy if market shows significant price movements",
+        "insight": "1. Stock fundamental value = remaining expected dividends + final buyback\n2. Market showing consistent trading volume suggesting good liquidity\n3. Price stability around 15 indicates rational market pricing\n4. Current position of 6 shares provides good dividend exposure while maintaining cash buffer\n5. Need to balance immediate trading opportunities with long-term value\n6. 5% interest rate provides good alternative return on cash holdings\n7. Important to maintain flexibility for future opportunities\n8. Trading volume and price stability suggests well-functioning market",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 9,
+        "timestamp": "2025-01-14 01:44:12",
+        "forecast": [
+            {
+                "forecasted_round": 6,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "16"
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "16"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 126.08,
+            "stock_value": 90.0,
+            "dividend_earned": 6.0,
+            "interest_earned": 5.72,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period based on remaining dividends + buyback\n2. Look for opportunities to buy below 15 given current fundamental value\n3. Maintain sufficient cash buffer for interest earnings and future opportunities\n4. Place balanced orders on both sides to capture price movements\n5. Monitor trading volume and price trends for market sentiment\n6. Begin reducing stock position after round 20\n7. Consider impact of interest rate when evaluating stock vs cash holdings\n8. Target gradual position increase if prices remain stable below fundamental value",
+        "insight": "1. Stock fundamental value = remaining expected dividends + final buyback\n2. Market showing consistent trading volume and price stability around 15\n3. Current position of 6 shares provides good dividend exposure while maintaining cash buffer\n4. Need to balance immediate trading opportunities with long-term value\n5. 5% interest rate provides meaningful return on cash holdings\n6. Market price below theoretical value suggests potential upside\n7. Trading volume indicates sufficient liquidity for position adjustments\n8. Important to maintain flexibility for future opportunities",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 10,
+        "timestamp": "2025-01-14 01:48:03",
+        "forecast": [
+            {
+                "forecasted_round": 7,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 134.78,
+            "stock_value": 90.0,
+            "dividend_earned": 2.4,
+            "interest_earned": 6.3,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period based on remaining dividends + buyback\n2. Look for opportunities to buy below 15 given current fundamental value\n3. Maintain sufficient cash buffer for interest earnings and future opportunities\n4. Place balanced orders on both sides to capture price movements\n5. Monitor trading volume and price trends for market sentiment\n6. Begin reducing stock position after round 20\n7. Consider impact of interest rate when evaluating stock vs cash holdings\n8. Target gradual position increase if prices remain stable below fundamental value",
+        "insight": "1. Stock fundamental value = remaining expected dividends + final buyback\n2. Market showing consistent trading volume and price stability around 15\n3. Current position of 6 shares provides good dividend exposure while maintaining cash buffer\n4. Trading volume indicates healthy market liquidity\n5. 5% interest rate provides meaningful return on cash holdings\n6. Market price slightly below theoretical value suggests potential upside\n7. Need to start planning exit strategy as we approach later rounds\n8. Balanced approach working well with current portfolio mix",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 11,
+        "timestamp": "2025-01-14 01:52:04",
+        "forecast": [
+            {
+                "forecasted_round": 8,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 16
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 16
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 143.92,
+            "stock_value": 90.0,
+            "dividend_earned": 2.4,
+            "interest_earned": 6.74,
+            "submitted_orders": [
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                },
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period based on remaining dividends + buyback\n2. Look for opportunities to buy below 15 given current fundamental value\n3. Maintain sufficient cash buffer for interest earnings and future opportunities\n4. Place balanced orders on both sides to capture price movements\n5. Monitor trading volume and price trends for market sentiment\n6. Begin reducing stock position after round 20\n7. Consider impact of interest rate when evaluating stock vs cash holdings\n8. Target gradual position increase if prices remain stable below fundamental value",
+        "insight": "1. Stock fundamental value = remaining expected dividends + final buyback\n2. Market showing consistent trading volume and price stability around 15\n3. Current position of 6 shares provides good dividend exposure while maintaining cash buffer\n4. Trading volume indicates healthy market liquidity\n5. 5% interest rate provides meaningful return on cash holdings\n6. Market price below theoretical value suggests potential upside\n7. Need to start planning exit strategy as we approach later rounds\n8. Balanced approach working well with current portfolio mix",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 12,
+        "timestamp": "2025-01-14 01:56:04",
+        "forecast": [
+            {
+                "forecasted_round": 9,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 6,
+            "current_cash": 153.52,
+            "stock_value": 90.0,
+            "dividend_earned": 2.4,
+            "interest_earned": 7.2,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 16.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period based on remaining dividends + buyback\n2. Look for opportunities to buy below 14.5 given current fundamental value\n3. Maintain sufficient cash buffer for interest earnings\n4. Place balanced orders on both sides but with slight sell bias\n5. Monitor trading volume and price trends\n6. Begin reducing stock position after round 20\n7. Consider impact of interest rate when evaluating holdings\n8. Target gradual position decrease if prices remain above fundamental value",
+        "insight": "1. Stock fundamental value ~14.7 with 21 rounds remaining\n2. Market showing remarkable price stability at 15\n3. Current position of 6 shares provides good dividend exposure while maintaining cash\n4. Trading volume indicates healthy market liquidity\n5. 5% interest rate providing meaningful return on growing cash position\n6. Market price slightly above theoretical value suggests slight overvaluation\n7. Need to start planning gradual exit strategy as we approach later rounds\n8. Balanced approach working well but shifting to slight sell bias",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 13,
+        "timestamp": "2025-01-14 02:00:01",
+        "forecast": [
+            {
+                "forecasted_round": 10,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 5,
+            "current_cash": 181.95,
+            "stock_value": 75.0,
+            "dividend_earned": 5.0,
+            "interest_earned": 8.43,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Calculate and update fundamental value each period (currently ~14)\n2. Look for opportunities to sell above 15 given slight overvaluation\n3. Maintain balanced position with gradual reduction in stock exposure\n4. Place limit orders on both sides but with stronger sell bias\n5. Monitor trading volume and price stability\n6. Target 4-5 shares position over next few rounds\n7. Maximize interest earnings on growing cash position\n8. Be prepared to adjust strategy if price deviates from 15",
+        "insight": "1. Stock fundamental value ~14 with 20 rounds remaining\n2. Market showing strong price stability at 15\n3. Current position of 6 shares slightly high given remaining rounds\n4. Trading volume remains healthy at 5-8 shares per round\n5. Growing cash position (153.52) providing meaningful interest returns\n6. Market price above fundamental value suggests gradual selling\n7. Wide spreads (14-16) limiting trading opportunities\n8. Need disciplined exit strategy over remaining rounds",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 14,
+        "timestamp": "2025-01-14 02:04:02",
+        "forecast": [
+            {
+                "forecasted_round": 11,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 208.4,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 9.85,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue gradual reduction of stock position to 3-4 shares\n2. Place limit orders to sell at 15-16 range\n3. Only consider buying if price drops below 14\n4. Focus on maximizing interest earnings from growing cash position\n5. Monitor price stability and volume patterns\n6. Maintain disciplined exit strategy as we approach final rounds\n7. Consider more aggressive selling if price remains above 15\n8. Target complete exit above 14 by round 25",
+        "insight": "1. Successfully reduced position to 5 shares at good price (15)\n2. Strong cash position (181.95) generating meaningful interest\n3. Market showing continued stability at 15 despite consistent volume\n4. Fundamental value declining with 19 rounds remaining\n5. Trading volume remains healthy at 4-8 shares per round\n6. Price remaining above fundamental value supports continued selling\n7. Last round's execution shows willingness to trade at 15\n8. Current position better aligned with remaining rounds",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 15,
+        "timestamp": "2025-01-14 02:08:01",
+        "forecast": [
+            {
+                "forecasted_round": 12,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 220.42,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 10.42,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue reducing stock position to 2-3 shares\n2. Place limit orders to sell at 15\n3. Only consider buying if price drops below 14\n4. Focus on maximizing interest earnings from growing cash position\n5. Monitor price stability and volume patterns\n6. Maintain disciplined exit strategy as we approach final rounds\n7. Consider more aggressive selling if price remains above fundamental value\n8. Target complete exit above 14 by round 25",
+        "insight": "1. Successfully reduced position to 4 shares at good prices (15)\n2. Very strong cash position (208.4) generating substantial interest\n3. Market showing continued stability at 15 with consistent volume\n4. Fundamental value declining with 18 rounds remaining\n5. Trading volume remains healthy at 4-7 shares per round\n6. Price remaining above fundamental value supports continued selling\n7. Interest earnings growing significantly (9.85 last round)\n8. Current position well-aligned with remaining rounds",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 16,
+        "timestamp": "2025-01-14 02:12:02",
+        "forecast": [
+            {
+                "forecasted_round": 13,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 4,
+            "current_cash": 233.04,
+            "stock_value": 60.0,
+            "dividend_earned": 1.6,
+            "interest_earned": 11.02,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue reducing stock position to 2-3 shares\n2. Place limit orders to sell at 15\n3. Only consider buying if price drops below 13.5\n4. Focus on maximizing interest earnings from growing cash position\n5. Monitor price stability and volume patterns\n6. Maintain disciplined exit strategy as we approach final rounds\n7. Consider more aggressive selling if price remains above fundamental value\n8. Target complete exit above 14 by round 25",
+        "insight": "1. Successfully reduced position to 4 shares at good prices (15)\n2. Very strong cash position (220.42) generating substantial interest\n3. Market showing continued stability at 15 with consistent volume\n4. Fundamental value declining with 17 rounds remaining\n5. Trading volume remains healthy at 4-7 shares per round\n6. Price remaining above fundamental value supports continued selling\n7. Interest earnings growing significantly (10.42 last round)\n8. Current position well-aligned with exit strategy",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 17,
+        "timestamp": "2025-01-14 02:15:58",
+        "forecast": [
+            {
+                "forecasted_round": 14,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 3,
+            "current_cash": 263.44,
+            "stock_value": 45.0,
+            "dividend_earned": 3.0,
+            "interest_earned": 12.4,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Continue reducing stock position to 2-3 shares\n2. Place limit orders to sell at 15\n3. Only consider buying if price drops below 13.5\n4. Focus on maximizing interest earnings from growing cash position\n5. Monitor price stability and volume patterns\n6. Maintain disciplined exit strategy as we approach final rounds\n7. Consider more aggressive selling if price remains above fundamental value\n8. Target complete exit above 14 by round 25",
+        "insight": "1. Successfully reduced position to 4 shares at good prices (15)\n2. Very strong cash position (233.04) generating substantial interest\n3. Market showing continued stability at 15 with consistent volume\n4. Fundamental value declining with 16 rounds remaining\n5. Trading volume remains healthy at 4-7 shares per round\n6. Price remaining above fundamental value supports continued selling\n7. Interest earnings growing significantly (11.02 last round)\n8. Current position well-aligned with exit strategy",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 18,
+        "timestamp": "2025-01-14 02:19:54",
+        "forecast": [
+            {
+                "forecasted_round": 15,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 15
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 2,
+            "current_cash": 294.36,
+            "stock_value": 30.0,
+            "dividend_earned": 2.0,
+            "interest_earned": 13.92,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Continue reducing stock position to 2 shares\n2. Place limit orders to sell at 15\n3. Only consider buying if price drops below 13.5\n4. Focus on maximizing interest earnings from growing cash position\n5. Monitor price stability and volume patterns\n6. Maintain disciplined exit strategy as we approach final rounds\n7. Consider more aggressive selling if price remains above fundamental value\n8. Target complete exit above 14 by round 25",
+        "insight": "1. Successfully reduced position to 3 shares at good prices (15)\n2. Very strong cash position (263.44) generating substantial interest\n3. Market showing continued stability at 15 with consistent volume\n4. Fundamental value declining with 15 rounds remaining\n5. Trading volume remains healthy at 4-7 shares per round\n6. Price remaining above fundamental value supports continued selling\n7. Interest earnings growing significantly (12.40 last round)\n8. Current position well-aligned with exit strategy",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 19,
+        "timestamp": "2025-01-14 02:23:57",
+        "forecast": [
+            {
+                "forecasted_round": 16,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 325.23,
+            "stock_value": 15.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 15.47,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 15.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Continue reducing stock position to 1 share by round 20\n2. Place limit orders to sell at 15\n3. Only consider buying if price drops below 13\n4. Focus on maximizing interest earnings from growing cash position\n5. Monitor price stability and volume patterns\n6. Maintain disciplined exit strategy as we approach final rounds\n7. Target complete exit above 14 by round 25\n8. Avoid any buying unless extreme price drops occur",
+        "insight": "1. Successfully reduced position to 2 shares at good prices (15)\n2. Very strong cash position (294.36) generating substantial interest\n3. Market showing continued stability at 15 with consistent volume\n4. Fundamental value declining with 14 rounds remaining\n5. Trading volume remains healthy at 4-7 shares per round\n6. Interest earnings growing significantly (13.92 last round)\n7. Current position well-aligned with exit strategy\n8. Market price persistently above fundamental value",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 20,
+        "timestamp": "2025-01-14 02:27:55",
+        "forecast": [
+            {
+                "forecasted_round": 17,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "15"
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 342.49,
+            "stock_value": 14.5,
+            "dividend_earned": 1.0,
+            "interest_earned": 16.26,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.5,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 0,
+            "round_finished": true
+        },
+        "plan": "1. Aim to sell final share at 15 within next 5 rounds\n2. Place limit sell order at 15 to match recent execution prices\n3. Only consider buying if price drops below 13\n4. Focus on maximizing interest earnings from large cash position\n5. Monitor volume patterns for execution opportunities\n6. Maintain disciplined no-buy policy unless extreme price drops occur\n7. Avoid any positions in final 5 rounds\n8. Target 100% cash position by round 25",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (325.23) generating substantial interest\n3. Market showing continued stability at 15 with healthy volume\n4. Fundamental value declining with 13 rounds remaining\n5. Trading volume remains consistent at 4-7 shares per round\n6. Interest earnings growing significantly (15.47 last round)\n7. Current minimal stock exposure aligns with exit strategy\n8. Price remains above fundamental value given remaining dividends",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 21,
+        "timestamp": "2025-01-14 02:31:54",
+        "forecast": [
+            {
+                "forecasted_round": 18,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 40,
+                "field": "f2",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 360.01,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 17.12,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Continue sell order at 15 for final share\n2. Avoid any buying above 13 given declining fundamental value\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor volume patterns for execution opportunities\n5. Maintain disciplined no-buy policy unless extreme price drops occur\n6. Target 100% cash position within next 5 rounds\n7. Avoid any positions in final 5 rounds\n8. Protect substantial interest earnings stream",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (342.49) generating substantial interest\n3. Market showing slight weakness with price dipping to 14.5\n4. Fundamental value declining with 12 rounds remaining\n5. Trading volume remains consistent at 4-7 shares per round\n6. Interest earnings growing significantly (16.26 last round)\n7. Current minimal stock exposure aligns with exit strategy\n8. Price remains above fundamental value given remaining dividends",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 22,
+        "timestamp": "2025-01-14 02:35:47",
+        "forecast": [
+            {
+                "forecasted_round": 19,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": "14"
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": "14"
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 378.41,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 18.0,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 1,
+            "round_finished": true
+        },
+        "plan": "1. Continue sell order at 15 for final share, consider accepting 14\n2. Avoid any buying above 13 given declining fundamental value\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor volume patterns for execution opportunities\n5. Maintain disciplined no-buy policy unless extreme price drops occur\n6. Target 100% cash position within next 3 rounds\n7. Avoid any positions in final 5 rounds\n8. Protect substantial interest earnings stream",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (360.01) generating substantial interest\n3. Market showing significant weakness with price dropping to 14.0\n4. Fundamental value declining with 11 rounds remaining\n5. Trading volume remains moderate at 4-5 shares per round\n6. Interest earnings growing significantly (17.12 last round)\n7. Current minimal stock exposure aligns with exit strategy\n8. Price now matches terminal value indicating market efficiency",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 23,
+        "timestamp": "2025-01-14 02:39:45",
+        "forecast": [
+            {
+                "forecasted_round": 20,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 45,
+                "field": "f3",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 397.73,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 18.92,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue sell order at 14.5-15 for final share\n2. No buying unless price drops below 13\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor volume patterns for execution opportunities\n5. Maintain disciplined no-buy policy\n6. Target 100% cash position within next 2 rounds\n7. Avoid any positions in final 5 rounds\n8. Protect substantial interest earnings stream",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (378.41) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Trading volume remains low but consistent\n5. Interest earnings growing significantly (18.0 last round)\n6. Current minimal stock exposure aligns with exit strategy\n7. Price matching terminal value indicates efficient market\n8. Strategy of gradual position reduction has proven effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 24,
+        "timestamp": "2025-01-14 02:43:48",
+        "forecast": [
+            {
+                "forecasted_round": 21,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 418.02,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 19.89,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 3,
+            "round_finished": true
+        },
+        "plan": "1. Continue sell order at 14.5-15 for final share\n2. No buying unless price drops below 13\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor volume patterns for execution opportunities\n5. Maintain disciplined no-buy policy\n6. Target 100% cash position within next 2 rounds\n7. Avoid any positions in final 5 rounds\n8. Protect substantial interest earnings stream",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (397.73) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Trading volume remains low but consistent\n5. Interest earnings growing significantly (18.92 last round)\n6. Current minimal stock exposure aligns with exit strategy\n7. Price matching terminal value indicates efficient market\n8. Strategy of gradual position reduction has proven effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 25,
+        "timestamp": "2025-01-14 02:47:45",
+        "forecast": [
+            {
+                "forecasted_round": 22,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 439.32,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 20.9,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Continue sell order at 14.5-15 for final share\n2. No buying unless price drops below 13\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor volume patterns for execution opportunities\n5. Maintain disciplined no-buy policy\n6. Target 100% cash position within next 2 rounds\n7. Avoid any positions in final 5 rounds\n8. Protect substantial interest earnings stream",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (418.02) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Trading volume remains low but consistent\n5. Interest earnings growing significantly (19.89 last round)\n6. Current minimal stock exposure aligns with exit strategy\n7. Price matching terminal value indicates efficient market\n8. Strategy of gradual position reduction has proven effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 26,
+        "timestamp": "2025-01-14 02:51:46",
+        "forecast": [
+            {
+                "forecasted_round": 23,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 461.69,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 21.97,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue sell order at 14.5-15 for final share\n2. No buying unless price drops below 13\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor volume patterns for execution opportunities\n5. Maintain disciplined no-buy policy\n6. Target 100% cash position within next 2 rounds\n7. Avoid any positions in final 5 rounds\n8. Protect substantial interest earnings stream",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (439.32) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Trading volume remains low but consistent\n5. Interest earnings growing significantly (20.90 last round)\n6. Current minimal stock exposure aligns with exit strategy\n7. Price matching terminal value indicates efficient market\n8. Strategy of gradual position reduction has proven effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 27,
+        "timestamp": "2025-01-14 02:55:45",
+        "forecast": [
+            {
+                "forecasted_round": 24,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 485.77,
+            "stock_value": 14.0,
+            "dividend_earned": 1.0,
+            "interest_earned": 23.08,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 15.0
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Continue sell order at 14.5-15 for final share\n2. No buying unless price drops below 13\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor volume patterns for execution opportunities\n5. Maintain disciplined no-buy policy\n6. Target 100% cash position within next 2 rounds\n7. Avoid any positions in final 5 rounds\n8. Protect substantial interest earnings stream",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (461.69) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Trading volume remains low but consistent\n5. Interest earnings growing significantly (21.97 last round)\n6. Current minimal stock exposure aligns with exit strategy\n7. Price matching terminal value indicates efficient market\n8. Strategy of gradual position reduction has proven effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 28,
+        "timestamp": "2025-01-14 02:59:48",
+        "forecast": [
+            {
+                "forecasted_round": 25,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 35,
+                "field": "f2",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 1,
+            "current_cash": 510.46,
+            "stock_value": 14.0,
+            "dividend_earned": 0.4,
+            "interest_earned": 24.29,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.5
+                },
+                {
+                    "order_type": "BUY",
+                    "num_shares": 1,
+                    "price": 13.0
+                }
+            ],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 6,
+            "round_finished": true
+        },
+        "plan": "1. Continue sell order at 14.5-15 for final share\n2. No buying unless price drops below 13\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor volume patterns for execution opportunities\n5. Maintain disciplined no-buy policy\n6. Target 100% cash position within next 2 rounds\n7. Avoid any positions in final 3 rounds\n8. Protect substantial interest earnings stream",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (485.77) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Trading volume remains low but consistent\n5. Interest earnings growing significantly (23.08 last round)\n6. Current minimal stock exposure aligns with exit strategy\n7. Price matching terminal value indicates efficient market\n8. Strategy of gradual position reduction has proven effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 29,
+        "timestamp": "2025-01-14 03:03:44",
+        "forecast": [
+            {
+                "forecasted_round": 26,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 550.68,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 26.22,
+            "submitted_orders": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "executed_trades": [
+                {
+                    "order_type": "SELL",
+                    "num_shares": 1,
+                    "price": 14.0
+                }
+            ],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 7,
+            "round_finished": true
+        },
+        "plan": "1. Continue sell order at 14.5 for final share\n2. No buying unless price drops below 13\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor volume patterns for execution opportunities\n5. Maintain disciplined no-buy policy\n6. Target 100% cash position within next 2 rounds\n7. Avoid any positions in final 3 rounds\n8. Protect substantial interest earnings stream",
+        "insight": "1. Successfully reduced position to 1 share through disciplined selling\n2. Very strong cash position (510.46) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Trading volume remains low but consistent\n5. Interest earnings growing significantly (24.29 last round)\n6. Current minimal stock exposure aligns with exit strategy\n7. Price matching terminal value indicates efficient market\n8. Strategy of gradual position reduction has proven effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 30,
+        "timestamp": "2025-01-14 03:07:44",
+        "forecast": [
+            {
+                "forecasted_round": 27,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 578.21,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 27.53,
+            "submitted_orders": [],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Maintain 100% cash position through final rounds\n2. No new buying under any circumstances\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor market activity but avoid taking new positions\n5. Protect substantial interest earnings stream\n6. Stay disciplined with exit strategy through final rounds",
+        "insight": "1. Successfully achieved 100% cash position ahead of final rounds\n2. Very strong cash position (550.68) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Interest earnings significant (26.22 last round)\n5. Current zero stock exposure optimal for end-game\n6. Strategy of gradual position reduction proved highly effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 31,
+        "timestamp": "2025-01-14 03:11:41",
+        "forecast": [
+            {
+                "forecasted_round": 28,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            },
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f1",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 607.12,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 28.91,
+            "submitted_orders": [],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 5,
+            "round_finished": true
+        },
+        "plan": "1. Maintain 100% cash position through final rounds\n2. No new buying under any circumstances\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor market activity but avoid taking new positions\n5. Protect substantial interest earnings stream\n6. Stay disciplined with exit strategy through final rounds",
+        "insight": "1. Successfully achieved 100% cash position ahead of final rounds\n2. Very strong cash position (578.21) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Interest earnings significant (27.53 last round)\n5. Current zero stock exposure optimal for end-game\n6. Strategy of gradual position reduction proved highly effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 32,
+        "timestamp": "2025-01-14 03:15:42",
+        "forecast": [
+            {
+                "forecasted_round": 29,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 637.48,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 30.36,
+            "submitted_orders": [],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 14.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 4,
+            "round_finished": true
+        },
+        "plan": "1. Maintain 100% cash position through final rounds\n2. No new buying under any circumstances\n3. Focus on maximizing interest earnings from large cash position\n4. Monitor market activity but avoid taking new positions\n5. Protect substantial interest earnings stream\n6. Stay disciplined with exit strategy through final rounds",
+        "insight": "1. Successfully achieved 100% cash position ahead of final rounds\n2. Very strong cash position (607.12) generating substantial interest\n3. Market showing stability at 14.0, matching terminal value\n4. Interest earnings significant (28.91 last round)\n5. Current zero stock exposure optimal for end-game\n6. Strategy of gradual position reduction proved highly effective",
+        "thought_observation": "None"
+    },
+    {
+        "round_num": 33,
+        "timestamp": "2025-01-14 03:19:36",
+        "forecast": [
+            {
+                "forecasted_round": 30,
+                "lb": 0,
+                "ub": 30,
+                "field": "f0",
+                "input_forecast": 14
+            }
+        ],
+        "risk_selections": [],
+        "portfolio_state": {
+            "num_shares": 0,
+            "current_cash": 669.35,
+            "stock_value": 0.0,
+            "dividend_earned": 0.0,
+            "interest_earned": 31.87,
+            "submitted_orders": [],
+            "executed_trades": [],
+            "round_finished": true
+        },
+        "market_state": {
+            "market_price": 13.0,
+            "interest_rate": "5%",
+            "dividends": "0.4 or 1.0",
+            "buy_back": 14.0,
+            "volume": 2,
+            "round_finished": true
+        },
+        "plan": "1. Maintain 100% cash position for final round\n2. No trading needed as terminal round approaches\n3. Focus on final interest earnings from large cash position\n4. No need for new plans as experiment concludes",
+        "insight": "1. Successfully maintained 100% cash position through end\n2. Final cash position (637.48) extremely strong\n3. Market price stable at 14.0 through closing rounds\n4. Strategy of early position reduction proved optimal\n5. Significant interest earnings (30.36 last round) validated cash-focused approach",
+        "thought_observation": "None"
+    }
+]
