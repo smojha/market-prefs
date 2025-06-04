@@ -1480,3 +1480,19 @@ page_sequence = [#GroupingWaitPage,
                  RiskPage4,
                  FinalResultsPage,
 ]
+
+def set_round_parameters(group, interest_rate=None, div_amounts=None, div_dist=None):
+    """
+    Set round-specific parameter values for a group.
+    Args:
+        group: The group to set parameters for
+        interest_rate: Optional float for the round's interest rate
+        div_amounts: Optional string of space-separated dividend amounts (e.g. "0.40 1.00")
+        div_dist: Optional string of space-separated dividend probabilities (e.g. ".5 .5")
+    """
+    if interest_rate is not None:
+        group.round_interest_rate = float(interest_rate)
+    if div_amounts is not None:
+        group.round_div_amounts = str(div_amounts)
+    if div_dist is not None:
+        group.round_div_dist = str(div_dist)
