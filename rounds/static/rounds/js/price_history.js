@@ -100,7 +100,20 @@ window.onload = function() {
         }
     });
 
+    // Make function to fetch market history data
+    window.fetchMarketHistory = function() {
+        let market_history = {
+            source: 'market_history',
+            num_periods: num_periods,
+            labels: labels,
+            prices: price_data,
+            volumes: volume_data
+        };
+        return market_history;
+    }
+
     let market_history = {
+        source: 'market_history',
         num_periods: num_periods,
         labels: labels,
         prices: price_data,
@@ -108,5 +121,4 @@ window.onload = function() {
     };
 
     console.log(JSON.stringify(market_history, null, 2));
-    console.log('Price history loaded');
 }

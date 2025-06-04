@@ -40,7 +40,13 @@
         });
         "{{ endfor }}"
 
-        console.log(JSON.stringify(inputs, null, 2));
+        // Make a JSON object containing a source label and inputs
+        const forecastData = {
+            subsource: "forecast_form",
+            inputs: inputs
+        };
+
+        return forecastData;
     }
 
 
@@ -76,6 +82,6 @@
     // Example of calling the function (e.g., on form submission or button click)
     // For demo, calling it immediately after the page loads
     document.addEventListener("DOMContentLoaded", function() {
-        gatherForecastData();
+        console.log(JSON.stringify(gatherForecastData(), null, 2));
     });
 </script>

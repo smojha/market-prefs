@@ -2,7 +2,7 @@ import random
 from collections import defaultdict
 
 from rounds.models import *
-from call_market_price2 import MarketPrice2, OrderFill2
+from call_market_price.src.call_market_price2 import MarketPrice2, OrderFill2
 from rounds.data_structs import DataForPlayer
 
 
@@ -59,7 +59,9 @@ class CallMarket:
         o = concat_or_null([self.offers, algo_offers])
 
         mp = MarketPrice2(b, o)
-        market_price, market_volume = mp.get_market_price()
+        mp_result = mp.get_market_price()
+        market_price, market_volume = mp_result if not isinstance(mp_result, float) else (mp_result, 0)
+
         # This can happen is there are no orders made
         # Set price to last price
         if market_price is None:

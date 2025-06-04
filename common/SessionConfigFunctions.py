@@ -54,6 +54,15 @@ def ensure_config(obj):
         return deepcopy(obj.session.config)
 
 
+def ensure_group(obj):
+    """Helper function to get group from various object types"""
+    if hasattr(obj, 'group'):
+        return obj.group
+    elif hasattr(obj, 'subsession'):
+        return obj.subsession.group
+    return obj
+
+
 def get_item_as_int(config, key, default=0, return_none=False):
     raw_value = config.get(key)
     if raw_value:
@@ -128,27 +137,56 @@ def get_margin_premium(obj, wnp=False):
         return get_item_as_float(config, SK_MARGIN_PREMIUM)
 
 
+def get_round_specific_value(value_str, obj):
+    """Helper function to get round-specific values from semicolon-separated strings"""
+    if not isinstance(value_str, str):
+        return str(value_str)
+        
+    values = value_str.split(';')
+    if len(values) == 1:
+        return value_str
+        
+    # Get round number from group
+    round_number = 1
+    if hasattr(obj, 'round_number'):
+        round_number = obj.round_number
+    elif hasattr(obj, 'group') and hasattr(obj.group, 'round_number'):
+        round_number = obj.group.round_number
+    elif isinstance(obj, dict) and 'round_number' in obj:
+        round_number = obj['round_number']
+    
+    # If round number exceeds available values, use the last value
+    index = min(round_number - 1, len(values) - 1)
+    if index < 0:
+        index = 0
+    return values[index]
+
+
+def get_interest_rate(obj):
+    config = ensure_config(obj)
+    value = config.get(SK_INTEREST_RATE)
+    round_value = get_round_specific_value(str(value), obj)
+    return float(round_value)
+
+
+def get_dividend_amount(obj):
+    config = ensure_config(obj)
+    value = config.get(SK_DIV_AMOUNT)
+    return get_round_specific_value(str(value), obj)
+
+
 def get_dividend_dist(obj):
     config = ensure_config(obj)
-    return config.get(SK_DIV_DIST)
+    value = config.get(SK_DIV_DIST)
+    return get_round_specific_value(str(value), obj)
 
 
 def get_dividend_probabilities(obj):
     return np.array([float(x) for x in get_dividend_dist(obj).split()])
 
 
-def get_dividend_amount(obj):
-    config = ensure_config(obj)
-    return config.get(SK_DIV_AMOUNT)
-
-
 def get_dividend_amounts(obj):
     return np.array([float(x) for x in get_dividend_amount(obj).split()])
-
-
-def get_interest_rate(obj):
-    config = ensure_config(obj)
-    return get_item_as_float(config, SK_INTEREST_RATE)
 
 
 def get_fundamental_value(obj):
@@ -163,6 +201,7 @@ def get_fundamental_value(obj):
         return 0
 
     return cu(exp / r)
+    # return 14
 
 
 def is_random_hist(obj):

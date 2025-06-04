@@ -26,6 +26,25 @@ Welcome to the Market Experiment.
         <div class="centered">
             <p>Do you wish to participate in the experiment?</p>
             <button name="consent_given" value="True" class="btn-look-alike">Next</button>
+            <script>
+                const consentPageData = {
+                    source: "consent_page"
+                }
+                console.log(JSON.stringify(consentPageData, null, 2));
+
+                // Define readPage() function
+                function readPage() {
+                    const consentPageData = {
+                        source: "consent_page"
+                    }
+                    return consentPageData;
+                }
+
+                // Make a function to simulate a click on the "Next" button to give consent
+                function giveConsent() {
+                    document.querySelector('.btn-look-alike').click();
+                }
+            </script>
         </div>
     </div>
     </div>

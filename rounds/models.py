@@ -80,6 +80,11 @@ class Group(BaseGroup):
     short = models.IntegerField()
     
     is_practice = models.BooleanField(initial=False)
+    
+    # Round-specific parameter fields
+    round_interest_rate = models.FloatField()
+    round_div_amounts = models.StringField()  # Store as space-separated values like "0.40 1.00"
+    round_div_dist = models.StringField()  # Store as space-separated values like ".5 .5"
 
     def in_round_or_none(self, round_number):
         try:
