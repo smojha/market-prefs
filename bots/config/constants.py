@@ -1,6 +1,3 @@
-NUM_INSTIGATOR_BOTS = 0
-LLM_MODEL_SPEC = "gpt-3.5-turbo-0125"
-
 SUPPORTED_LLM_MODELS = {
     "gpt-4o": {"model_name": "gpt-4o-2024-08-06", "service_provider": "OpenAI"},
     "gpt-3.5": {"model_name": "gpt-3.5-turbo-0125", "service_provider": "OpenAI"},
@@ -102,9 +99,3 @@ To summarize, here are the key points:
 - Market dynamics can change over time, so it is important to adapt your strategies as needed
 
 """
-
-data_folder = "bot-data/debug-runs"
-run_comments = "No comments provided"
-experiment_link = "No link provided" # default to no link provided
-
-# RunConfig(url='http://localhost:8000/SessionStartLinks/jo2g7edd', model_name='gpt-4o', production=True, message='gpt-4o experienced run 2/3', timeout_minutes=105, data_folder='bot-data/debug-runs', prod_folder='bot-data/production-runs')

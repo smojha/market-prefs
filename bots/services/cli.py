@@ -1,8 +1,5 @@
-# services/cli.py
 import argparse
 from typing import Sequence
-
-# Import ONLY from runner (not from main)
 from .runner import run_experiment, RunConfig
 
 def build_parser() -> argparse.ArgumentParser:

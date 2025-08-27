@@ -113,7 +113,6 @@ def fetch_llm_completion(prompt, model_name):
         completion = client.chat.completions.create(
             model=model,
             messages=[
-                # {"role": "system", "content": "You are Grok, a chatbot inspired by the Hitchhikers Guide to the Galaxy."},
                 {"role": "user", "content": prompt},
             ],
         )
@@ -126,7 +125,6 @@ def fetch_llm_completion(prompt, model_name):
         model_name = SUPPORTED_LLM_MODELS[model_name]["model_name"]
         model = genai.GenerativeModel(model_name)
         resp_obj = model.generate_content(prompt).text
-        # it often looks like a string with the ```json at the beginning and ``` at the end. we need to remove these before parsing the JSON
         resp_obj = resp_obj.replace('```json', '').replace('```', '')
         # turn resp_obj into a dictionary
         if isinstance(resp_obj, str):

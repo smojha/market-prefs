@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 class WindowManager:
     def __init__(self):
         self.driver = self.setup_driver()
@@ -37,7 +38,7 @@ class WindowManager:
 
         self.windows[bot_id] = window_handle
         self.command_queues[bot_id] = queue.Queue()
-        self.log_queues[bot_id] = queue.Queue()
+        self.log_queues[bot_id] = queue.Queue(maxsize=2) # keep things fresh
         print(f"Created window for Bot {bot_id}")
 
     def cycle_windows(self):

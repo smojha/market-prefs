@@ -2,7 +2,6 @@ import datetime
 from typing import List
 from bs4 import BeautifulSoup
 import requests
-import os
 
 class Forecast:
         class ForecastSelection:
