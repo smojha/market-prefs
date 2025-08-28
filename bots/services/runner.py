@@ -7,7 +7,7 @@ from domain.experiment import Experiment
 
 @dataclass
 class RunConfig:
-    url: str
+    url: str | None
     model_name: str
     production: bool
     message: str | None
@@ -17,15 +17,19 @@ class RunConfig:
     num_bots: int | None = None
 
 def run_experiment(cfg: RunConfig) -> None:
-    experiment_link = cfg.url.split('/')[-1]
-
     output_file = 'config/bot-links.cfg'
     current_model = cfg.model_name
 
     data_folder = cfg.prod_folder if cfg.production else cfg.data_folder
     run_comments = cfg.message if cfg.production else "No comments provided"
 
-    write_experiment_links_to_file(cfg.url, output_file)
+    if cfg.url:
+        experiment_link = cfg.url.split('/')[-1]
+        write_experiment_links_to_file(cfg.url, output_file)
+    else:
+        experiment_link = "manual"
+        print("No URL provided. Skipping experiment link fetch/write. "
+              "Make sure 'config/bot-links.cfg' is prepared manually.")
 
     if current_model == MIXED_BOT_TYPES:
         current_model = "Mixed Bot Types"

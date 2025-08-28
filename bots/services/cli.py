@@ -4,7 +4,9 @@ from .runner import run_experiment, RunConfig
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(description="Run the trading experiment.")
-    p.add_argument("url", type=str, help="URL to fetch experiment links from.")
+    p.add_argument("--url", type=str, default=None,
+                   help="URL to fetch experiment links from. If not provided, "
+                        "links will be read manually.")
     p.add_argument("model_name", type=str, help="Model name to use for the experiment.")
     p.add_argument("-p", "--production", action="store_true",
                    help="Use real-experiment-runs data folder.")
