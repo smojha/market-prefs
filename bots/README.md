@@ -39,7 +39,7 @@ source .venv/bin/activate
 ```
 
 ### 2. Install dependencies
-Activate .venv
+Activate .venv; likely source .venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
