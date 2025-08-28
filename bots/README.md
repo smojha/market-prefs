@@ -40,6 +40,7 @@ source .venv/bin/activate
 
 ### 2. Install dependencies
 ```bash
+Activate virtual .env
 pip install -r requirements.txt
 ```
 
