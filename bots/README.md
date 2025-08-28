@@ -76,14 +76,17 @@ Only the last `N` links in the config file become bots.
 If omitted, all subjects are bots by default.
 
 ## Examples
-Run a debug experiment with all bots:
+Please run the following commands from the `bots/` directory.
+Note that the session start links URL need nots be localhost
+(i.e. hosting using herokuapp) Run a debug experiment with
+all bots:
 ```bash
-python -m bots.main http://localhost:8000/SessionStartLinks/test123 gpt-4o
+python main.py http://localhost:8000/SessionStartLinks/test123 gpt-4o
 ```
 Run a production experiment with notes and only 4 bots:
 ```bash
-python -m bots.main http://localhost:8000/SessionStartLinks/jo2g7edd gpt-4o \
-  -p -m "gpt-4o 2/3" --num-bots 4
+python main.py http://localhost:8000/SessionStartLinks/jo2g7edd gpt-4o \
+  -p -m "SOME MESSAGE ABOUT THIS RUN" --num-bots 4
 ```
 
 ## Output & Data

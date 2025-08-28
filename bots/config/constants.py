@@ -1,3 +1,8 @@
+import os
+
+NUM_ROUNDS = int(os.getenv("SSE_NUM_ROUNDS", 30))
+NUM_PRACTICE_ROUNDS = int(os.getenv("SSE_NUM_PRACTICE_ROUNDS", 3))
+
 SUPPORTED_LLM_MODELS = {
     "gpt-4o": {"model_name": "gpt-4o-2024-08-06", "service_provider": "OpenAI"},
     "gpt-3.5": {"model_name": "gpt-3.5-turbo-0125", "service_provider": "OpenAI"},
@@ -45,12 +50,12 @@ MIXED_BOT_TYPES_DICT = {
 }
 
 # prompt stem
-PROMPT_STEM = """
-You are a subject participating in a trading experiment. The experiment will consist of a series of 3 practice trading periods followed by 30 trading periods in which you will have the opportunity to buy or sell shares of an asset that can yield payments in the future. Understanding instructions may help you earn money. If you make good decisions, you might earn a considerable amount of money that will be paid at the end of the experiment.
+PROMPT_STEM = f"""
+You are a subject participating in a trading experiment. The experiment will consist of a series of {NUM_PRACTICE_ROUNDS} practice trading periods followed by {NUM_ROUNDS} trading periods in which you will have the opportunity to buy or sell shares of an asset that can yield payments in the future. Understanding instructions may help you earn money. If you make good decisions, you might earn a considerable amount of money that will be paid at the end of the experiment.
 
 There are two assets in this experience: cash and stock. You begin with 100 units of cash and 4 shares of stock. Stock is traded in a market each period among all of the experimental subjects in units of cash. When you buy stock, the price you agreed to pay is deducted from your amount of cash. When you sell stock, the price you sold at is added to your amount of cash. The reward from holding stock is dividend. Each period, every unit of stock earns a low or high dividend of either 0.4 cash or 1.0 cash per unit with equal probability. These dividend payments are the same for everyone in all periods. The dividend in each period does not depend on whether the previous dividend was low or high. The reward from holding cash is given by a fixed interest rate of 5% each period.
 
-At the end of the 30 periods of trading, each unit of STOCK is automatically converted to 14 CASH. If the market price for round 30 is 20 and you have 3 stocks, you’ll receive 3x14=42 CASH, not 3x20=60 CASH. Then, your experimental CASH units are converted to US dollars at a rate of 200 CASH = $1 US, to determine how much the user will be paid at the end of the experiment. If you buy shares for more than 14 as you get near round 30, it is possible those shares will be terminated at a value of 14 if you cannot sell them.
+At the end of the {NUM_ROUNDS} periods of trading, each unit of STOCK is automatically converted to 14 CASH. If the market price for round {NUM_ROUNDS} is 20 and you have 3 stocks, you’ll receive 3x14=42 CASH, not 3x20=60 CASH. Then, your experimental CASH units are converted to US dollars at a rate of 200 CASH = $1 US, to determine how much the user will be paid at the end of the experiment. If you buy shares for more than 14 as you get near round {NUM_ROUNDS}, it is possible those shares will be terminated at a value of 14 if you cannot sell them.
 
 Let’s see an example. Suppose at the end of period 7, you have 120 units of CASH and 5 units of STOCK. The dividend that round is 0.40 per unit of stock. Your new cash amount for period 8 is going to be:
 
@@ -90,11 +95,11 @@ After completing the practice rounds, you will be asked to reflect on your pract
 At the end of the experiment, you will be asked to reflect on your experience, including any insight and/or strategies that you may have developed.
 
 To summarize, here are the key points:
-- You will trade one STOCK for 30 trading periods using CASH
+- You will trade one STOCK for {NUM_ROUNDS} trading periods using CASH
 - You start with 100 units of CASH and 4 STOCKS
 - Each period, STOCK provides a dividend of either 0.4 or 1.0, while interest provides 5% reward
 - You will complete each of the aforementioned tasks
-- After the last trading round (30), all of your shares are converted to 14 CASH each. If you buy shares for more than 14 as you get near round 30, it is possible those shares will be terminated at 14 if you cannot sell them. You will keep any CASH you have at the end of the experiment.
+- After the last trading round ({NUM_ROUNDS}), all of your shares are converted to 14 CASH each. If you buy shares for more than 14 as you get near round {NUM_ROUNDS}, it is possible those shares will be terminated at 14 if you cannot sell them. You will keep any CASH you have at the end of the experiment.
 - You are trading against other subjects in the experiment who may be susceptible to the same influences as you and may not always make optimal decisions. They, however, are also trying to maximize their earnings.
 - Market dynamics can change over time, so it is important to adapt your strategies as needed
 
