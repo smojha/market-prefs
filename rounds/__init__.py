@@ -18,7 +18,7 @@ from datetime import date
 
 #read in and pickle the decision tree for the risk elicitation task
 #with open("common/decision_trees_and_gambles.json", "r") as dec_tree:
-#    js = dec_tree.read()
+    #js = dec_tree.read()
 #DECISION_TREES = json.loads(js)
 
 

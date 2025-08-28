@@ -11,9 +11,9 @@ POST = requests.post
 
 # if using Heroku, change this to https://YOURAPP.herokuapp.com
 LOCAL_SERVER_URL = 'http://localhost:8000'
-SERVER_URL = 'https://vt-market-experiment.herokuapp.com'
+SERVER_URL = 'https://llmmarket-310495633edd.herokuapp.com'
 BASE_URL = [SERVER_URL]
-REST_KEY = "s+Uj_g5Zunap3?TfZ6uUQ7" #"environ.get('REST_FKEY')"
+REST_KEY = "sug9rD9dd!"
 
 COMP_URL_EXP = 'https://app.prolific.com/submissions/complete?cc=CT8QWJ3A'
 COMP_URL_PRE = 'https://app.prolific.com/submissions/complete?cc=C1BNU59M'
@@ -44,6 +44,9 @@ def make_exp(N, l, dist, is_hi, show_next, comp_url=COMP_URL_EXP):
         participation_fee = participation_fee,
         real_world_currency_per_point = 0.005,
         show_next = show_next,
+        market_time = 20,
+        forecast_time = 30,
+        summary_time = 10,
     )
     
     if is_hi:
@@ -59,6 +62,7 @@ def make_exp(N, l, dist, is_hi, show_next, comp_url=COMP_URL_EXP):
                 modified_session_config_fields=session_configs,
                 )
     exp_code = resp_exp_create['code']
+    room_url = resp_exp_create['room_url']
     resp_exp_check = check_session(exp_code)
     
     #Set the completion URL
@@ -66,6 +70,7 @@ def make_exp(N, l, dist, is_hi, show_next, comp_url=COMP_URL_EXP):
 
     
     # Create the landing session
+    session_configs['experiment_link'] = room_url
     resp_land_create = call_api(POST, 'sessions',
                 session_config_name='ctlanding',
                 room_name='CTlanding',
