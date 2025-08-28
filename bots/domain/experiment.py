@@ -47,7 +47,7 @@ class Experiment:
         with open(metadata_path, "a") as f:
             f.write(
                 f"{datetime.datetime.now()} | run-{run_num} | {current_model} | "
-                f"{num_subjects} subjects | {run_comments} | {experiment_link}\n"
+                f"{num_subjects} subjects | {num_bots} bots | {run_comments} | {experiment_link}\n"
             )
 
     def add_bot(self, bot: TradingAgent) -> None:

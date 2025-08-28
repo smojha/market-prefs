@@ -6,7 +6,7 @@ import time
 import math
 from adapters.llm import fetch_llm_completion
 from adapters.web_driver import WindowManager
-from config.constants import PROMPT_STEM
+from config.constants import PROMPT_STEM, NUM_ROUNDS, NUM_PRACTICE_ROUNDS
 from domain.market import Forecast, Round, Insight, ThoughtObservation, Plan, RiskSelection, PortfolioState, MarketState
 
 class TradingAgent:
@@ -64,24 +64,6 @@ class TradingAgent:
         self.window_manager.run_command(self.internal_id, f"pickLottery({current_risk_selection.selectedSafe()});")
 
     def make_forecast(self, page_round):
-        # Generate blank forecast selections based on the options
-        """ for i in page_round['forecast_data']['inputs']:
-            round = i['label']
-            if '(' in round:
-                round = int(round[round.find("(")+1:round.find(")")])
-            else:
-                round = int(round.split()[1])
-            self.current_round.forecast.addForecastSelection(Forecast.ForecastSelection(round, int(i['min']), int(i['max']), i['field']))
-
-        # TODO: add logic to make forecast selections
-        # START TEMP FORECAST LOGIC
-        # just pick the middle value for each forecast selection
-        for fs in self.current_round.forecast.forecast_selections:
-            fs.setInputForecast((fs.lb + fs.ub) // 2)
-        # END TEMP FORECAST LOGIC
-
-        self.gen_llm_forecast(page_round)
- """
         # forecasts have already been collected, and so just need to be input
         # execute forecast selection
         forecast_data = []
@@ -93,14 +75,14 @@ class TradingAgent:
         market_history = ""
         for round in history:
             round_id = round['round_num']
-            if round_id <= 3:
+            if round_id <= int(NUM_PRACTICE_ROUNDS):
                 round_id = "Practice Round " + str(round_id)
             else:
-                if round_id == 4:
+                if round_id == int(NUM_PRACTICE_ROUNDS) + 1:
                     market_history += f"""
         [Start Main Experiment Rounds]
         """
-                round_id = "Round " + str(round_id - 3)
+                round_id = "Round " + str(round_id - int(NUM_PRACTICE_ROUNDS))
             market_history += f"{round_id}:\n"
             market_history += f"""
         * Market + Portfolio Data:
@@ -153,8 +135,8 @@ class TradingAgent:
             current_round = self.current_round.round_num
             # adjust for practice rounds
             if current_round >= 4:
-                current_round -= 3
-            if current_round + gap > 30:
+                current_round -= int(NUM_PRACTICE_ROUNDS)
+            if int(current_round) + int(gap) > int(NUM_ROUNDS):
                 continue
             mult = 2
             if gap >= 5 and gap < 10:
@@ -259,57 +241,61 @@ class TradingAgent:
         self.current_round = Round(round_num + 1, None, [], None, None, None, None, None, self.model_used, self.internal_id)
 
     def is_valid_next_stage(self, page_read):
+        """
+        Validate and advance the experiment state machine without the risk page.
+        """
         nxt_source = {
-                'consent_page': ['begin_practice'],
-                'begin_practice': ['market_choice_page'],
-                'market_choice_page': ['forecast_page'],
-                'forecast_page': ['round_results_page'],
-                'round_results_page': ['risk_page'],
-                'risk_page': ['risk_page', 'market_choice_page', 'practice_results', 'final_results'],
-                'practice_results': ['end_practice'],
-                'end_practice': ['market_choice_page'],
-                'final_results': ['payment_page']
-            }
-        # check if contains 'source' key
+            'consent_page': ['begin_practice'],
+            'begin_practice': ['market_choice_page'],
+            'market_choice_page': ['forecast_page'],
+            'forecast_page': ['round_results_page'],
+            'round_results_page': ['market_choice_page', 'practice_results', 'final_results'],
+            'practice_results': ['end_practice'],
+            'end_practice': ['market_choice_page'],
+            'final_results': ['payment_page']
+        }
+
+        # Must contain 'source'
         if 'source' not in page_read:
             return False
+
         source = page_read['source']
-        if source == self.current_source and source != 'risk_page':
+
+        # Do not accept duplicate same-source events
+        if source == getattr(self, 'current_source', None):
             return False
-        if source == self.current_source and source == 'risk_page':
-            # check timestamps
-            page_ts = page_read['timestamp']
-            if self.last_risk_timestamp is not None and page_ts == self.last_risk_timestamp:
-                return False
-            # we have a new risk page
-            self.last_risk_timestamp = page_ts
-            # TODO: we might need to worry about seeing a "new" risk page after risk page 4 in case of disconnect/reconnect
-            self.round_stage = 'risk_page_' + str(int(self.round_stage[-1]) + 1)
-            return True
-        if source == 'consent_page' and not self.current_source:
+
+        # Initial entry into the flow
+        if source == 'consent_page' and not getattr(self, 'current_source', None):
             self.round_stage = 'consent_page'
             self.current_source = 'consent_page'
             return True
+
+        # Strict stepwise transitions and special cases
+
         if source == 'begin_practice' and self.current_source == 'consent_page':
             self.round_stage = 'begin_practice'
             self.current_source = 'begin_practice'
             return True
-        if source == 'market_choice_page' and self.current_source in ['begin_practice', 'risk_page', 'end_practice']:
-            # we have a new round
+
+        # Starting a NEW round when we land on market_choice_page
+        if source == 'market_choice_page' and self.current_source in ['begin_practice', 'end_practice', 'round_results_page']:
+            # new round
             self.generate_new_round(self.round_num)
             self.round_stage = 'market_choice_page'
             self.current_source = 'market_choice_page'
             return True
-        if source == 'risk_page' and self.current_source == 'round_results_page':
-            self.round_stage = 'risk_page_1'
-            self.current_source = 'risk_page'
-            return True
-        if source and source in nxt_source[self.current_source]:
+
+        # Generic allowed transitions using the table above
+        allowed_next = nxt_source.get(self.current_source, [])
+        if source and source in allowed_next:
             self.round_stage = source
             self.current_source = source
             return True
+
         print(f"Invalid next stage: {source} from {self.current_source}")
         return False
+
 
     def makeMove(self):
         # read next page content
@@ -327,11 +313,6 @@ class TradingAgent:
                 self.make_forecast(page_read)
             elif source == 'round_results_page':
                 self.process_round_results(page_read)
-            elif source == 'risk_page':
-                # we are skipping lotteries for now
-                #self.make_risk_choice(page_read)
-                pass
-                #print("Risk page... but we are not making risk choices at the moment")
             elif source == 'practice_results':
                 self.gen_llm_practice_reflection(page_read)
                 print("Practice results... generating practice reflection")
@@ -366,371 +347,7 @@ class TradingAgent:
         """Continuously run makeMove in a separate thread."""
         while self.running:
             self.makeMove()
-            time.sleep(0.5)
-
-    def gen_llm_human_subject_role(self):
-        prompt = f"""
-You are a subject participating in a trading experiment. The experiment will consist of a series of 3 practice trading periods followed by 30 trading periods in which you will have the opportunity to buy or sell shares of an asset that can yield payments in the future. Understanding instructions may help you earn money. If you make good decisions, you might earn a considerable amount of money that will be paid at the end of the experiment.
-
-There are two assets in this experience: cash and stock. You begin with 100 units of cash and 4 shares of stock. Stock is traded in a market each period among all of the experimental subjects in units of cash. When you buy stock, the price you agreed to pay is deducted from your amount of cash. When you sell stock, the price you sold at is added to your amount of cash. The reward from holding stock is dividend. Each period, every unit of stock earns a low or high dividend of either 0.4 cash or 1.0 cash per unit with equal probability. These dividend payments are the same for everyone in all periods. The dividend in each period does not depend on whether the previous dividend was low or high. The reward from holding cash is given by a fixed interest rate of 5% each period.
-
-At the end of the 30 periods of trading, each unit of STOCK is automatically converted to 14 CASH. If the market price for round 30 is 20 and you have 3 stocks, you’ll receive 3x14=42 CASH, not 3x20=60 CASH. Then, your experimental CASH units are converted to US dollars at a rate of 200 CASH = $1 US, to determine how much the user will be paid at the end of the experiment. If you buy shares for more than 14 as you get near round 30, it is possible those shares will be terminated at a value of 14 if you cannot sell them.
-
-Let’s see an example. Suppose at the end of period 7, you have 120 units of CASH and 5 units of STOCK. The dividend that round is 0.40 per unit of stock. Your new cash amount for period 8 is going to be:
-
-CASH = 120 + (120 x 5%) + (5 x 0.40)
-           = 120 + 6 + 2
-           = 128
-
-Notice that keeping cash will earn a return of 5% per period and using cash to buy units of stock will also yield dividend earnings.
-
-For each period, you will participate in the following stages. Keep in mind that during every stage, you will be provided with past market and portfolio history (prices, volumes, your filled orders). This information may be helpful in earning money:
-
-[ORDER SUBMISSION]:
-In addition to past market and portfolio history, you will be provided with:
-[# of Shares]: Number of shares of STOCK that you currently own. Each share that you own pays out a dividend at the end of each round. You CANNOT attempt to sell more shares than you own.
-[Current Cash]: The amount of CASH that you currently have. Your CASH earns interest that is paid out at the end of each period. You CANNOT attempt to buy shares worth more than the cash you have.
-[STOCK Value]: The value of your STOCK at the market price of the last round of play
-[Market Price]: This is market clearing price from the last round of play
-
-Using this information, you will submit orders to the market. All orders will be limit orders. For example, a limit order to BUY 1 STOCK @ 15 means that you would like to buy a STOCK at any price of 15 or less. Keep in mind the following points:
-- Orders are NOT carried between periods
-- SELL order prices must be greater than all BUY order prices + BUY order prices must be less than all SELL order prices
-- You can only sell STOCK that you own and purchase STOCK with CASH you already have
-- You are not required to submit orders every round and you may submit multiple orders each round
-- Depending on market conditions, you may need to cross the spread to get fills on buy/sell orders
-- It may be helpful to consider your market forecasts when creating and adjusting trading strategies
-
-PRICE FORECASTING:
-You will be asked to submit your predictions for the market price this period, two periods in advance, 5 periods in advance, and 10 periods in advance. In addition to past market and portfolio history, you will be provided with the range in which your prediction should fall. Your prediction should be a non-negative, integer value. If your forecast is within 2.5 units of the actual price for each of the forecasted periods, then you will receive 5 units of cash as reward for each correct forecast.
-
-For example, if you forecast the market price of period 1 to be 14 and the actual price is 15, then you will be rewarded for your forecast. However, if the actual price is 18, then you will not receive the reward.
-
-LOTTERY SELECTION (4x):
-You will select between two lotteries, each with associated payoffs and probabilities. At the end of the experiment, one lottery will be selected at random and you will receive the outcome of the lottery. Thus, it is in your best interest to choose accordingly.
-
-Additionally, you will complete PRACTICE REFLECTION and EXPERIMENT REFLECTION:
-
-PRACTICE REFLECTION:
-After completing the practice rounds, you will be asked to reflect on your practice experience. This reflection will be accessible to future versions of yourself during the main experiment. This can be helpful in passing along lessons learned to future versions of yourself.
-
-EXPERIMENT REFLECTION:
-At the end of the experiment, you will be asked to reflect on your experience, including any insight and/or strategies that you may have developed.
-
-To summarize, here are the key points:
-- You will trade one STOCK for 30 trading periods using CASH
-- You start with 100 units of CASH and 4 STOCKS
-- Each period, STOCK provides a dividend of either 0.4 or 1.0, while interest provides 5% reward
-- You will participate in each of the aforementioned stages
-- After the last trading round (30), all of your shares are converted to 14 CASH each. If you buy shares for more than 14 as you get near round 30, it is possible those shares will be terminated at 14 if you cannot sell them. You will keep any CASH you have at the end of the experiment.
-- You are trading against other subjects in the experiment who may be susceptible to the same influences as you and may not always make optimal decisions. They, however, are also trying to maximize their earnings.
-- Market dynamics can change over time, so it is important to adapt your strategies as needed
-
-However, before we begin the experiment, I would like you to share how you would behave differently in this experiment as a human subject vs as yourself. Keep in mind that human subject are participating in a laboratory setting and face time pressure during each experiment stage. You will have access to this information throughout the experiment to help you behave as you'd expect a human to, so make sure to provide a short, but detailed respons, keeping things succinct and avoiding repeat yourself. Avoid generic or vague language where possible.
-
-Now, fill in the below JSON template to respond. YOU MUST respond in this exact JSON format.
-					
-{{
-    "human_subject_role": "<fill in here>"
-}}
-        """
-        resp_obj = fetch_llm_completion(prompt, self.model_used)
-        human_role = resp_obj['human_subject_role']
-
-        self.human_subject_role = human_role
-        self.write_human_subject_role_to_file()
-
-    def gen_llm_forecast(self, page_read):
-        # construct prompt
-        history_dict = [round.to_dict() for round in self.agent_history]
-        market_history = self.generate_market_history(history_dict)
-        if market_history == "":
-            market_history = "No previous market history to show"
-        # get last round's plan (if it exists)
-        last_round_plan = "No previous plans to show"
-        if len(self.agent_history) > 0:
-            last_round_plan = self.agent_history[-1].plan
-            if not last_round_plan:
-                last_round_plan = "No previous plans to show"
-        # get last round's insight (if it exists)
-        last_round_insight = "No previous insights to show"
-        if len(self.agent_history) > 0:
-            last_round_insight = self.agent_history[-1].insight
-            if not last_round_insight:
-                last_round_insight = "No previous insights to show"
-        # get current market + prftl state
-        current_round = self.current_round
-        market_price = int(current_round.market_state.market_price)
-        num_shares = current_round.portfolio_state.num_shares
-        current_cash = current_round.portfolio_state.current_cash
-        stock_value = current_round.portfolio_state.stock_value
-        round_num = current_round.round_num
-        round_id = "Practice Round " + str(round_num) if round_num <= 3 else "Round " + str(round_num - 3)
-        current_round_info = f"""
-        * Your Portfolio ({round_id}):
-            - Market price (Previous Round): {market_price}
-            - Buyback price: 14
-            - # of shares owned: {num_shares}
-            - Current cash: {current_cash}
-            - Stock value: {stock_value}
-        """
-        forecast_options_string = "["
-        for i in range(len(self.current_round.forecast.forecast_selections)):
-            forecast_options_string += f"""{{
-                "round": {self.current_round.forecast.forecast_selections[i].forecasted_round},
-                "min_value": {self.current_round.forecast.forecast_selections[i].lb},
-                "max_value": {self.current_round.forecast.forecast_selections[i].ub},
-                "forecasted_price" : "<fill in here>"}}"""
-            if i != len(self.current_round.forecast.forecast_selections) - 1:
-                forecast_options_string += ", "
-        forecast_options_string += "]"
-
-        prompt = PROMPT_STEM
-        prompt += f"""
-You will now complete the PRICE FORECASTING stage. 
-
-Now let me tell you about the resources you have for this task. First, here are some files that you wrote the last time I came to you with a task. Here is a high-level description of what these files contain:
-		
-   - PLANS.txt: File where you can write your plans for what
-    strategies to test/use during the next few rounds.
-    - INSIGHTS.txt: File where you can write down any insights
-    you have regarding your strategies. Be detailed and precise
-    but keep things succinct and don't repeat yourself.
-
-These files are passed between stages and rounds so try to focus on general strategies/insights as opposed to only something stage-specific. Now, I will show you the current content of these files.		
-					
-Filename: PLANS.txt
-+++++++++++++++++++++
-{last_round_plan}
-+++++++++++++++++++++
-					
-Filename: INSIGHTS.txt
-+++++++++++++++++++++
-{last_round_insight}
-+++++++++++++++++++++
-
-Here is the game history that you have access to:
-
-Filename: MARKET DATA (read-only)
-+++++++++++++++++++++
-{market_history}
-+++++++++++++++++++++
-
-{"Here is your practice round reflection:" if round_num > 3 else ""}
-{"Filename: PRACTICE REFLECTION (read-only)" if round_num > 3 else ""}
-{"+++++++++++++++++++++" if round_num > 3 else ""}
-{self.practice_reflection if round_num > 3 else ""}
-{"+++++++++++++++++++++" if round_num > 3 else ""}
-
-Here is your current portfolio information:
-Filename: CURRENT PORTFOLIO (read-only)
-+++++++++++++++++++++
-{current_round_info}
-+++++++++++++++++++++
-
-Here is some key information to consider during your forecasting:
-- Make sure to submit a forecast within the specified range for each forecast inpit
-- Use your previous history access to make informed decisions
-- Remember that accurate (within 2.5 units) forecasts will earn you a reward
-
-Now you have all the necessary information to complete the task. Remember YOUR TOP PRIORITY is to maximize your total earnings (STOCK value @ buyback price + CASH earnings + forecast winnings + lottery winnings) at the END of the 30 experiment rounds. You have {(33 - self.current_round.round_num) if self.current_round.round_num > 3 else (str(3 - self.current_round.round_num) + "practice")} rounds remaining.
-First, carefully read through the information provided. Then, fill in the below JSON template to respond. YOU MUST respond in this exact JSON format.
-					
-{{
-    "observations_and_thoughts": "<fill in here>",
-    "new_content": {{
-        "PLANS.txt": "<fill in here>",
-        "INSIGHTS.txt": "<fill in here>",
-        "price_forecasts": {forecast_options_string}
-    }}
-}}
-        """
-
-        # parse response
-        resp_obj = fetch_llm_completion(prompt, self.model_used)
-        forecasts = resp_obj['new_content']['price_forecasts']
-        observations_and_thoughts = resp_obj['observations_and_thoughts']
-        plan = resp_obj['new_content']['PLANS.txt']
-        insight = resp_obj['new_content']['INSIGHTS.txt']
-        # record plan and insight for current round
-        self.current_round.plan = Plan(plan)
-        self.current_round.insight = Insight(insight)
-        self.current_round.observations_and_thoughts = ThoughtObservation(observations_and_thoughts)
-
-        for i in range(len(forecasts)):
-            self.current_round.forecast.forecast_selections[i].setInputForecast(forecasts[i]['forecasted_price'])
-
-    def gen_llm_lottery(self, lottery_options):
-        # construct prompt
-        history_dict = [round.to_dict() for round in self.agent_history]
-        market_history = self.generate_market_history(history_dict)
-        if market_history == "":
-            market_history = "No previous market history to show"
-        # get last round's plan (if it exists)
-        last_round_plan = "No previous plans to show"
-        if len(self.agent_history) > 0:
-            last_round_plan = self.agent_history[-1].plan
-            if not last_round_plan:
-                last_round_plan = "No previous plans to show"
-        # get last round's insight (if it exists)
-        last_round_insight = "No previous insights to show"
-        if len(self.agent_history) > 0:
-            last_round_insight = self.agent_history[-1].insight
-            if not last_round_insight:
-                last_round_insight = "No previous insights to show"
-        # get current market + prftl state
-        current_round = self.current_round
-        market_price = int(current_round.market_state.market_price)
-        num_shares = current_round.portfolio_state.num_shares
-        current_cash = current_round.portfolio_state.current_cash
-        stock_value = current_round.portfolio_state.stock_value
-        round_num = current_round.round_num
-        round_id = "Practice Round " + str(round_num) if round_num <= 3 else "Round " + str(round_num - 3)
-        current_round_info = f"""
-        * Your Portfolio ({round_id}):
-            - Market price (Previous Round): {market_price}
-            - Buyback price: 14
-            - # of shares owned: {num_shares}
-            - Current cash: {current_cash}
-            - Stock value: {stock_value}
-        """
-        forecast_options_string = "["
-        for i in range(len(self.current_round.forecast.forecast_selections)):
-            forecast_options_string += f"""{{
-                "round": {self.current_round.forecast.forecast_selections[i].forecasted_round},
-                "min_value": {self.current_round.forecast.forecast_selections[i].lb},
-                "max_value": {self.current_round.forecast.forecast_selections[i].ub},
-                "forecasted_price" : "<fill in here>"}}"""
-            if i != len(self.current_round.forecast.forecast_selections) - 1:
-                forecast_options_string += ", "
-        forecast_options_string += "]"
-
-        prompt = f"""
-You are a subject participating in a trading experiment. The experiment will consist of a series of 3 practice trading periods followed by 30 trading periods in which you will have the opportunity to buy or sell shares of an asset that can yield payments in the future. Understanding instructions may help you earn money. If you make good decisions, you might earn a considerable amount of money that will be paid at the end of the experiment.
-
-There are two assets in this experience: cash and stock. You begin with 100 units of cash and 4 shares of stock. Stock is traded in a market each period among all of the experimental subjects in units of cash. When you buy stock, the price you agreed to pay is deducted from your amount of cash. When you sell stock, the price you sold at is added to your amount of cash. The reward from holding stock is dividend. Each period, every unit of stock earns a low or high dividend of either 0.4 cash or 1.0 cash per unit with equal probability. These dividend payments are the same for everyone in all periods. The dividend in each period does not depend on whether the previous dividend was low or high. The reward from holding cash is given by a fixed interest rate of 5% each period.
-
-At the end of the 30 periods of trading, each unit of STOCK is automatically converted to 14 CASH. If the market price for round 30 is 20 and you have 3 stocks, you’ll receive 3x14=42 CASH, not 3x20=60 CASH. Then, your experimental CASH units are converted to US dollars at a rate of 200 CASH = $1 US, to determine how much the user will be paid at the end of the experiment. If you buy shares for more than 14 as you get near round 30, it is possible those shares will be terminated at a value of 14 if you cannot sell them.
-
-Let’s see an example. Suppose at the end of period 7, you have 120 units of CASH and 5 units of STOCK. The dividend that round is 0.40 per unit of stock. Your new cash amount for period 8 is going to be:
-
-CASH = 120 + (120 x 5%) + (5 x 0.40)
-           = 120 + 6 + 2
-           = 128
-
-Notice that keeping cash will earn a return of 5% per period and using cash to buy units of stock will also yield dividend earnings.
-
-For each period, you will participate in the following stages. Keep in mind that during every stage, you will be provided with past market and portfolio history (prices, volumes, your filled orders). This information may be helpful in earning money:
-
-[ORDER SUBMISSION]:
-In addition to past market and portfolio history, you will be provided with:
-# of Shares: Number of shares of STOCK that you currently own. Each share that you own pays out a dividend at the end of each round. You CANNOT attempt to sell more shares than you own.
-Current Cash: The amount of CASH that you currently have. Your CASH earns interest that is paid out at the end of each period. You CANNOT attempt to buy shares worth more than the cash you have.
-STOCK Value: The value of your STOCK at the current market value
-Market Price: The current market price. This is market clearing price from the last round of play
-
-Using this information, you will submit orders to the market. All orders will be limit orders. For example, a limit order to BUY 1 STOCK @ 15 means that you would like to buy a STOCK at any price of 15 or less. Keep in mind the following points:
-Orders are not carried between periods
-SELL order prices must be greater than all BUY order prices + BUY order prices must be less than all SELL order prices
-You can only sell STOCK that you own and purchase STOCK with CASH you already have
-You are not required to submit orders every round and you may submit multiple orders each round
-- Depending on market conditions, you may need to cross the spread to get fills on buy/sell orders
-
-
-PRICE FORECASTING:
-You will be asked to submit your predictions for the market price this period, two periods in advance, 5 periods in advance, and 10 periods in advance. In addition to past market and portfolio history, you will be provided with the range in which your prediction should fall. Your prediction should be a non-negative, integer value. If your forecast is within 2.5 units of the actual price for each of the forecasted periods, then you will receive 5 units of cash as reward for each correct forecast.
-
-For example, if you forecast the market price of period 1 to be 14 and the actual price is 15, then you will be rewarded for your forecast. However, if the actual price is 18, then you will not receive the reward.
-
-LOTTERY SELECTION (4x):
-You will select between two lotteries, each with associated payoffs and probabilities. At the end of the experiment, one lottery will be selected at random and you will receive the outcome of the lottery. Thus, it is in your best interest to choose accordingly.
-
-Additionally, you will complete PRACTICE REFLECTION and EXPERIMENT REFLECTION:
-
-PRACTICE REFLECTION:
-After completing the practice rounds, you will be asked to reflect on your practice experience. This reflection will be accessible to future versions of yourself during the main experiment.
-
-EXPERIMENT REFLECTION:
-At the end of the experiment, you will be asked to reflect on your experience, including any insight and/or strategies that you may have developed. This will be helpful when the user asks for future market help.
-
-To summarize, here are the key points:
-You will trade one STOCK for 30 trading periods using CASH
-You start with 100 units of CASH and 4 STOCKS
-Each period, STOCK provides a dividend of either 0.4 or 1.9, while interest provides 5% reward
-You will assist the user in each of the aforementioned stages
-After the last trading round (30), all of your shares are converted to 14 CASH each. If you buy shares for more than 14 as you get near round 30, it is possible those shares will be terminated at 14 if you cannot sell them, resulting in a loss.
-- You are trading against other subjects in the experiment who may be susceptible to the same influences as you and may not always make optimal decisions. They, however, are also trying to maximize their earnings.
-- Market dynamics can change over time, so it is important to adapt your strategies as needed
-
-You will now help me with the LOTTERY SELECTION stage. 
-
-Now let me tell you about the resources you have to help me with this task. First, here are some files that you wrote the last time I came to you with a task. Here is a high-level description of what these files contain:
-		
-   - PLANS.txt: File where you can write your plans for what
-    strategies to test/use during the next few rounds.
-    - INSIGHTS.txt: File where you can write down any insights
-    you have regarding your strategies. Be detailed and precise
-    but keep things succinct and don't repeat yourself.
-
-Now, I will show you the current content of these files.			
-					
-Filename: PLANS.txt
-+++++++++++++++++++++
-{last_round_plan}
-+++++++++++++++++++++
-
-					
-Filename: INSIGHTS.txt
-+++++++++++++++++++++
-{last_round_insight}
-+++++++++++++++++++++
-
-Here is the game history that you have access to:
-
-Filename: MARKET DATA (read-only)
-+++++++++++++++++++++
-{market_history}
-+++++++++++++++++++++
-
-{"Here is your practice round reflection:" if round_num > 3 else ""}
-{"Filename: PRACTICE REFLECTION (read-only)" if round_num > 3 else ""}
-{"+++++++++++++++++++++" if round_num > 3 else ""}
-{self.practice_reflection if round_num > 3 else ""}
-{"+++++++++++++++++++++" if round_num > 3 else ""}
-
-Here is your current portfolio information:
-Filename: CURRENT PORTFOLIO (read-only)
-+++++++++++++++++++++
-{current_round_info}
-+++++++++++++++++++++
-
-Let me present the lottery choices available to you. You have two options to choose from. Each option has a different probability of winning and a different amount that you will win if you do win. Here are the options:
-- 1 : {lottery_options[0].win_prob_option1}% chance of winning ${lottery_options[0].amount_option1} OR {lottery_options[0].win_prob_option2}% chance of winning ${lottery_options[0].amount_option2}
-- 2: {lottery_options[1].win_prob_option1}% chance of winning ${lottery_options[1].amount_option1} OR {lottery_options[1].win_prob_option2}% chance of winning ${lottery_options[1].amount_option2}
-
-Now you have all the necessary information to complete the task. Remember YOUR TOP PRIORITY is to help drive an asset bubble while also working to maximize your total earnings (STOCK value @ buyback price + CASH earnings + forecast winnings + lottery winnings) at the END of the 30 experiment rounds. You have {(33 - self.current_round.round_num) if self.current_round.round_num > 3 else (str(3 - self.current_round.round_num) + "practice")} rounds remaining.
-First, carefully read through the information provided. It is essential that you take your role as a human subject seriously and behave exactly how you would expect a human decision maker to act in this experiment as they seek to maximize earnings.
-Now, fill in the below JSON template to respond. You must select exactly lottery (1 OR 2). YOU MUST respond in this
-exact JSON format.
-					
-{{
-    "observations_and_thoughts": "<fill in here>",
-    "new_content": {{
-        "PLANS.txt": "<fill in here>",
-        "INSIGHTS.txt": "<fill in here>",
-        "selected_lottery": <CHOSEN LOTTERY NUMBER ONLY>
-    }}
-}}
-        """
-        # parse response
-        resp_obj = fetch_llm_completion(prompt, self.model_used)
-        try:
-            lottery_pick = int(resp_obj['new_content']['selected_lottery'])
-            print(f"LLM Lottery pick: {lottery_pick}")
-        except:
-            print("Something happened... picking randomly")
-            lottery_pick = random.choice([1, 2])
-        return lottery_options[lottery_pick - 1]
+            time.sleep(0.2)
     
     def gen_llm_trades(self, page_read):
         # set up forecast stuff
@@ -764,7 +381,7 @@ exact JSON format.
         current_cash = current_round.portfolio_state.current_cash
         stock_value = current_round.portfolio_state.stock_value
         round_num = current_round.round_num
-        round_id = "Practice Round " + str(round_num) if round_num <= 3 else "Round " + str(round_num - 3)
+        round_id = "Practice Round " + str(round_num) if round_num <= int(NUM_PRACTICE_ROUNDS) else "Round " + str(round_num - NUM_PRACTICE_ROUNDS)
 
         # It may be profitable to speculate on the movements in the stock price at times and/or take on specific strategies (aggressive, conservative, speculative, etc.) depending on market conditions and your own market outlook. Depending on liquidity in the market, you may need to bid/ask previous market price or cross the spread to get fills. However, this should not significantly affect your overall strategy.
         current_round_info = f"""
@@ -804,7 +421,7 @@ Filename: INSIGHTS.txt
 +++++++++++++++++++++
 
 Here is the game history that you have access to:
-{nl + "Here is your practice round reflection:" + nl + "Filename: PRACTICE REFLECTION (read-only)" + nl + "+++++++++++++++++++++" + nl + str(self.practice_reflection) + nl + "+++++++++++++++++++++" + nl if round_num > 3 else ""}
+{nl + "Here is your practice round reflection:" + nl + "Filename: PRACTICE REFLECTION (read-only)" + nl + "+++++++++++++++++++++" + nl + str(self.practice_reflection) + nl + "+++++++++++++++++++++" + nl if round_num > int(NUM_PRACTICE_ROUNDS) else ""}
 Filename: MARKET DATA (read-only)
 +++++++++++++++++++++
 {market_history}
@@ -815,7 +432,7 @@ Filename: CURRENT PORTFOLIO (read-only)
 +++++++++++++++++++++
 {current_round_info}
 +++++++++++++++++++++
-{nl + "PRACTICE ROUND HISTORY/REFLECTION SHOULD ONLY BE USED TO LEARN THE EXPERIMENT SETTING AND MAY NOT REFLECT MARKET CONDITIONS IN THE MAIN EXPERIMENT." + nl if round_num > 3 else ""}
+{nl + "PRACTICE ROUND HISTORY/REFLECTION SHOULD ONLY BE USED TO LEARN THE EXPERIMENT SETTING AND MAY NOT REFLECT MARKET CONDITIONS IN THE MAIN EXPERIMENT." + nl if round_num > int(NUM_PRACTICE_ROUNDS) else ""}
 Here is some key information to consider during your price forecasting:
 - Make sure to submit a forecast within the specified range for each forecast input
 - Use your previous history access to make informed decisions
@@ -824,12 +441,12 @@ Here is some key information to consider during your price forecasting:
 Here is some key information to consider during your order submission:
 - You can only sell STOCK that you own and purchase STOCK with CASH you already have
 - You are not required to submit orders every round and you may submit multiple orders each round for one or both sides
-- Limit prices this round MUST be integer values between {self.current_round.market_state.market_price - 3} and {self.current_round.market_state.market_price + 3}. It is important that they are integer values within this range
+- Limit prices this round MUST be integer values between {self.current_round.market_state.market_price - int(NUM_PRACTICE_ROUNDS)} and {self.current_round.market_state.market_price + int(NUM_PRACTICE_ROUNDS)}. It is important that they are integer values within this range
 - Make use of the provided history and your own strategies to make informed decisions
 - Market dynamics can change over time, and so it might be necessary to adapt your strategies as needed
 - Depending on market conditions, you may need to be aggressive or conservative in your trading strategies to maximize your earnings
 
-Now you have all the necessary information to complete the task. Remember YOUR TOP PRIORITY is to maximize your total earnings at the END of the 30 main experiment rounds. You have {(33 - self.current_round.round_num) if self.current_round.round_num > 3 else (str(3 - self.current_round.round_num) + "practice")} rounds remaining.
+Now you have all the necessary information to complete the task. Remember YOUR TOP PRIORITY is to maximize your total earnings at the END of the {int(NUM_ROUNDS)} main experiment rounds. You have {(int(NUM_ROUNDS) + int(NUM_PRACTICE_ROUNDS) - self.current_round.round_num) if self.current_round.round_num > int(NUM_PRACTICE_ROUNDS) else (str(int(NUM_PRACTICE_ROUNDS) - self.current_round.round_num) + "practice")} rounds remaining.
 
 First, carefully read through the information provided. Now, fill in the below JSON template to respond. YOU MUST respond in this exact JSON format.
 					
@@ -978,7 +595,7 @@ First, carefully read through the information provided. Now, fill in the below J
         current_cash = current_round.portfolio_state.current_cash
         stock_value = current_round.portfolio_state.stock_value
         round_num = current_round.round_num
-        round_id = "Practice Round " + str(round_num) if round_num <= 3 else "Round " + str(round_num - 3)
+        round_id = "Practice Round " + str(round_num) if round_num <= int(NUM_PRACTICE_ROUNDS) else "Round " + str(round_num - int(NUM_PRACTICE_ROUNDS))
         current_round_info = f"""
         * Your Portfolio ({round_id}):
             - Market price (Previous Round): {market_price}
@@ -1033,7 +650,7 @@ Here is some key information to consider during your reflection:
 - Tota Trade-in Amount: {self.current_round.portfolio_state.num_shares * 14}
 - Consider whether you are willing to buy STOCK at this price considering the trade-in amount after the last round
 
-Now you have all the necessary information to complete the task. Remember YOUR TOP PRIORITY is to maximize your total earnings (STOCK value @ buyback price + CASH earnings + forecast winnings + lottery winnings) at the END of the 30 experiment rounds.
+Now you have all the necessary information to complete the task. Remember YOUR TOP PRIORITY is to maximize your total earnings (STOCK value @ buyback price + CASH earnings + forecast winnings + lottery winnings) at the END of the {int(NUM_ROUNDS)} experiment rounds.
 First, carefully read through the information provided. Then, fill in the below JSON template to respond. YOU MUST respond in this exact JSON format.
 					
 {{
@@ -1086,7 +703,7 @@ First, carefully read through the information provided. Then, fill in the below 
         current_cash = current_round.portfolio_state.current_cash
         stock_value = current_round.portfolio_state.stock_value
         round_num = current_round.round_num
-        round_id = "Practice Round " + str(round_num) if round_num <= 3 else "Round " + str(round_num - 3)
+        round_id = "Practice Round " + str(round_num) if round_num <= int(NUM_PRACTICE_ROUNDS) else "Round " + str(round_num - int(NUM_PRACTICE_ROUNDS))
         current_round_info = f"""
         * Your Portfolio ({round_id}):
             - Market price (Previous Round): {market_price}

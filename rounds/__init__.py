@@ -17,9 +17,9 @@ from datetime import date
 
 
 #read in and pickle the decision tree for the risk elicitation task
-with open("common/decision_trees_and_gambles.json", "r") as dec_tree:
-    js = dec_tree.read()
-DECISION_TREES = json.loads(js)
+#with open("common/decision_trees_and_gambles.json", "r") as dec_tree:
+#    js = dec_tree.read()
+#DECISION_TREES = json.loads(js)
 
 
 NUM_ROUNDS = os.getenv('SSE_NUM_ROUNDS')
@@ -117,7 +117,7 @@ def get_js_vars_for_risk(player: Player, choice_num: int):
     ret =  get_js_vars(player)
     idx = player.round_number-1
     
-    risk_task = DECISION_TREES[idx]
+    #risk_task = DECISION_TREES[idx]
     
     sh = f"${risk_task['sh'] : .2f}"
     sl = f"${risk_task['sl'] : .2f}"
@@ -1474,10 +1474,10 @@ page_sequence = [#GroupingWaitPage,
                  RoundResultsPage,
                  #Fixate,
                  #RiskWaitPage,
-                 RiskPage1,
-                 RiskPage2,
-                 RiskPage3,
-                 RiskPage4,
+                 #RiskPage1,
+                 #RiskPage2,
+                 #RiskPage3,
+                 #RiskPage4,
                  FinalResultsPage,
 ]
 

@@ -374,34 +374,9 @@ class Player(BasePlayer):
     
     
     def get_risk_task_data(self):
-        #payouts - common to all choices this round
-        rh = self.risk_rh
-        rl = self.risk_rl
-        sh = self.risk_sh
-        sl = self.risk_sl
-        
-        ret = []
-        for i in [1,2,3,4]:
-            # choice 1==risky
-            choice = self.field_maybe_none(f'risk_{i}')
-            
-            if choice is None:
-                continue
-            
-            p_hi = self.field_maybe_none(f'risk_phi_{i}')
-            
-            r_data = dict(
-                    rnd = self.round_number,
-                    c_num = i,
-                    choice = choice,
-                    rh=rh,
-                    rl=rl,
-                    sh=sh,
-                    sl=sl,
-                    p_hi=p_hi
-                )
-            ret.append(r_data)
-        return ret
+        # avoid getting risk task data while we
+        # are skipping the risk elicitation task
+        return []
     
 
     def __str__(self):
