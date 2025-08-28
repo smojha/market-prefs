@@ -81,13 +81,27 @@ Note that the session start links URL need nots be localhost
 (i.e. hosting using herokuapp) Run a debug experiment with
 all bots:
 ```bash
-python main.py http://localhost:8000/SessionStartLinks/test123 gpt-4o
+python main.py --url http://localhost:8000/SessionStartLinks/test123 gpt-4o
 ```
 Run a production experiment with notes and only 4 bots:
 ```bash
-python main.py http://localhost:8000/SessionStartLinks/jo2g7edd gpt-4o \
+python main.py --url http://localhost:8000/SessionStartLinks/jo2g7edd gpt-4o \
   -p -m "SOME MESSAGE ABOUT THIS RUN" --num-bots 4
 ```
+To run an experiment without automatically scraping/writing participant links,
+drop the optional `--url` argument and manually update the links in `config/bot-links.cfg`
+to match this format:
+```bash
+1=https://llmmarket-310495633edd.herokuapp.com/InitializeParticipant/q2flqq3x
+2=https://llmmarket-310495633edd.herokuapp.com/InitializeParticipant/wwfoemxy
+...
+```
+To run an experiment with these bots, run the following command:
+```bash
+python main.py gpt-4o \
+  -p -m "SOME MESSAGE ABOUT THIS RUN"
+```
+To run a
 
 ## Output & Data
 - **Run folders:**
